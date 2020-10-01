@@ -1,0 +1,40 @@
+.border-color-set {
+  border: 3px solid #54a020;
+
+}
+
+.page-padding {
+  padding: 20px;
+}
+
+.header-section {
+  padding-top: 10px;
+}
+
+.header {
+  border: 3px solid #54a020;
+}
+
+.heading {
+  color: #90c226;
+  -webkit-text-fill-color: white;
+  /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #90c226;
+}
+
+.font-set-label {
+  padding: 5px;
+  margin-top: 10px;
+  background-color: #90c226;
+  color: white;
+  font-size: 18px;
+}
+
+.font-set-label label {
+  margin: auto;
+}
+
+.main {
+  padding: 130px 20px 5px;
+}

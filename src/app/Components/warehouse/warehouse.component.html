@@ -1,0 +1,39 @@
+<header class="header-section-bg-color ">
+  <h5 class="text-center" style="margin: auto;">WAREHOUSE</h5>
+</header>
+<section class="border-color-set">
+  <div class="row">
+    <div class="col-md-3 padding-colm-set ">
+      <label for="sel1" class="text-color ">WAREHOUSE CODE:</label>
+      <label></label>
+    </div>
+    <div class="col-md-3 padding-colm-set ">
+      <label for="sel1" class="text-color ">WAREHOUSE NAME:</label>
+    </div>
+    <div class="col-md-3 padding-colm-set ">
+      <label for="sel1" class="text-color ">MANAGER:</label>
+      <label></label>
+    </div>
+    <div class="col-md-3  padding-colm-set ">
+      <label for="sel1" class="text-color ">PHONE:</label>
+    </div>
+  </div>
+</section>
+<section class="section-space">
+  <table id="customers" class="display table table_size table_background" style="width:100%">
+    <thead>
+      <tr class="home-page-color-bg">
+        <th scope="col">ITEM NAME</th>
+        <th scope="col">QUANTITY IN STOCK</th>
+        <th scope="col">UNITS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tb of tabledata">
+        <td>{{tb.Teachers}}</td>
+        <td>{{tb.Subjects}}</td>
+        <td>{{tb.TAI}}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>

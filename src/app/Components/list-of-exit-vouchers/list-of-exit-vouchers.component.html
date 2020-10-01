@@ -1,0 +1,92 @@
+<header class="header-section-bg-color ">
+  <h5 class="text-center" style="margin: auto;">LIST OF EXIT VOUCHERS</h5>
+</header>
+<section class="border-color-set">
+  <div class="row">
+    <div class="col-md-4 padding-colm-set ">
+      <label for="sel1" class="text-color ">PERIOD:</label>
+      <select class="form-control" id="sel1">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+      <select class="form-control" id="sel1" style="margin-top: 2%;">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+    </div>
+    <div class="col-md-4 border-left padding-colm-set ">
+      <label for="sel1" class="text-color ">PROVEN WAREHOUSE:</label>
+      <select class="form-control" id="sel1">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+      <label for="sel1" class="text-color ">RECEPTION WAREHOUSE:</label>
+      <select class="form-control" id="sel1">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+    </div>
+    <div class="col-md-4 border-left padding-colm-set ">
+      <label for="sel1" class="text-color ">GOOD NUMBER:</label>
+      <select class="form-control" id="sel1">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+      <button class="btn btn-success buttons-style  w-50 " style="float: right; margin-top: 5%;">APPLY FILTER</button>
+    </div>
+  </div>
+</section>
+<section class="section-space">
+  <table id="customers" #dataTable class="display table table_size table_background" style="width:100%">
+    <thead>
+      <tr class="home-page-color-bg">
+        <th scope="col">DATED</th>
+        <th scope="col">DOCUMENT NUMBER</th>
+        <th scope="col">PROVEN WAREHOUSE</th>
+        <th scope="col">RECEPTION WAREHOUSE</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tb of tabledata">
+        <td>{{tb.Teachers}}</td>
+        <td>{{tb.Subjects}}</td>
+        <td>{{tb.TAI}}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<section>
+  <div class="row">
+    <div class="col-md-10">
+      <div class="row">
+        <div class="col-md-2">
+          <button class="btn btn-success buttons-style  w-100 ">New entry voucher</button>
+        </div>
+        <div class="col-md-2">
+          <button class="btn btn-success buttons-style  w-100 ">Actions</button>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-md-2">
+      <div class="row">
+        <div class="col-md-6">
+          <button class="btn btn-success buttons-style  w-100 ">Edit</button>
+        </div>
+        <div class="col-md-6">
+          <button class="btn btn-success buttons-style  w-100 ">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

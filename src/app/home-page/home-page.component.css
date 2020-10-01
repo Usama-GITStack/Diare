@@ -38,3 +38,78 @@
 .main {
   padding: 130px 20px 5px;
 }
+
+#menu,
+#menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#menu {
+  width: 100%;
+
+  margin: 40px auto;
+  border-radius: 6px;
+  background-color: green;
+
+}
+
+#menu:before,
+#menu:after {
+  content: '';
+  display: table;
+}
+
+#menu:after {
+  clear: both;
+}
+
+#menu li {
+  float: left;
+  box-shadow: 1px 0 0 #90EE90;
+  position: relative;
+  padding: 0px 40px;
+}
+
+#menu a {
+  float: left;
+  padding: 12px 30px;
+  text-decoration: none;
+  color: #fff;
+
+}
+
+#menu li:hover {
+  color: #fafafa;
+  background-color: #262626;
+
+}
+
+#menu ul {
+  margin: 20px 0 0 0;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 46px;
+  left: 0;
+  z-index: 1;
+  background-color: #90EE90;
+  border-radius: 3px;
+  transition: all .3s ease-in-out;
+
+}
+
+#menu li:hover>ul {
+  opacity: 1;
+  visibility: visible;
+  margin: 0;
+
+}
+
+#menu ul ul {
+  top: 0;
+  left: 150px;
+  margin: 0 0 0 20px;
+
+}

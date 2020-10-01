@@ -11,6 +11,18 @@ import { RegisterNewCoustomerComponent } from './Components/register-new-coustom
 import { CustomerinfoComponent } from './Components/customerinfo/customerinfo.component';
 import { ListofArticalsComponent } from './Components/listof-articals/listof-articals.component';
 import { AddArticalsComponent } from './Components/add-articals/add-articals.component';
+import { StockDocumentComponent } from './Components/stock-document/stock-document.component';
+import { ListOfEntryVouchersComponent } from './Components/list-of-entry-vouchers/list-of-entry-vouchers.component';
+import { NewEntryVouchersComponent } from './Components/new-entry-vouchers/new-entry-vouchers.component';
+import { ListOfExitVouchersComponent } from './Components/list-of-exit-vouchers/list-of-exit-vouchers.component';
+import { NewgoodexitComponent } from './Components/newgoodexit/newgoodexit.component';
+import { StockMovementListComponent } from './Components/stock-movement-list/stock-movement-list.component';
+import { ListofWarehouseComponent } from './Components/listof-warehouse/listof-warehouse.component';
+import { WarehouseComponent } from './Components/warehouse/warehouse.component';
+import { AddNewWarehouseComponent } from './Components/add-new-warehouse/add-new-warehouse.component';
+import { SaleDocumentsComponent } from './Components/sale-documents/sale-documents.component';
+import { InvoiceListComponent } from './Components/invoice-list/invoice-list.component';
+import { NewInvoiceComponent } from './Components/new-invoice/new-invoice.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +31,19 @@ import { AddArticalsComponent } from './Components/add-articals/add-articals.com
     RegisterNewCoustomerComponent,
     CustomerinfoComponent,
     ListofArticalsComponent,
-    AddArticalsComponent
+    AddArticalsComponent,
+    StockDocumentComponent,
+    ListOfEntryVouchersComponent,
+    NewEntryVouchersComponent,
+    ListOfExitVouchersComponent,
+    NewgoodexitComponent,
+    StockMovementListComponent,
+    ListofWarehouseComponent,
+    WarehouseComponent,
+    AddNewWarehouseComponent,
+    SaleDocumentsComponent,
+    InvoiceListComponent,
+    NewInvoiceComponent
   ],
   imports: [
     BrowserModule,

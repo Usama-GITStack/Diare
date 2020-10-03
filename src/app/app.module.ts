@@ -29,7 +29,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddEntryVouchersComponent } from './Components/add-entry-vouchers/add-entry-vouchers.component';
 import { AddExitVouchersComponent } from './Components/add-exit-vouchers/add-exit-vouchers.component';
 import { AddInvoiceComponent } from './Components/add-invoice/add-invoice.component';
-
+import { FilterPipe } from './filter.pipe';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,15 +55,18 @@ import { AddInvoiceComponent } from './Components/add-invoice/add-invoice.compon
     NewInvoiceComponent,
     AddEntryVouchersComponent,
     AddExitVouchersComponent,
-    AddInvoiceComponent
+    AddInvoiceComponent,
+    FilterPipe,
+
   ],
   imports: [
-
+    MatDatepickerModule,
     FormsModule,
     HttpClientModule,
     BrowserModule,
     MatSelectModule,
     AppRoutingModule,
+    NgbModule,
     DataTablesModule,
     BrowserAnimationsModule
   ],

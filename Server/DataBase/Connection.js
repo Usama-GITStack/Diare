@@ -17,6 +17,8 @@ const GetExitV = require("../Routes/GetExitV");
 const GetWarehouse = require("../Routes/GetWarehouse");
 const AddInvoice = require("../Routes/AddInvoice");
 const GetInvoice = require("../Routes/GetInvoice");
+const AddNewVoucher = require("../Routes/AddNewVoucher");
+const FinderNewVoucher = require("../Routes/FinderNewVoucher");
 //DataBase
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb+srv://osama:mahmood12@cluster0.jxi96.mongodb.net/Diare?retryWrites=true&w=majority", {
@@ -45,6 +47,8 @@ app.use("/ListOfExitVouchers", GetExitV);
 app.use("/ListofWarehouse", GetWarehouse);
 app.use("/AddInvoice", AddInvoice);
 app.use("/InvoiceList", GetInvoice);
+app.use("/NewEntryVouchers", AddNewVoucher);
+app.use("/NewEntryVouchers1", FinderNewVoucher);
 //Listner
 app.listen(3000, () => {
   console.log("Listning To The Port 3000....");

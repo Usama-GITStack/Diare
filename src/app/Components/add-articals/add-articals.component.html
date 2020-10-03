@@ -58,7 +58,10 @@
               <div class="form-group row">
                 <label class="col-sm-4 col-form-label">Unit:</label>
                 <div class="col-sm-8">
-                  <input type="text" class="form-control" placeholder="" [(ngModel)]="Unit" name="Unit" required>
+                  <select class="form-control" id="sel1" [(ngModel)]="Unit" name="Unit" required>
+                    <option>Boxes</option>
+                    <option>Meters</option>
+                  </select>
                 </div>
               </div>
             </div>
@@ -66,7 +69,10 @@
               <div class="form-group row">
                 <label class="col-sm-4 col-form-label">Category:</label>
                 <div class="col-sm-8">
-                  <input type="" class="form-control" placeholder="" [(ngModel)]="Category" name="Category" required>
+                  <select class="form-control" id="sel1" [(ngModel)]="Category" name="Category" required>
+                    <option>Milk</option>
+                    <option>Products</option>
+                  </select>
                 </div>
               </div>
             </div>

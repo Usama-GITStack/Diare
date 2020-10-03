@@ -5,18 +5,14 @@
   <div class="row">
     <div class="col-md-4 padding-colm-set ">
       <label for="sel1" class="text-color ">PERIOD:</label>
-      <select class="form-control" id="sel1">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-      </select>
-      <select class="form-control" id="sel1" style="margin-top: 2%;">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-      </select>
+      <div class="col-md-12">
+        <label for="birthday" class="text-color ">From:</label>
+        <input type="date" class="form-control" id="" name="">
+      </div>
+      <div class="col-md-12">
+        <label for="birthday" class="text-color ">To:</label>
+        <input type="date" class="form-control" id="" name="">
+      </div>
     </div>
     <div class="col-md-4 border-left padding-colm-set ">
       <label for="sel1" class="text-color ">PROVEN WAREHOUSE:</label>
@@ -46,7 +42,7 @@
     </div>
   </div>
 </section>
-<section class="section-space">
+<section class="section-space" id="PDF">
   <table id="excel-table" #dataTable class="display table table_size table_background" style="width:100%">
     <thead>
       <tr class="home-page-color-bg">
@@ -57,9 +53,9 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let tb of tabledata">
+      <tr *ngFor="let tb of tabledata; let i=index">
         <td>{{tb.Date}}</td>
-        <td>{{tb.Document}}</td>
+        <td><a (click)=Transfer(i)>{{tb.Document}}</a></td>
         <td>{{tb.Warehouse}}</td>
         <td>{{tb.Reception}}</td>
       </tr>

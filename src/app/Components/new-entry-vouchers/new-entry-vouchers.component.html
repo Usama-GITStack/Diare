@@ -4,44 +4,21 @@
 <section class="border-color-set">
   <div class="row">
     <div class="col-md-4 padding-colm-set ">
-      <label for="sel1" class="text-color ">PERIOD:</label>
-      <select class="form-control" id="sel1">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-      </select>
-      <select class="form-control" id="sel1" style="margin-top: 2%;">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-      </select>
+      <label for="sel1" class="text-color ">Date:</label>
+      <label for="sel1" class="text-color " style="float:right">{{Date}}</label>
+      <br>
+      <label for="sel1" class="text-color ">BE Number:</label>
+      <label for="sel1" class="text-color " style="float:right">{{Document}}</label>
     </div>
     <div class="col-md-4 border-left padding-colm-set ">
       <label for="sel1" class="text-color ">PROVEN WAREHOUSE:</label>
-      <select class="form-control" id="sel1">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-      </select>
+      <label for="sel1" class="text-color " style="float:right">{{Warehouse}}</label>
+      <br>
       <label for="sel1" class="text-color ">RECEPTION WAREHOUSE:</label>
-      <select class="form-control" id="sel1">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-      </select>
+      <label for="sel1" class="text-color " style="float:right">{{Reception}}</label>
     </div>
-    <div class="col-md-4 border-left padding-colm-set ">
-      <label for="sel1" class="text-color ">GOOD NUMBER:</label>
-      <select class="form-control" id="sel1">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-      </select>
+    <div class="col-md-4 padding-colm-set ">
+
       <button class="btn btn-success buttons-style  w-50 " style="float: right; margin-top: 5%;">APPLY FILTER</button>
     </div>
   </div>
@@ -59,10 +36,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let tb of tabledata">
-        <td>{{tb.Teachers}}</td>
-        <td>{{tb.Subjects}}</td>
-        <td>{{tb.TAI}}</td>
+      <tr *ngFor="let tb of tabledata1">
+        <td>{{tb.ITEMCODE}}</td>
+        <td>{{tb.ARTICLENAME}}</td>
+        <td>{{tb.AMOUNT}}</td>
+        <td>{{tb.UNITS}}</td>
+        <td>{{tb.ITEMVALUE}}</td>
+        <td>{{tb.TOTALVALUE}}</td>
       </tr>
     </tbody>
   </table>
@@ -74,8 +54,10 @@
         <div class="col-md-2">
 
         </div>
-        <div class="col-md-2">
-
+        <div class="col-md-4">
+          <div class="col-md-6">
+            <button class="btn btn-success buttons-style  w-100 " (click)="openXl(content)">Add Voucher</button>
+          </div>
         </div>
       </div>
 
@@ -92,3 +74,62 @@
     </div>
   </div>
 </section>
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Add New Vouchers</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form ngNativeValidate (submit)="onCourseSend()">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>ITEM CODE</label>
+            <input type="text" class="form-control" aria-describedby="emailHelp" value="AR-{{random}}" placeholder="">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>ARTICLE NAME</label>
+            <input type="text" class="form-control" aria-describedby="emailHelp" placeholder=""
+              [(ngModel)]="ARTICLENAME" name="ARTICLENAME">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>AMOUNT</label>
+            <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="" [(ngModel)]="AMOUNT"
+              name="AMOUNT">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>UNITS</label>
+            <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="" [(ngModel)]="UNITS"
+              name="UNITS">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>ITEM VALUE</label>
+            <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="" [(ngModel)]="ITEMVALUE"
+              name="ITEMVALUE">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>TOTAL VALUE</label>
+            <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="" [(ngModel)]="TOTALVALUE"
+              name="TOTALVALUE">
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+  </div>
+</ng-template>

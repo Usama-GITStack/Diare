@@ -1,3 +1,4 @@
+import { CoustomerRegisterService } from './../Services/coustomer-register.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { DataTablesModule } from 'angular-datatables';
@@ -23,6 +24,8 @@ import { AddNewWarehouseComponent } from './Components/add-new-warehouse/add-new
 import { SaleDocumentsComponent } from './Components/sale-documents/sale-documents.component';
 import { InvoiceListComponent } from './Components/invoice-list/invoice-list.component';
 import { NewInvoiceComponent } from './Components/new-invoice/new-invoice.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,13 +49,17 @@ import { NewInvoiceComponent } from './Components/new-invoice/new-invoice.compon
     NewInvoiceComponent
   ],
   imports: [
+    FormsModule,
+    HttpClientModule,
     BrowserModule,
     MatSelectModule,
     AppRoutingModule,
     DataTablesModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    CoustomerRegisterService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

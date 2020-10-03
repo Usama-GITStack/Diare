@@ -43,3 +43,10 @@ select {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+.form-control {
+  border: 3px solid #54a020;
+  background-color: #90c226;
+  border-radius: 0px;
+  color: white;
+}

@@ -1,3 +1,5 @@
+import { AddExitVouchersComponent } from './Components/add-exit-vouchers/add-exit-vouchers.component';
+import { AddEntryVouchersComponent } from './Components/add-entry-vouchers/add-entry-vouchers.component';
 import { NewInvoiceComponent } from './Components/new-invoice/new-invoice.component';
 import { InvoiceListComponent } from './Components/invoice-list/invoice-list.component';
 import { SaleDocumentsComponent } from './Components/sale-documents/sale-documents.component';
@@ -39,6 +41,8 @@ const routes: Routes = [
   { path: 'SaleDocuments', component: SaleDocumentsComponent },
   { path: 'InvoiceList', component: InvoiceListComponent },
   { path: 'NewInvoice', component: NewInvoiceComponent },
+  { path: 'AddEntryVouchers', component: AddEntryVouchersComponent },
+  { path: 'AddExitVouchers', component: AddExitVouchersComponent },
 
 ];
 

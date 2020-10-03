@@ -1,5 +1,6 @@
 import { CoustomerRegisterService } from './../../../Services/coustomer-register.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
+import * as XLSX from 'xlsx';
 @Component({
   selector: 'app-coustomer-list',
   templateUrl: './coustomer-list.component.html',
@@ -12,7 +13,15 @@ export class CoustomerListComponent implements OnInit {
   datageting: any = {};
   tabledata = [];
   dataTable: any;
-
+  fileName = 'ExcelSheet.xlsx';
+  exportexcel() {
+    console.log("Usama")
+    let element = document.getElementById('excel-table');
+    const ws: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+    XLSX.writeFile(wb, this.fileName);
+  }
   ngOnInit() {
     this.CR.getData().subscribe(data => {
       this.datageting = data;

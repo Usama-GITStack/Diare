@@ -19,5 +19,19 @@ const AddArticals = mongoose.model("AddArticals", new mongoose.Schema({
   Category: String,
   Margin: String
 }));
+const EntryV = mongoose.model("EntryV", new mongoose.Schema({
+  Date: String,
+  Document: String,
+  Warehouse: String,
+  Reception: String,
+}));
+const ExitV = mongoose.model("ExitV", new mongoose.Schema({
+  Date: String,
+  Document: String,
+  Warehouse: String,
+  Reception: String,
+}));
 module.exports.Customer = Customer;
 module.exports.AddArticals = AddArticals;
+module.exports.EntryV = EntryV;
+module.exports.ExitV = ExitV;

@@ -34,7 +34,7 @@
   </div>
 </section>
 <section class="section-space">
-  <table id="customers" #dataTable class="display table table_size table_background" style="width:100%">
+  <table id="excel-table" #dataTable class="display table table_size table_background" style="width:100%">
     <thead>
       <tr class="home-page-color-bg">
         <th scope="col">CUSTOMER CODE</th>
@@ -74,7 +74,7 @@
           <button class="btn btn-success buttons-style  w-100 " routerLink="/CustomerInfo">Customer account</button>
         </div>
         <div class="col-md-2">
-          <button class="btn btn-success buttons-style  w-100 ">Actions</button>
+          <button class="btn btn-success buttons-style  w-100 " (click)="exportexcel()">Actions</button>
         </div>
       </div>
 

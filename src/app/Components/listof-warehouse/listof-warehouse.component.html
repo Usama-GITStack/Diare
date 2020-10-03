@@ -3,7 +3,7 @@
 </header>
 
 <section class="section-space">
-  <table id="customers" class="display table table_size table_background" style="width:100%">
+  <table id="excel-table" class="display table table_size table_background" style="width:100%">
     <thead>
       <tr class="home-page-color-bg">
         <th scope="col">WAREHOUSE CODE</th>
@@ -15,9 +15,11 @@
     </thead>
     <tbody>
       <tr *ngFor="let tb of tabledata">
-        <td>{{tb.Teachers}}</td>
-        <td>{{tb.Subjects}}</td>
-        <td>{{tb.TAI}}</td>
+        <td>{{tb.WAREHOUSECODE}}</td>
+        <td>{{tb.NAMEOFWAREHOUSE}}</td>
+        <td>{{tb.ADDRESS}}</td>
+        <td>{{tb.NAMEOFMANAGER}}</td>
+        <td>{{tb.PHONE}}</td>
       </tr>
     </tbody>
   </table>
@@ -27,10 +29,10 @@
     <div class="col-md-10">
       <div class="row">
         <div class="col-md-2">
-          <button class="btn btn-success buttons-style  w-100 ">Add</button>
+          <button class="btn btn-success buttons-style  w-100 " routerLink="/AddNewWarehouse">Add</button>
         </div>
         <div class="col-md-2">
-          <button class="btn btn-success buttons-style  w-100 ">Actions</button>
+          <button class="btn btn-success buttons-style  w-100 " (click)="exportexcel()">Actions</button>
         </div>
       </div>
 

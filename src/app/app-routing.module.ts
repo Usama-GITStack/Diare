@@ -1,3 +1,4 @@
+import { AddInvoiceComponent } from './Components/add-invoice/add-invoice.component';
 import { AddExitVouchersComponent } from './Components/add-exit-vouchers/add-exit-vouchers.component';
 import { AddEntryVouchersComponent } from './Components/add-entry-vouchers/add-entry-vouchers.component';
 import { NewInvoiceComponent } from './Components/new-invoice/new-invoice.component';
@@ -43,6 +44,7 @@ const routes: Routes = [
   { path: 'NewInvoice', component: NewInvoiceComponent },
   { path: 'AddEntryVouchers', component: AddEntryVouchersComponent },
   { path: 'AddExitVouchers', component: AddExitVouchersComponent },
+  { path: 'AddInvoice', component: AddInvoiceComponent },
 
 ];
 

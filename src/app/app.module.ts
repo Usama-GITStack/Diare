@@ -28,6 +28,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AddEntryVouchersComponent } from './Components/add-entry-vouchers/add-entry-vouchers.component';
 import { AddExitVouchersComponent } from './Components/add-exit-vouchers/add-exit-vouchers.component';
+import { AddInvoiceComponent } from './Components/add-invoice/add-invoice.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { AddExitVouchersComponent } from './Components/add-exit-vouchers/add-exi
     InvoiceListComponent,
     NewInvoiceComponent,
     AddEntryVouchersComponent,
-    AddExitVouchersComponent
+    AddExitVouchersComponent,
+    AddInvoiceComponent
   ],
   imports: [
 

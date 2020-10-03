@@ -22,6 +22,9 @@ export class CoustomerListComponent implements OnInit {
     XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
     XLSX.writeFile(wb, this.fileName);
   }
+  SavePDF() {
+
+  }
   ngOnInit() {
     this.CR.getData().subscribe(data => {
       this.datageting = data;

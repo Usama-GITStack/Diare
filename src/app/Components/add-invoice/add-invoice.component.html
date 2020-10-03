@@ -1,60 +1,55 @@
 <div class="set-section">
   <header class="header-section-bg-color ">
-    <h5 class="text-center" style="margin: auto;">ADD A NEW WAREHOUSE</h5>
+    <h5 class="text-center" style="margin: auto;">REGISTER A NEW CUSTOMER</h5>
   </header>
   <section>
     <div class="regirstration-box">
-      <form ngNativeValidate (submit)="onCourseSend()">
+      <form method="post" ngNativeValidate (submit)="onCourseSend()">
         <div class="row">
           <div class="col-md-6">
             <div class="col-md-12">
               <div class="form-group row">
-                <label for="inputEmail" class="col-sm-4 col-form-label">WAREHOUSE CODE:</label>
+                <label class="col-sm-4 col-form-label">Date:</label>
                 <div class="col-sm-8">
-                  <input type="text" class="form-control" id="inputEmail" placeholder="" value="ER-{{random}}" required>
+                  <input type="text" class="form-control" placeholder="" [(ngModel)]="DATED" name="Date" required>
                 </div>
               </div>
             </div>
             <div class="col-md-12">
               <div class="form-group row">
-                <label for="inputEmail" class="col-sm-4 col-form-label">NAME OF WAREHOUSE:</label>
+                <label class="col-sm-4 col-form-label">CLIENT NAME:</label>
                 <div class="col-sm-8">
-                  <input type="text" class="form-control" id="inputEmail" [(ngModel)]="NAMEOFWAREHOUSE"
-                    name="NAMEOFWAREHOUSE" placeholder="">
+                  <input type="text" class="form-control" placeholder="" [(ngModel)]="CLIENTNAME" name="Document"
+                    required>
                 </div>
               </div>
             </div>
             <div class="col-md-12">
               <div class="form-group row">
-                <label for="inputEmail" class="col-sm-4 col-form-label">NAME OF MANAGER:</label>
+                <label class="col-sm-4 col-form-label">DOCUMENT NUMBER:</label>
                 <div class="col-sm-8">
-                  <input type="text" class="form-control" id="inputEmail" [(ngModel)]="NAMEOFMANAGER"
-                    name="NAMEOFMANAGER" placeholder="">
+                  <input type="text" class="form-control" placeholder="" [(ngModel)]="DOCUMENTNUMBER" name="Document"
+                    required>
                 </div>
               </div>
             </div>
           </div>
           <div class="col-md-6">
             <div class="col-md-12">
-
-            </div>
-            <div class="col-md-12">
-            </div>
-            <div class="col-md-12">
               <div class="form-group row">
-                <label for="inputEmail" class="col-sm-4 col-form-label">ADDRESS:</label>
+                <label class="col-sm-4 col-form-label">TOTAL AMOUNT:</label>
                 <div class="col-sm-8">
-                  <input type="text" class="form-control" id="inputEmail" [(ngModel)]="ADDRESS" name="ADDRESS"
-                    placeholder="">
+                  <input type="" class="form-control" placeholder="" [(ngModel)]="TOTALAMOUNT" name="Warehouse"
+                    required>
                 </div>
               </div>
             </div>
             <div class="col-md-12">
               <div class="form-group row">
-                <label for="inputEmail" class="col-sm-4 col-form-label">PHONE:</label>
+                <label class="col-sm-4 col-form-label">GOOD DELIVERY GENERATE:</label>
                 <div class="col-sm-8">
-                  <input type="tel" class="form-control" id="inputEmail" [(ngModel)]="PHONE" name="PHONE"
-                    placeholder="">
+                  <input type="text" class="form-control" placeholder="" [(ngModel)]="GOODDELIVERYGENERATE"
+                    name="Reception" required>
                 </div>
               </div>
             </div>
@@ -64,7 +59,7 @@
                   <button type="submit" class="btn btn-success buttons-style  w-100 ">Save</button>
                 </div>
                 <div class="col-md-6">
-                  <button class="btn btn-success buttons-style  w-100 ">CANCEL</button>
+                  <button class="btn btn-success buttons-style  w-100 ">TO CANCEL</button>
                 </div>
               </div>
             </div>

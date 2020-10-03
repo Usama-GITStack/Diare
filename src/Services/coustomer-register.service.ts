@@ -97,6 +97,30 @@ export class CoustomerRegisterService {
       }
     })
   }
+  AddExitVouchers(CR) {
+    this.http.post('http://localhost:3000/Newgoodexit', CR, {
+    }).subscribe(data => {
+      this.datageting = data
+      if (this.datageting.success) {
+        window.alert(this.datageting.success);
+      }
+      else {
+        window.alert(this.datageting.fail);
+      }
+    })
+  }
+  AddWarehouseStuff(CR) {
+    this.http.post('http://localhost:3000/Warehouse', CR, {
+    }).subscribe(data => {
+      this.datageting = data
+      if (this.datageting.success) {
+        window.alert(this.datageting.success);
+      }
+      else {
+        window.alert(this.datageting.fail);
+      }
+    })
+  }
   getData() {
     return this.http.get('http://localhost:3000/CustomerList');
   }
@@ -117,6 +141,20 @@ export class CoustomerRegisterService {
   }
   getData6(Finder) {
     return this.http.get('http://localhost:3000/NewEntryVouchers1', {
+      headers: {
+        auth: Finder
+      }
+    });
+  }
+  getData7(Finder) {
+    return this.http.get('http://localhost:3000/Newgoodexit1', {
+      headers: {
+        auth: Finder
+      }
+    });
+  }
+  getData8(Finder) {
+    return this.http.get('http://localhost:3000/Warehouse1', {
       headers: {
         auth: Finder
       }

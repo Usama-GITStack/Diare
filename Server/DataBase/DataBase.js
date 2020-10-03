@@ -54,6 +54,21 @@ const NewInvoice = mongoose.model("NewInvoice", new mongoose.Schema({
   ITEMVALUE: String,
   TOTALVALUE: String,
 }));
+const ExitInvoice = mongoose.model("ExitInvoice", new mongoose.Schema({
+  Document: String,
+  ITEMCODE: String,
+  ARTICLENAME: String,
+  AMOUNT: String,
+  UNITS: String,
+  ITEMVALUE: String,
+  TOTALVALUE: String,
+}));
+const NewWarehouseStuff = mongoose.model("NewWarehouseStuff", new mongoose.Schema({
+  WAREHOUSECODE: String,
+  ITEMNAME: String,
+  QUANTITYINSTOCK: String,
+  UNITS: String,
+}));
 module.exports.Customer = Customer;
 module.exports.AddArticals = AddArticals;
 module.exports.EntryV = EntryV;
@@ -61,3 +76,5 @@ module.exports.ExitV = ExitV;
 module.exports.Warehouse = Warehouse;
 module.exports.Invoice = Invoice;
 module.exports.NewInvoice = NewInvoice;
+module.exports.ExitInvoice = ExitInvoice;
+module.exports.NewWarehouseStuff = NewWarehouseStuff;

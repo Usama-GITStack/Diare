@@ -2,7 +2,7 @@
   <h5 class="text-center" style="margin: auto;">LIST OF WAREHOUSES</h5>
 </header>
 
-<section class="section-space">
+<section class="section-space" id="PDF">
   <table id="excel-table" class="display table table_size table_background" style="width:100%">
     <thead>
       <tr class="home-page-color-bg">
@@ -14,9 +14,9 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let tb of tabledata">
+      <tr *ngFor="let tb of tabledata; let i=index">
         <td>{{tb.WAREHOUSECODE}}</td>
-        <td>{{tb.NAMEOFWAREHOUSE}}</td>
+        <td><a (click)="Transfer(i)">{{tb.NAMEOFWAREHOUSE}}</a></td>
         <td>{{tb.ADDRESS}}</td>
         <td>{{tb.NAMEOFMANAGER}}</td>
         <td>{{tb.PHONE}}</td>

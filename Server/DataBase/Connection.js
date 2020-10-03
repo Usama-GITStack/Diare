@@ -19,6 +19,10 @@ const AddInvoice = require("../Routes/AddInvoice");
 const GetInvoice = require("../Routes/GetInvoice");
 const AddNewVoucher = require("../Routes/AddNewVoucher");
 const FinderNewVoucher = require("../Routes/FinderNewVoucher");
+const AddExitVoucher = require("../Routes/AddExitVoucher");
+const FinderExitVoucher = require("../Routes/FinderExitVoucher");
+const AddWS = require("../Routes/AddWS");
+const FinderWS = require("../Routes/FinderWS");
 //DataBase
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb+srv://osama:mahmood12@cluster0.jxi96.mongodb.net/Diare?retryWrites=true&w=majority", {
@@ -49,6 +53,11 @@ app.use("/AddInvoice", AddInvoice);
 app.use("/InvoiceList", GetInvoice);
 app.use("/NewEntryVouchers", AddNewVoucher);
 app.use("/NewEntryVouchers1", FinderNewVoucher);
+app.use("/Newgoodexit", AddExitVoucher);
+app.use("/Newgoodexit1", FinderExitVoucher);
+app.use("/Warehouse", AddWS);
+app.use("/Warehouse1", FinderWS);
+
 //Listner
 app.listen(3000, () => {
   console.log("Listning To The Port 3000....");

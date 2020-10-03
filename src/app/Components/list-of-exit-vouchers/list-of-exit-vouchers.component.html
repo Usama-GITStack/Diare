@@ -46,7 +46,7 @@
     </div>
   </div>
 </section>
-<section class="section-space">
+<section class="section-space" id="PDF">
   <table id="excel-table" #dataTable class="display table table_size table_background" style="width:100%">
     <thead>
       <tr class="home-page-color-bg">
@@ -57,9 +57,9 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let tb of tabledata">
+      <tr *ngFor="let tb of tabledata; let i=index">
         <td>{{tb.Date}}</td>
-        <td>{{tb.Document}}</td>
+        <td><a (click)=Transfer(i)>{{tb.Document}}</a></td>
         <td>{{tb.Warehouse}}</td>
         <td>{{tb.Reception}}</td>
       </tr>

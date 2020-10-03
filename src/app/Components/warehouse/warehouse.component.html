@@ -1,21 +1,25 @@
 <header class="header-section-bg-color ">
   <h5 class="text-center" style="margin: auto;">WAREHOUSE</h5>
+
+
 </header>
 <section class="border-color-set">
   <div class="row">
     <div class="col-md-3 padding-colm-set ">
       <label for="sel1" class="text-color ">WAREHOUSE CODE:</label>
-      <label></label>
+      <label style="float: right;">{{WAREHOUSECODE}}</label>
     </div>
     <div class="col-md-3 padding-colm-set ">
       <label for="sel1" class="text-color ">WAREHOUSE NAME:</label>
+      <label style="float: right;">{{WAREHOUSENAME}}</label>
     </div>
     <div class="col-md-3 padding-colm-set ">
       <label for="sel1" class="text-color ">MANAGER:</label>
-      <label></label>
+      <label style="float: right;">{{MANAGER}}</label>
     </div>
     <div class="col-md-3  padding-colm-set ">
       <label for="sel1" class="text-color ">PHONE:</label>
+      <label style="float: right;">{{PHONE}}</label>
     </div>
   </div>
 </section>
@@ -29,11 +33,57 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let tb of tabledata">
-        <td>{{tb.Teachers}}</td>
-        <td>{{tb.Subjects}}</td>
-        <td>{{tb.TAI}}</td>
+      <tr *ngFor="let tb of tabledata1">
+        <td>{{tb.ITEMNAME}}</td>
+        <td>{{tb.QUANTITYINSTOCK}}</td>
+        <td>{{tb.UNITS}}</td>
       </tr>
     </tbody>
   </table>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="col-md-6">
+        <button class="btn btn-success buttons-style  w-100 " (click)="openXl(content)">Add</button>
+      </div>
+    </div>
+  </div>
 </section>
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Add New Vouchers</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form ngNativeValidate (submit)="onCourseSend()">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>ITEM NAME</label>
+            <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="" [(ngModel)]="ITEMNAME"
+              name="ITEMNAME">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>QUANTITY IN STOCK</label>
+            <input type="text" class="form-control" aria-describedby="emailHelp" placeholder=""
+              [(ngModel)]="QUANTITYINSTOCK" name="QUANTITYINSTOCK">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>UNITS</label>
+            <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="" [(ngModel)]="UNITS"
+              name="UNITS">
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+  </div>
+</ng-template>

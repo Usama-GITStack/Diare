@@ -218,9 +218,33 @@ export class CoustomerRegisterService {
       }
     })
   }
+  UpdateArticals(CR) {
+    this.http.post('http://localhost:3000/ListofArticalsUpdate', CR, {
+    }).subscribe(data => {
+      this.datageting = data
+      if (this.datageting.success) {
+        window.alert(this.datageting.success);
+      }
+      else {
+        window.alert(this.datageting.fail);
+      }
+    })
+  }
   //Remove
   CustomerListRemove(CR) {
     this.http.post('http://localhost:3000/CustomerListRemove', CR, {
+    }).subscribe(data => {
+      this.datageting = data
+      if (this.datageting.success) {
+        window.alert(this.datageting.success);
+      }
+      else {
+        window.alert(this.datageting.fail);
+      }
+    })
+  }
+  ArticalsRemove(CR) {
+    this.http.post('http://localhost:3000/ListofArticalsRemove', CR, {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {

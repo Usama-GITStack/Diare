@@ -4,7 +4,7 @@
 <section class="border-color-set">
   <div class="row">
     <div class="col-md-4 padding-colm-set ">
-      <label for="sel1" class="text-color " [(ngModel)]="searchText">CUSTOMER NAME AND FIRST NAME:</label>
+      <label for="sel1" class="text-color ">CUSTOMER NAME AND FIRST NAME:</label>
       <select class="form-control" id="sel1">
         <option>First Name</option>
         <option *ngFor="let tb of tabledata; let i = index">{{tb.FirstName}}</option>
@@ -43,7 +43,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let tb of tabledata | filter :searchText; let i=index">
+      <tr *ngFor="let tb of tabledata | filter:searchText; let i=index">
         <td>{{tb.CustomerCode}}</td>
         <td>{{tb.LastName}}</td>
         <td>{{tb.FirstName}}</td>

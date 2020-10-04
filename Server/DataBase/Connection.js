@@ -30,10 +30,12 @@ const ListRules = require("../Routes/GetRules");
 const AddCheckOuts = require("../Routes/AddCheckOuts");
 const GetCheckout = require("../Routes/GetCheckout");
 const CustomerListUpdate = require("../Routes/UpdationCode/CustomerListUpdate");
+const ArticalUpdate = require("../Routes/UpdationCode/ArticalUpdate");
 const CustomerRemove = require("../Routes/RemoveCode/CustomerRemove");
+const ArticalRemove = require("../Routes/RemoveCode/ArticalRemove");
 //DataBase
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb+srv://osama:mahmood12@cluster0.jxi96.mongodb.net/Diare?retryWrites=true&w=majority", {
+mongoose.connect("mongodb+srv://osama:mahmood12@cluster0-4lwks.gcp.mongodb.net/Diare?retryWrites=true&w=majority", {
     useNewUrlParser: true
   }).then(() => {
     console.log("Connection with MongoDB......");
@@ -72,7 +74,9 @@ app.use("/ListRules", ListRules);
 app.use("/NewCheckout", AddCheckOuts);
 app.use("/ListCheckout", GetCheckout);
 app.use("/CustomerListUpdate", CustomerListUpdate);
+app.use("/ListofArticalsUpdate", ArticalUpdate);
 app.use("/CustomerListRemove", CustomerRemove);
+app.use("/ListofArticalsRemove", ArticalRemove);
 //Listner
 app.listen(3000, () => {
   console.log("Listning To The Port 3000....");

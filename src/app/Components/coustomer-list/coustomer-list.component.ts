@@ -58,21 +58,7 @@ export class CoustomerListComponent implements OnInit {
     })
     this.random = Math.floor((Math.random() * 10000) + 1);
   }
-  DataFilter() {
-  }
-  data(index) {
-    console.log(index)
-    this.tabledata = this.datageting.msg;
-    return this.tabledata = this.tabledata[index];
-  }
-  data1(index) {
-    this.tabledata = this.datageting.msg;
-    return this.tabledata = this.tabledata[index];
-  }
-  data2(index) {
-    this.tabledata = this.datageting.msg;
-    return this.tabledata = this.tabledata[index];
-  }
+
   openXl(content, index) {
     this.modalService.open(content, { size: 'xl' });
     this.CustomerCode = this.tabledata[index].CustomerCode;

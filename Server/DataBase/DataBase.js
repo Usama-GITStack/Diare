@@ -87,7 +87,32 @@ const ReciptInvoice = mongoose.model("ReciptInvoice", new mongoose.Schema({
   }],
   TotalInvoice: String
 }));
-
+const User = mongoose.model("User", new mongoose.Schema({
+  UserCOde: String,
+  Name: String,
+  Phone: String,
+  Function: String,
+  Password: String,
+  PasswordC: String,
+}));
+const Rules = mongoose.model("Rules", new mongoose.Schema({
+  RC: String,
+  Date: String,
+  CC: String,
+  CN: String,
+  PM: String,
+  Bank: String,
+  Checkout: String,
+  Amount: String
+}));
+const Checkout = mongoose.model("Checkout", new mongoose.Schema({
+  RN: String,
+  Date: String,
+  Amount: String,
+  EXPENDITURE: String,
+  CM: String,
+  Wording: String,
+}));
 module.exports.Customer = Customer;
 module.exports.AddArticals = AddArticals;
 module.exports.EntryV = EntryV;
@@ -98,3 +123,6 @@ module.exports.NewInvoice = NewInvoice;
 module.exports.ExitInvoice = ExitInvoice;
 module.exports.NewWarehouseStuff = NewWarehouseStuff;
 module.exports.ReciptInvoice = ReciptInvoice;
+module.exports.User = User;
+module.exports.Rules = Rules;
+module.exports.Checkout = Checkout;

@@ -1,0 +1,106 @@
+<div class="set-section">
+  <header class="header-section-bg-color ">
+    <h5 class="text-center" style="margin: auto;">NEW RULES</h5>
+  </header>
+  <section>
+    <div class="regirstration-box">
+      <form method="post" ngNativeValidate (submit)="onCourseSend()">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="col-md-12">
+              <div class="form-group row">
+                <label class="col-sm-4 col-form-label">RECEIPT No:</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" placeholder="" value="RC-{{random}}" required>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group row">
+                <label class="col-sm-4 col-form-label">CUSTOMER CODE:</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" placeholder="" value="CL-{{random1}}" required>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group row">
+                <label class="col-sm-4 col-form-label">PAYMENT CHOICE:</label>
+                <div class="col-sm-8">
+                  <select class="form-control" [(ngModel)]="PM" name="PM" required>
+                    <option>Chose Choice</option>
+                    <option>Cash</option>
+                    <option>Cheques</option>
+                    <option>Bank Transfer</option>
+                    <option>Deposit</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group row">
+                <label class="col-sm-4 col-form-label">AMOUNT:</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" placeholder="" [(ngModel)]="Amount" name="Amount" required>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="col-md-12">
+              <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Date:</label>
+                <div class="col-sm-8">
+                  <input type="date" class="form-control" placeholder="" [(ngModel)]="Date" name="Date" required>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group row">
+                <label class="col-sm-4 col-form-label">CLIENT NAME:</label>
+                <div class="col-sm-8">
+                  <select class="form-control" [(ngModel)]="CN" name="CN">
+                    <option>User Select</option>
+                    <option *ngFor="let td of tabledata">{{td.FirstName}}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Bank:</label>
+                <div class="col-sm-8">
+                  <select class="form-control" [(ngModel)]="Bank" name="Bank" required>
+                    <option>Chose Bank</option>
+                    <option>User Bank</option>
+                    <option>CHECKOUT</option>
+                    <option>ORABANK</option>
+                    <option>ECOBANK</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group row">
+                <label class="col-sm-4 col-form-label">CHECKOUT Case:</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" placeholder="" value="Case:{{random2}}" required>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <button type="submit" class="btn btn-success buttons-style  w-100 ">Save</button>
+                </div>
+                <div class="col-md-6">
+                  <button class="btn btn-success buttons-style  w-100 ">CANCEL</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+</div>

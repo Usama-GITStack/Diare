@@ -121,6 +121,42 @@ export class CoustomerRegisterService {
       }
     })
   }
+  UserAdd(CR) {
+    this.http.post('http://localhost:3000/AddUser', CR, {
+    }).subscribe(data => {
+      this.datageting = data
+      if (this.datageting.success) {
+        window.alert(this.datageting.success);
+      }
+      else {
+        window.alert(this.datageting.fail);
+      }
+    })
+  }
+  RuleAdd(CR) {
+    this.http.post('http://localhost:3000/NewRules', CR, {
+    }).subscribe(data => {
+      this.datageting = data
+      if (this.datageting.success) {
+        window.alert(this.datageting.success);
+      }
+      else {
+        window.alert(this.datageting.fail);
+      }
+    })
+  }
+  CheckoutAdd(CR) {
+    this.http.post('http://localhost:3000/NewCheckout', CR, {
+    }).subscribe(data => {
+      this.datageting = data
+      if (this.datageting.success) {
+        window.alert(this.datageting.success);
+      }
+      else {
+        window.alert(this.datageting.fail);
+      }
+    })
+  }
   getData() {
     return this.http.get('http://localhost:3000/CustomerList');
   }
@@ -159,6 +195,15 @@ export class CoustomerRegisterService {
         auth: Finder
       }
     });
+  }
+  getData9() {
+    return this.http.get('http://localhost:3000/UserList');
+  }
+  getData10() {
+    return this.http.get('http://localhost:3000/ListRules');
+  }
+  getData11() {
+    return this.http.get('http://localhost:3000/ListCheckout');
   }
 }
 

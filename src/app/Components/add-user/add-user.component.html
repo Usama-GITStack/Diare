@@ -19,7 +19,7 @@
             <div class="form-group row">
               <label class="col-sm-4 col-form-label">First Name & Last Name:</label>
               <div class="col-sm-8">
-                <input type="text" class="form-control" placeholder="" [(ngModel)]="LastName" name="LastName" required>
+                <input type="text" class="form-control" placeholder="" [(ngModel)]="Name" name="Name" required>
               </div>
             </div>
           </div>
@@ -35,10 +35,10 @@
             <div class="form-group row">
               <label class="col-sm-4 col-form-label">FUNCTION:</label>
               <div class="col-sm-8">
-                <select class="form-control" id="sel1" [(ngModel)]="Civility" name="Civility" required>
-                  <option>Sir</option>
-                  <option>Mr</option>
-                  <option>Mrs</option>
+                <select class="form-control" id="sel1" [(ngModel)]="Function" name="Function" required>
+                  <option>ADMINISTRATOR</option>
+                  <option>COMMERCIAL</option>
+                  <option>VISITOR</option>
                 </select>
               </div>
             </div>
@@ -48,7 +48,7 @@
             <div class="form-group row">
               <label class="col-sm-4 col-form-label">PASSWORD:</label>
               <div class="col-sm-8">
-                <input type="text" class="form-control" placeholder="" [(ngModel)]="FirstName" name="FirstName"
+                <input type="password" class="form-control" placeholder="" [(ngModel)]="Password" name="Password"
                   required>
               </div>
             </div>
@@ -57,7 +57,7 @@
             <div class="form-group row">
               <label class="col-sm-4 col-form-label">PASSWORD CONFIRMATION:</label>
               <div class="col-sm-8">
-                <input type="text" class="form-control" placeholder="" [(ngModel)]="FirstName" name="FirstName"
+                <input type="password" class="form-control" placeholder="" [(ngModel)]="PasswordC" name="PasswordC"
                   required>
               </div>
             </div>

@@ -1,0 +1,100 @@
+<header class="header-section-bg-color ">
+  <h5 class="text-center" style="margin: auto;">LIST OF CheckOuts</h5>
+</header>
+<section class="border-color-set">
+  <div class="row">
+    <div class="col-md-4 padding-colm-set ">
+      <label for="sel1" class="text-color ">PERIOD:</label>
+      <div class="col-md-12">
+        <label for="birthday" class="text-color ">From:</label>
+        <input type="date" class="form-control" id="" name="">
+      </div>
+      <div class="col-md-12">
+        <label for="birthday" class="text-color ">To:</label>
+        <input type="date" class="form-control" id="" name="">
+      </div>
+    </div>
+    <div class="col-md-4 border-left padding-colm-set ">
+      <label for="sel1" class="text-color ">CLIENT NAME:</label>
+      <select class="form-control" id="sel1">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+      <label for="sel1" class="text-color ">CUSTOMER CODE:</label>
+      <select class="form-control" id="sel1">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+    </div>
+    <div class="col-md-4 border-left padding-colm-set ">
+      <label for="sel1" class="text-color ">RECEIPT NUMBER:</label>
+      <select class="form-control" id="sel1">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+      <label for="sel1" class="text-color ">BANK // CASH</label>
+      <select class="form-control" id="sel1">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+      <button class="btn btn-success buttons-style  w-50 " style="float: right; margin-top: 5%;">APPLY FILTER</button>
+    </div>
+  </div>
+</section>
+<section class="section-space" id="PDF">
+  <table id="excel-table" #dataTable class="display table table_size table_background" style="width:100%">
+    <thead>
+      <tr class="home-page-color-bg">
+        <th scope="col">DATED</th>
+        <th scope="col">RECEIPT No</th>
+        <th scope="col">WORDING</th>
+        <th scope="col">AMOUNT</th>
+        <th scope="col">CATEGORY</th>
+        <th scope="col">PAYMENT METHOD</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tb of tabledata; let i=index">
+        <td>{{tb.Date}}</td>
+        <td>{{tb.RN}}</td>
+        <td>{{tb.Wording}}</td>
+        <td>{{tb.Amount}}</td>
+        <td>{{tb.EXPENDITURE}}</td>
+        <td>{{tb.CM}}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<section>
+  <div class="row">
+    <div class="col-md-10">
+      <div class="row">
+        <div class="col-md-2">
+          <button class="btn btn-success buttons-style  w-100 " routerLink="/NewCheckout">New Checkout
+          </button>
+        </div>
+        <div class="col-md-2">
+          <button class="btn btn-success buttons-style  w-100 " (click)="exportexcel()">Actions</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="row">
+        <div class="col-md-6">
+          <button class="btn btn-success buttons-style  w-100 ">Edit</button>
+        </div>
+        <div class="col-md-6">
+          <button class="btn btn-success buttons-style  w-100 ">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

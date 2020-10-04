@@ -23,6 +23,12 @@ const AddExitVoucher = require("../Routes/AddExitVoucher");
 const FinderExitVoucher = require("../Routes/FinderExitVoucher");
 const AddWS = require("../Routes/AddWS");
 const FinderWS = require("../Routes/FinderWS");
+const AddUser = require("../Routes/AddUser");
+const UserList = require("../Routes/GetUser");
+const AddRules = require("../Routes/AddRules");
+const ListRules = require("../Routes/GetRules");
+const AddCheckOuts = require("../Routes/AddCheckOuts");
+const GetCheckout = require("../Routes/GetCheckout");
 //DataBase
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb+srv://osama:mahmood12@cluster0.jxi96.mongodb.net/Diare?retryWrites=true&w=majority", {
@@ -57,6 +63,12 @@ app.use("/Newgoodexit", AddExitVoucher);
 app.use("/Newgoodexit1", FinderExitVoucher);
 app.use("/Warehouse", AddWS);
 app.use("/Warehouse1", FinderWS);
+app.use("/AddUser", AddUser);
+app.use("/UserList", UserList);
+app.use("/NewRules", AddRules);
+app.use("/ListRules", ListRules);
+app.use("/NewCheckout", AddCheckOuts);
+app.use("/ListCheckout", GetCheckout);
 
 //Listner
 app.listen(3000, () => {

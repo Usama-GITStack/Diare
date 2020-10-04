@@ -14,10 +14,10 @@
     </thead>
     <tbody>
       <tr *ngFor="let tb of tabledata; let i=index">
-        <td>{{tb.WAREHOUSECODE}}</td>
-        <td><a (click)="Transfer(i)">{{tb.NAMEOFWAREHOUSE}}</a></td>
-        <td>{{tb.ADDRESS}}</td>
-        <td>{{tb.NAMEOFMANAGER}}</td>
+        <td>{{tb.UserCOde}}</td>
+        <td>{{tb.Name}}</td>
+        <td>{{tb.Phone}}</td>
+        <td>{{tb.Function}}</td>
       </tr>
     </tbody>
   </table>
@@ -27,7 +27,7 @@
     <div class="col-md-10">
       <div class="row">
         <div class="col-md-2">
-          <button class="btn btn-success buttons-style  w-100 " routerLink="/AddNewWarehouse">Add</button>
+          <button class="btn btn-success buttons-style  w-100 " routerLink="/AddUser">Add</button>
         </div>
         <div class="col-md-2">
           <button class="btn btn-success buttons-style  w-100 " (click)="exportexcel()">Actions</button>

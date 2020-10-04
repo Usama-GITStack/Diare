@@ -36,6 +36,10 @@ import { COMMERCIALINVOICEComponent } from './Components/commercialinvoice/comme
 import { AddUserComponent } from './Components/add-user/add-user.component';
 import { UserListComponent } from './Components/user-list/user-list.component';
 import { UserAccessControlComponent } from './Components/user-access-control/user-access-control.component';
+import { ListRegulationComponent } from './Components/list-regulation/list-regulation.component';
+import { NewRulesComponent } from './Components/new-rules/new-rules.component';
+import { NewCheckoutComponent } from './Components/new-checkout/new-checkout.component';
+import { CheckoutListComponent } from './Components/checkout-list/checkout-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,6 +69,10 @@ import { UserAccessControlComponent } from './Components/user-access-control/use
     AddUserComponent,
     UserListComponent,
     UserAccessControlComponent,
+    ListRegulationComponent,
+    NewRulesComponent,
+    NewCheckoutComponent,
+    CheckoutListComponent,
 
   ],
   imports: [

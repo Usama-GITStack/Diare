@@ -1,3 +1,6 @@
+import { CheckoutListComponent } from './Components/checkout-list/checkout-list.component';
+import { ListRegulationComponent } from './Components/list-regulation/list-regulation.component';
+import { NewRulesComponent } from './Components/new-rules/new-rules.component';
 import { UserListComponent } from './Components/user-list/user-list.component';
 import { AddUserComponent } from './Components/add-user/add-user.component';
 import { COMMERCIALINVOICEComponent } from './Components/commercialinvoice/commercialinvoice.component';
@@ -24,6 +27,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ListofArticalsComponent } from './Components/listof-articals/listof-articals.component';
+import { NewCheckoutComponent } from './Components/new-checkout/new-checkout.component';
 
 
 const routes: Routes = [
@@ -51,6 +55,10 @@ const routes: Routes = [
   { path: 'commercialinvoice', component: COMMERCIALINVOICEComponent },
   { path: 'AddUser', component: AddUserComponent },
   { path: 'UserList', component: UserListComponent },
+  { path: 'NewRules', component: NewRulesComponent },
+  { path: 'ListRules', component: ListRegulationComponent },
+  { path: 'NewCheckout', component: NewCheckoutComponent },
+  { path: 'ListCheckout', component: CheckoutListComponent },
 
 ];
 

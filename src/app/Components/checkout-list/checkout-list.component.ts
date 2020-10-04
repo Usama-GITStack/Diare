@@ -1,16 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { CoustomerRegisterService } from './../../../Services/coustomer-register.service';
 import * as XLSX from 'xlsx';
 import { jsPDF } from "jspdf";
 import html2canvas from 'html2canvas';
+import { Router, Routes } from '@angular/router';
 @Component({
-  selector: 'app-user-list',
-  templateUrl: './user-list.component.html',
-  styleUrls: ['./user-list.component.css']
+  selector: 'app-checkout-list',
+  templateUrl: './checkout-list.component.html',
+  styleUrls: ['./checkout-list.component.css']
 })
-export class UserListComponent implements OnInit {
-
-  constructor(private CR: CoustomerRegisterService) { }
+export class CheckoutListComponent implements OnInit {
+  @ViewChild('dataTable', { static: true }) table;
   datageting: any = {};
   tabledata = [];
   dataTable: any;
@@ -34,11 +34,16 @@ export class UserListComponent implements OnInit {
       doc.save('Quiz.pdf');
     });
   }
+  constructor(private CR: CoustomerRegisterService,) { }
+
   ngOnInit() {
-    this.CR.getData9().subscribe(data => {
+    this.CR.getData11().subscribe(data => {
       this.datageting = data;
       this.tabledata = this.datageting.msg;
+      setTimeout(() => {
+        this.dataTable = $(this.table.nativeElement);
+        this.dataTable.DataTable();
+      }, 500);
     })
   }
-
 }

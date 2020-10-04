@@ -69,6 +69,25 @@ const NewWarehouseStuff = mongoose.model("NewWarehouseStuff", new mongoose.Schem
   QUANTITYINSTOCK: String,
   UNITS: String,
 }));
+const ReciptInvoice = mongoose.model("ReciptInvoice", new mongoose.Schema({
+  FACTNUMBER: String,
+  Date: String,
+  Warehouse: String,
+  FirstName: String,
+  LastName: String,
+  Email: String,
+  Phone: String,
+  Address: String,
+  InvoiceData: [{
+    DESCRIPTION: String,
+    AMOUNT: String,
+    UNIT: String,
+    SELLINGPRICE: String,
+    TOTAL: String
+  }],
+  TotalInvoice: String
+}));
+
 module.exports.Customer = Customer;
 module.exports.AddArticals = AddArticals;
 module.exports.EntryV = EntryV;
@@ -78,3 +97,4 @@ module.exports.Invoice = Invoice;
 module.exports.NewInvoice = NewInvoice;
 module.exports.ExitInvoice = ExitInvoice;
 module.exports.NewWarehouseStuff = NewWarehouseStuff;
+module.exports.ReciptInvoice = ReciptInvoice;

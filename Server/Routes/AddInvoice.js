@@ -1,13 +1,18 @@
 const express = require("express");
 const rout = express.Router();
-const Invoice = require("../DataBase/DataBase");
+const ReciptInvoice = require("../DataBase/DataBase");
 rout.post("/", (req, res) => {
-  const myData = new Invoice.Invoice({
-    DATED: req.body.DATED,
-    CLIENTNAME: req.body.CLIENTNAME,
-    DOCUMENTNUMBER: req.body.DOCUMENTNUMBER,
-    TOTALAMOUNT: req.body.TOTALAMOUNT,
-    GOODDELIVERYGENERATE: req.body.GOODDELIVERYGENERATE,
+  const myData = new ReciptInvoice.ReciptInvoice({
+    FACTNUMBER: req.body.FACTNUMBER,
+    Date: req.body.Date,
+    Warehouse: req.body.Warehouse,
+    FirstName: req.body.FirstName,
+    LastName: req.body.LastName,
+    Email: req.body.Email,
+    Phone: req.body.Phone,
+    Address: req.body.Address,
+    InvoiceData: req.body.InvoiceData,
+    TotalInvoice: req.body.TotalInvoice
   });
   console.log(myData);
   myData.save()

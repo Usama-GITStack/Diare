@@ -1,3 +1,6 @@
+import { UserListComponent } from './Components/user-list/user-list.component';
+import { AddUserComponent } from './Components/add-user/add-user.component';
+import { COMMERCIALINVOICEComponent } from './Components/commercialinvoice/commercialinvoice.component';
 import { AddInvoiceComponent } from './Components/add-invoice/add-invoice.component';
 import { AddExitVouchersComponent } from './Components/add-exit-vouchers/add-exit-vouchers.component';
 import { AddEntryVouchersComponent } from './Components/add-entry-vouchers/add-entry-vouchers.component';
@@ -45,6 +48,9 @@ const routes: Routes = [
   { path: 'AddEntryVouchers', component: AddEntryVouchersComponent },
   { path: 'AddExitVouchers', component: AddExitVouchersComponent },
   { path: 'AddInvoice', component: AddInvoiceComponent },
+  { path: 'commercialinvoice', component: COMMERCIALINVOICEComponent },
+  { path: 'AddUser', component: AddUserComponent },
+  { path: 'UserList', component: UserListComponent },
 
 ];
 

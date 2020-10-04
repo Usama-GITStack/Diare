@@ -62,7 +62,7 @@ export class CoustomerRegisterService {
     })
   }
   Invoice(CR) {
-    this.http.post('http://localhost:3000/AddInvoice', CR, {
+    this.http.post('http://localhost:3000/NewInvoice', CR, {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {

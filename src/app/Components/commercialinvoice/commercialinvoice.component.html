@@ -1,0 +1,130 @@
+<div class="container">
+  <div class="row">
+    <div class="col-2" id="logodiv1">
+      <img src="../../../assets/logo.jpg" alt="NO photo" id="logo">
+    </div>
+    <div class="col-8" style="text-align: center;">
+      <h3 style="color: #90c226; margin-bottom: 0%;">DIARE GROUPE INDUSTRIE SARL</h3> <br>
+      <p style="color: #54a020; margin-top: 0%;"> Kankan car station. Madina is walking. Route du Niger.Commune de
+        Matam. Republic of Guinea. <br>
+        Phone:. 621 36 47 21/664 20 10 14 </p>
+    </div>
+    <div class="col-2" id="logodiv2">
+      <img src="../../../assets/logo.jpg" alt="NO photo" id="logo">
+    </div>
+  </div>
+</div>
+
+<hr class="new5">
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-2" id="logodiv1">
+
+    </div>
+    <div class="col-8" style="text-align: center;">
+      <h3 style="color: #54a020; margin-bottom: 0%;">COMMERCIAL INVOICE</h3>
+
+    </div>
+    <div class="col-2" id="logodiv2">
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-3" id="logodiv1">
+
+    </div>
+    <div class="col-6" style="text-align: center;">
+
+    </div>
+    <div class="col-3" id="logodiv2" style="color: #54a020">
+      DATE: {{today| date:'shortDate'}} <br>
+      {{InvoiceNumber}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3" id="logodiv1" style="color: #54a020">
+      CUSTOMER CODE: CL-{{random}}
+    </div>
+    <div class="col-6" style="text-align: center;">
+    </div>
+    <div class="col-3">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-6" id="logodiv1" style="color: #54a020">
+      CUSTOMER Name: <span style="margin-left: 5%;">{{FirstName}}</span> <br>
+      ADDRESS: <span style="margin-left: 5%;">{{Address}}</span>
+    </div>
+    <div class="col-3" style="text-align: center;">
+    </div>
+    <div class="col-3" style="color: #54a020;">
+      EMAIL: <span style="margin-left: 0%; font-size: 14px;">{{Email}}</span><br>
+      PHONE : <span style="margin-left: 5%;">{{Phone}}</span>
+    </div>
+  </div>
+</div>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>DESCRIPTION</th>
+      <th>AMOUNT</th>
+      <th>UNIT</th>
+      <th>SINGLE PRICE</th>
+      <th>TOTAL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let td of DataQuiz; let i= index">
+      <td>{{td.DESCRIPTION}}</td>
+      <td>{{td.AMOUNT}}</td>
+      <td>{{td.UNIT}}</td>
+      <td>{{td.SELLINGPRICE}}</td>
+      <td>{{td.TOTAL}}</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr id="totaltr">
+      <td>TOTAL AMOUNT TO PAY</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>{{Total}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<p style="color: #90c226; margin-left: 3%; margin-top: 2px;">This invoice is drawn up for the sum of: fifty six million
+  seven hundred thousand Guinean francs.</p>
+
+<div class="container">
+  <div class="row" style="padding-right: 2px;">
+    <div class="col-sm" id="box1" style="margin-right: 8px; color: #54a020; text-decoration-line: underline; ">
+      BILLING AGENT
+    </div>
+    <div class="col-sm" id="box2" style="margin-right: 8px; color: #54a020; text-decoration-line: underline; ">
+      STOCK MANAGER
+    </div>
+    <div class="col-sm" id="box3" style="margin-right: 8px; color: #54a020; text-decoration-line: underline; ">
+      SALES MANAGER
+    </div>
+    <div class="col-sm" id="box4" style="margin-right: 8px; color: #54a020; text-decoration-line: underline; ">
+      CUSTOMER
+    </div>
+  </div>
+</div>

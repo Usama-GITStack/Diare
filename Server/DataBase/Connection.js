@@ -49,7 +49,7 @@ app.use("/AddNewWarehouse", AddWareouse);
 app.use("/ListOfEntryVouchers", GetEntryV);
 app.use("/ListOfExitVouchers", GetExitV);
 app.use("/ListofWarehouse", GetWarehouse);
-app.use("/AddInvoice", AddInvoice);
+app.use("/NewInvoice", AddInvoice);
 app.use("/InvoiceList", GetInvoice);
 app.use("/NewEntryVouchers", AddNewVoucher);
 app.use("/NewEntryVouchers1", FinderNewVoucher);

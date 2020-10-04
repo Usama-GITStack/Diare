@@ -1,9 +1,9 @@
 const express = require("express");
 const rout = express.Router();
-const Invoice = require("../DataBase/DataBase");
+const ReciptInvoice = require("../DataBase/DataBase");
 // Data Geting
 rout.get("/", (req, res) => {
-  Invoice.Invoice.find({}, (err, findObject) => {
+  ReciptInvoice.ReciptInvoice.find({}, (err, findObject) => {
     if (err) {
       res.send({
         msg: "The Error Occure"

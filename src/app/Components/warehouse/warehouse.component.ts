@@ -51,7 +51,7 @@ export class WarehouseComponent implements OnInit {
           this.dataTable.DataTable();
         }, 500);
       })
-    }, 1500);
+    }, 1000);
   }
   openXl(content) {
     this.modalService.open(content, { size: 'xl' });

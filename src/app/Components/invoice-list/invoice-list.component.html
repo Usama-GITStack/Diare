@@ -46,7 +46,7 @@
     </div>
   </div>
 </section>
-<section class="section-space">
+<section class="section-space" id="PDF">
   <table id="excel-table" #dataTable class="display table table_size table_background" style="width:100%">
     <thead>
       <tr class="home-page-color-bg">
@@ -58,11 +58,11 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let tb of tabledata">
-        <td>{{tb.DATED}}</td>
-        <td>{{tb.CLIENTNAME}}</td>
-        <td>{{tb.DOCUMENTNUMBER}}</td>
-        <td>{{tb.TOTALAMOUNT}}</td>
+      <tr *ngFor="let tb of tabledata; let i=index">
+        <td>{{tb.Date}}</td>
+        <td>{{tb.FirstName}}</td>
+        <td><a (click)=Target(i)>{{tb.FACTNUMBER}}</a></td>
+        <td>{{tb.TotalInvoice}}</td>
         <td>{{tb.GOODDELIVERYGENERATE}}</td>
       </tr>
     </tbody>
@@ -73,7 +73,7 @@
     <div class="col-md-10">
       <div class="row">
         <div class="col-md-2">
-          <button class="btn btn-success buttons-style  w-100 " routerLink="/AddInvoice">New Invoice</button>
+          <button class="btn btn-success buttons-style  w-100 " routerLink="/NewInvoice">New Invoice</button>
         </div>
         <div class="col-md-2">
           <button class="btn btn-success buttons-style  w-100 " (click)="exportexcel()">Actions</button>

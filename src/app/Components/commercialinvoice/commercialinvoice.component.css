@@ -1,0 +1,83 @@
+#logo {
+  width: 100px;
+  height: 100px;
+}
+
+#logodiv1 {
+  margin-left: 0%;
+}
+
+#logodiv2 {
+  margin-right: 0%;
+}
+
+hr.new5 {
+  border: 5px solid #90c226;
+  border-radius: 5px;
+  margin: 3%;
+}
+
+.row {
+  margin-top: 1%;
+}
+
+.table {
+  margin: 3%;
+}
+
+th {
+  background-color: #90c226;
+  color: white;
+}
+
+td {
+  border: 5px solid #90c226;
+  border-color: 5px solid #90c226;
+}
+
+#totaltr {
+  color: #54a020;
+  font-weight: bold;
+  border-top: 3px solid #90c226;
+  border-bottom: 3px solid #90c226;
+}
+
+table {
+  border: 1px solid #90c226;
+}
+
+table.table-bordered>tbody>tr>td {
+  border: 1px solid #90c226;
+}
+
+table.table-bordered>thead>tr>th {
+  border: none;
+}
+
+#box1 {
+  border: 3px solid #90c226;
+  height: 80px;
+  width: 5px;
+
+}
+
+#box2 {
+  border: 3px solid #90c226;
+  height: 80px;
+  width: 5px;
+
+}
+
+#box3 {
+  border: 3px solid #90c226;
+  height: 80px;
+  width: 5px;
+
+}
+
+#box4 {
+  border: 3px solid #90c226;
+  height: 80px;
+  width: 5px;
+
+}

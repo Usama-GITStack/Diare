@@ -1,97 +1,115 @@
 <header class="header-section-bg-color ">
   <h5 class="text-center" style="margin: auto;">NEW INVOICE</h5>
 </header>
-<section class="border-color-set">
-  <div class="row">
-    <div class="col-md-3 padding-colm-set ">
-      <label for="sel1" class="text-color ">FACT NUMBER:</label>
-      <label></label>
-    </div>
-    <div class="col-md-3 padding-colm-set ">
-      <label for="sel1" class="text-color ">WAREHOUSE:</label>
-    </div>
-    <div class="col-md-3 padding-colm-set ">
-      <label for="sel1" class="text-color ">DATED:</label>
-      <label></label>
-    </div>
-  </div>
-</section>
-<section class="border-color-set">
-  <div class="row">
-    <div class="col-md-3 padding-colm-set ">
-      <div class="form-group">
-        <label for="exampleInputEmail1">LAST NAME</label>
-        <input type="text" class="form-control" id="exampleInputEmail1">
+<form ngNativeValidate (submit)="onCourseSend()">
+  <section class="border-color-set">
+    <div class="row">
+      <div class="col-md-4 padding-colm-set ">
+        <label for="sel1" class="text-color ">FACT NUMBER:</label>
+        <label style="float:right">INVOICE NO. {{random}}</label>
+      </div>
+      <div class="col-md-4 padding-colm-set ">
+        <label for="sel1" class="text-color ">WAREHOUSE:</label>
+        <select class="form-control" id="sel1" [(ngModel)]="Warehouse" name="Warehouse" required>
+          <option>Warehouse Select</option>
+          <option *ngFor="let tb of tabledata; let i=index">{{tb.NAMEOFWAREHOUSE}}</option>
+        </select>
+      </div>
+      <div class="col-md-4 padding-colm-set ">
+        <label for="sel1" class="text-color ">DATED:</label>
+        <label style="float:right">{{ today | date:'shortDate' }} </label>
+        <label></label>
       </div>
     </div>
-    <div class="col-md-3 padding-colm-set ">
-      <div class="form-group">
-        <label for="exampleInputEmail1">FIRST NAME</label>
-        <input type="text" class="form-control" id="exampleInputEmail1">
+  </section>
+  <section class="border-color-set">
+    <div class="row">
+      <div class="col-md-3 padding-colm-set ">
+        <div class="form-group">
+          <label>LAST NAME</label>
+          <input type="text" class="form-control" [(ngModel)]="LastName" name="LastName" required>
+        </div>
+      </div>
+      <div class="col-md-3 padding-colm-set ">
+        <div class="form-group">
+          <label>FIRST NAME</label>
+          <input type="text" class="form-control" [(ngModel)]="FirstName" name="FirstName" required>
+        </div>
+      </div>
+      <div class="col-md-3 padding-colm-set ">
+        <div class="form-group">
+          <label>PHONE</label>
+          <input type="text" class="form-control" [(ngModel)]="Phone" name="Phone" required>
+        </div>
+      </div>
+      <div class="col-md-3 padding-colm-set ">
+        <div class="form-group">
+          <label>ADDRESS</label>
+          <input type="text" class="form-control" [(ngModel)]="Address" name="Address" required>
+        </div>
+      </div>
+      <div class="col-md-4 padding-colm-set ">
+        <div class="form-group">
+          <label>E-MAIL</label>
+          <input type="text" class="form-control" [(ngModel)]="Email" name="Email" required>
+        </div>
       </div>
     </div>
-    <div class="col-md-3 padding-colm-set ">
-      <div class="form-group">
-        <label for="exampleInputEmail1">PHONE</label>
-        <input type="text" class="form-control" id="exampleInputEmail1">
-      </div>
-    </div>
-    <div class="col-md-3 padding-colm-set ">
-      <div class="form-group">
-        <label for="exampleInputEmail1">ADDRESS</label>
-        <input type="text" class="form-control" id="exampleInputEmail1">
-      </div>
-    </div>
-    <div class="col-md-4 padding-colm-set ">
-      <div class="form-group">
-        <label for="exampleInputEmail1">E-MAIL</label>
-        <input type="text" class="form-control" id="exampleInputEmail1">
-      </div>
-    </div>
-  </div>
-</section>
-<section class="section-space">
-  <table id="customers" class="display table table_size table_background" style="width:100%">
-    <thead>
-      <tr class="home-page-color-bg">
-        <th scope="col">DESCRIPTION</th>
-        <th scope="col">AMOUNT</th>
-        <th scope="col">UNITS</th>
-        <th scope="col">SELLING PRICE</th>
-        <th scope="col">TOTAL</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let tb of tabledata">
-        <td>{{tb.Teachers}}</td>
-        <td>{{tb.Subjects}}</td>
-        <td>{{tb.TAI}}</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
-<section>
-  <div class="row">
-    <div class="col-md-10">
-      <div class="row">
-        <div class="col-md-2">
+  </section>
+  <section class="section-space">
+    <table id="customers" class="display table table_size table_background" style="width:100%">
+      <thead>
+        <tr class="home-page-color-bg">
+          <th scope="col">DESCRIPTION</th>
+          <th scope="col">AMOUNT</th>
+          <th scope="col">UNITS</th>
+          <th scope="col">SELLING PRICE</th>
+          <th scope="col">TOTAL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tb of table12">
+          <td>{{tb.DESCRIPTION}}</td>
+          <td>{{tb.AMOUNT}}</td>
+          <td>{{tb.UNIT}}</td>
+          <td>{{tb.SELLINGPRICE}}</td>
+          <td>{{tb.TOTAL}}</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr class="home-page-color-bg">
+          <th scope="col">TOTAL AMOUNT TO PAY</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col">{{TotalAdd}}</th>
+        </tr>
+      </tfoot>
+    </table>
+  </section>
+  <section>
+    <div class="row">
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-md-2">
 
-        </div>
-        <div class="col-md-2">
+          </div>
+          <div class="col-md-2">
 
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-2">
+        <div class="row">
+          <div class="col-md-6">
+            <button class="btn btn-success buttons-style  w-100 " type="submit">Save</button>
+          </div>
+          <div class="col-md-6">
+            <button class="btn btn-success buttons-style  w-100 ">Cancel</button>
+          </div>
         </div>
       </div>
-
     </div>
-    <div class="col-md-2">
-      <div class="row">
-        <div class="col-md-6">
-          <button class="btn btn-success buttons-style  w-100 ">Remove</button>
-        </div>
-        <div class="col-md-6">
-          <button class="btn btn-success buttons-style  w-100 ">To cancel</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
+</form>

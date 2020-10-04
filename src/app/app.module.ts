@@ -32,6 +32,10 @@ import { AddInvoiceComponent } from './Components/add-invoice/add-invoice.compon
 import { FilterPipe } from './filter.pipe';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { COMMERCIALINVOICEComponent } from './Components/commercialinvoice/commercialinvoice.component';
+import { AddUserComponent } from './Components/add-user/add-user.component';
+import { UserListComponent } from './Components/user-list/user-list.component';
+import { UserAccessControlComponent } from './Components/user-access-control/user-access-control.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,6 +61,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AddExitVouchersComponent,
     AddInvoiceComponent,
     FilterPipe,
+    COMMERCIALINVOICEComponent,
+    AddUserComponent,
+    UserListComponent,
+    UserAccessControlComponent,
 
   ],
   imports: [

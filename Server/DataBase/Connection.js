@@ -29,6 +29,8 @@ const AddRules = require("../Routes/AddRules");
 const ListRules = require("../Routes/GetRules");
 const AddCheckOuts = require("../Routes/AddCheckOuts");
 const GetCheckout = require("../Routes/GetCheckout");
+const CustomerListUpdate = require("../Routes/UpdationCode/CustomerListUpdate");
+const CustomerRemove = require("../Routes/RemoveCode/CustomerRemove");
 //DataBase
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb+srv://osama:mahmood12@cluster0.jxi96.mongodb.net/Diare?retryWrites=true&w=majority", {
@@ -69,7 +71,8 @@ app.use("/NewRules", AddRules);
 app.use("/ListRules", ListRules);
 app.use("/NewCheckout", AddCheckOuts);
 app.use("/ListCheckout", GetCheckout);
-
+app.use("/CustomerListUpdate", CustomerListUpdate);
+app.use("/CustomerListRemove", CustomerRemove);
 //Listner
 app.listen(3000, () => {
   console.log("Listning To The Port 3000....");

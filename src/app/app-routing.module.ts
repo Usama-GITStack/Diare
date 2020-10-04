@@ -1,3 +1,5 @@
+import { RECEIPTComponent } from './Components/receipt/receipt.component';
+import { SaleHistoryComponent } from './Components/sale-history/sale-history.component';
 import { CheckoutListComponent } from './Components/checkout-list/checkout-list.component';
 import { ListRegulationComponent } from './Components/list-regulation/list-regulation.component';
 import { NewRulesComponent } from './Components/new-rules/new-rules.component';
@@ -59,6 +61,8 @@ const routes: Routes = [
   { path: 'ListRules', component: ListRegulationComponent },
   { path: 'NewCheckout', component: NewCheckoutComponent },
   { path: 'ListCheckout', component: CheckoutListComponent },
+  { path: 'SaleHistory', component: SaleHistoryComponent },
+  { path: 'RECEIPT', component: RECEIPTComponent },
 
 ];
 

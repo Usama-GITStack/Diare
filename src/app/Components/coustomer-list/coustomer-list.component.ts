@@ -3,6 +3,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import * as XLSX from 'xlsx';
 import { jsPDF } from "jspdf";
 import html2canvas from 'html2canvas';
+import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-coustomer-list',
   templateUrl: './coustomer-list.component.html',
@@ -10,7 +11,7 @@ import html2canvas from 'html2canvas';
 })
 export class CoustomerListComponent implements OnInit {
 
-  constructor(private CR: CoustomerRegisterService) { }
+  constructor(private CR: CoustomerRegisterService, public config: NgbModalConfig, public modalService: NgbModal) { }
   @ViewChild('dataTable', { static: true }) table;
   datageting: any = {};
   tabledata = [];
@@ -18,6 +19,15 @@ export class CoustomerListComponent implements OnInit {
   fileName = 'ExcelSheet.xlsx';
   searchText: any;
   searchText1: any;
+  CustomerCode: String;
+  LastName: String;
+  Phone: String;
+  City: String;
+  Civility: String;
+  FirstName: String;
+  Category: String;
+  Address: String;
+  random: any;
   exportexcel() {
     console.log("Usama")
     let element = document.getElementById('excel-table');
@@ -46,6 +56,7 @@ export class CoustomerListComponent implements OnInit {
         this.dataTable.DataTable();
       }, 500);
     })
+    this.random = Math.floor((Math.random() * 10000) + 1);
   }
   DataFilter() {
   }
@@ -62,5 +73,35 @@ export class CoustomerListComponent implements OnInit {
     this.tabledata = this.datageting.msg;
     return this.tabledata = this.tabledata[index];
   }
-
+  openXl(content, index) {
+    this.modalService.open(content, { size: 'xl' });
+    this.CustomerCode = this.tabledata[index].CustomerCode;
+    this.LastName = this.tabledata[index].LastName;
+    this.Phone = this.tabledata[index].Phone;
+    this.City = this.tabledata[index].City;
+    this.Civility = this.tabledata[index].Civility;
+    this.FirstName = this.tabledata[index].FirstName;
+    this.Category = this.tabledata[index].Category;
+    this.Address = this.tabledata[index].MadinaAddress;
+  }
+  onCourseSend() {
+    const Co = {
+      CustomerCode: this.CustomerCode,
+      LastName: this.LastName,
+      Phone: this.Phone,
+      City: this.City,
+      Civility: this.Civility,
+      FirstName: this.FirstName,
+      Category: this.Category,
+      Address: this.Address
+    }
+    console.log(Co);
+    this.CR.CustomerListUpdate(Co);
+  }
+  Delete(index) {
+    const Co = {
+      CustomerCode: this.tabledata[index].CustomerCode
+    }
+    this.CR.CustomerListRemove(Co);
+  }
 }

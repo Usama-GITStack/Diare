@@ -39,18 +39,21 @@
         <th scope="col">ADDRESS</th>
         <th scope="col">CUSTOMER CATEGORY</th>
         <th scope="col">CURRENT BALANCE</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let tb of tabledata | filter :searchText;">
+      <tr *ngFor="let tb of tabledata | filter :searchText; let i=index">
         <td>{{tb.CustomerCode}}</td>
         <td>{{tb.LastName}}</td>
         <td>{{tb.FirstName}}</td>
         <td>{{tb.Phone}}</td>
         <td>{{tb.City}}</td>
-        <td>{{tb.Category}}</td>
         <td>{{tb.MadinaAddress}}</td>
+        <td>{{tb.Category}}</td>
         <td>{{tb.Civility}}</td>
+        <td> <button class="btn btn-success buttons-style  w-100 " (click)="openXl(content ,i)">Edit</button>
+          <button class="btn btn-success buttons-style  w-100 " (click)=Delete(i)>Remove</button></td>
       </tr>
     </tbody>
   </table>
@@ -76,12 +79,86 @@
     <div class="col-md-2">
       <div class="row">
         <div class="col-md-6">
-          <button class="btn btn-success buttons-style  w-100 ">Edit</button>
+
         </div>
         <div class="col-md-6">
-          <button class="btn btn-success buttons-style  w-100 ">Remove</button>
+
         </div>
       </div>
     </div>
   </div>
 </section>
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Update</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form ngNativeValidate (submit)="onCourseSend()">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>CUSTOMER CODE</label>
+            <input type="text" class="form-control" aria-describedby="emailHelp" value="{{CustomerCode}}" placeholder=""
+              disabled>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>LAST NAME</label>
+            <input type="text" class="form-control" aria-describedby="emailHelp" value="{{LastName}}" placeholder=""
+              [(ngModel)]="LastName" name="LastName">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>FIRST NAME</label>
+            <input type="text" class="form-control" aria-describedby="emailHelp" value="{{FirstName}}" placeholder=""
+              [(ngModel)]="FirstName" name="FirstName">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label> PHONE</label>
+            <input type="text" class="form-control" aria-describedby="emailHelp" value="{{Phone}}" placeholder=""
+              [(ngModel)]="Phone" name="Phone">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>CITY</label>
+            <input type="text" class="form-control" aria-describedby="emailHelp" value="{{City}}" placeholder=""
+              [(ngModel)]="City" name="City">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label> ADDRESS</label>
+            <input type="text" class="form-control" aria-describedby="emailHelp" value="{{Address}}" placeholder=""
+              [(ngModel)]="Address" name="Address">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>CUSTOMER CATEGORY</label>
+            <input type="text" class="form-control" aria-describedby="emailHelp" value="{{Category}}" placeholder=""
+              [(ngModel)]="Category" name="Category">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Civility</label>
+            <input type="text" class="form-control" aria-describedby="emailHelp" value="{{Civility}}" placeholder=""
+              [(ngModel)]="Civility" name="Civility">
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+  </div>
+</ng-template>

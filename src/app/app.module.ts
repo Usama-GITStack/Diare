@@ -40,6 +40,8 @@ import { ListRegulationComponent } from './Components/list-regulation/list-regul
 import { NewRulesComponent } from './Components/new-rules/new-rules.component';
 import { NewCheckoutComponent } from './Components/new-checkout/new-checkout.component';
 import { CheckoutListComponent } from './Components/checkout-list/checkout-list.component';
+import { SaleHistoryComponent } from './Components/sale-history/sale-history.component';
+import { RECEIPTComponent } from './Components/receipt/receipt.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,6 +75,8 @@ import { CheckoutListComponent } from './Components/checkout-list/checkout-list.
     NewRulesComponent,
     NewCheckoutComponent,
     CheckoutListComponent,
+    SaleHistoryComponent,
+    RECEIPTComponent,
 
   ],
   imports: [

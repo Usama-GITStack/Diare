@@ -205,5 +205,31 @@ export class CoustomerRegisterService {
   getData11() {
     return this.http.get('http://localhost:3000/ListCheckout');
   }
+  //Updation
+  CustomerListUpdate(CR) {
+    this.http.post('http://localhost:3000/CustomerListUpdate', CR, {
+    }).subscribe(data => {
+      this.datageting = data
+      if (this.datageting.success) {
+        window.alert(this.datageting.success);
+      }
+      else {
+        window.alert(this.datageting.fail);
+      }
+    })
+  }
+  //Remove
+  CustomerListRemove(CR) {
+    this.http.post('http://localhost:3000/CustomerListRemove', CR, {
+    }).subscribe(data => {
+      this.datageting = data
+      if (this.datageting.success) {
+        window.alert(this.datageting.success);
+      }
+      else {
+        window.alert(this.datageting.fail);
+      }
+    })
+  }
 }
 

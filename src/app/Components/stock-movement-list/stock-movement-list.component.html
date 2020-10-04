@@ -5,49 +5,37 @@
   <div class="row">
     <div class="col-md-4 padding-colm-set ">
       <label for="sel1" class="text-color ">PERIOD:</label>
-      <select class="form-control" id="sel1">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-      </select>
-      <select class="form-control" id="sel1" style="margin-top: 2%;">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-      </select>
+      <label>From</label>
+      <input class="form-control" type="date">
+      <label>To</label>
+      <input class="form-control" type="date">
     </div>
     <div class="col-md-4 border-left padding-colm-set ">
       <label for="sel1" class="text-color ">ITEM CODE:</label>
       <select class="form-control" id="sel1">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
+        <option>AR0001</option>
       </select>
       <label for="sel1" class="text-color ">ARTICLE NAME:</label>
       <select class="form-control" id="sel1">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
+        <option>NON DAIRY CREAMER</option>
+        <option>Bill</option>
+        <option>GOOD MORNING 30 PCS</option>
         <option>4</option>
       </select>
     </div>
     <div class="col-md-4 border-left padding-colm-set ">
       <label for="sel1" class="text-color ">DOCUMENT TYPE:</label>
       <select class="form-control" id="sel1">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
+        <option>ENTRY VOUCHER</option>
+        <option>ENTRY VOUCHER 1</option>
+        <option>ENTRY VOUCHER 2</option>
       </select>
       <button class="btn btn-success buttons-style  w-50 " style="float: right; margin-top: 5%;">APPLY FILTER</button>
     </div>
   </div>
 </section>
-<section class="section-space">
-  <table id="customers" #dataTable class="display table table_size table_background" style="width:100%">
+<section class="section-space" id="PDF">
+  <table id="excel-table" #dataTable class="display table table_size table_background" style="width:100%">
     <thead>
       <tr class="home-page-color-bg">
         <th scope="col">DATED</th>
@@ -60,10 +48,59 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let tb of tabledata">
-        <td>{{tb.Teachers}}</td>
-        <td>{{tb.Subjects}}</td>
-        <td>{{tb.TAI}}</td>
+      <tr>
+        <td>06/09/20</td>
+        <td>AR0001</td>
+        <td>NON DAIRY CREAMER</td>
+        <td>ENTRY VOUCHER</td>
+        <td>BE0001</td>
+        <td>2250</td>
+        <td>2250</td>
+      </tr>
+      <tr>
+        <td>06/09/20</td>
+        <td>AR0001</td>
+        <td>BILL</td>
+        <td>ENTRY VOUCHER</td>
+        <td>BE0001</td>
+        <td>2250</td>
+        <td>2250</td>
+      </tr>
+      <tr>
+        <td>06/09/20</td>
+        <td>AR0001</td>
+        <td>BILL</td>
+        <td>ENTRY VOUCHER</td>
+        <td>FA0001</td>
+        <td>2250</td>
+        <td>2250</td>
+      </tr>
+      <tr>
+        <td>08/07/20</td>
+        <td>AR0001</td>
+        <td>NON DAIRY CREAMER</td>
+        <td>ENTRY VOUCHER</td>
+        <td>BE0001</td>
+        <td>2250</td>
+        <td>2250</td>
+      </tr>
+      <tr>
+        <td>06/09/20</td>
+        <td>AR0001</td>
+        <td>GOOD MORNING 30 PCS</td>
+        <td>ENTRY VOUCHER</td>
+        <td>BE0001</td>
+        <td>2250</td>
+        <td>2250</td>
+      </tr>
+      <tr>
+        <td>08/07/20</td>
+        <td>AR0001</td>
+        <td>NON DAIRY CREAMER</td>
+        <td>ENTRY VOUCHER</td>
+        <td>BE0001</td>
+        <td>2250</td>
+        <td>2250</td>
       </tr>
     </tbody>
   </table>
@@ -73,7 +110,7 @@
     <div class="col-md-10">
       <div class="row">
         <div class="col-md-2">
-          <button class="btn btn-success buttons-style  w-100 ">Actions</button>
+          <button class="btn btn-success buttons-style  w-100 " (click)="exportexcel()">Actions</button>
         </div>
         <div class="col-md-2">
 

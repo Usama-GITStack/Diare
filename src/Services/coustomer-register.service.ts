@@ -230,6 +230,18 @@ export class CoustomerRegisterService {
       }
     })
   }
+  UpdateEV(CR) {
+    this.http.post('http://localhost:3000/ListOfEntryVouchersUpdate', CR, {
+    }).subscribe(data => {
+      this.datageting = data
+      if (this.datageting.success) {
+        window.alert(this.datageting.success);
+      }
+      else {
+        window.alert(this.datageting.fail);
+      }
+    })
+  }
   //Remove
   CustomerListRemove(CR) {
     this.http.post('http://localhost:3000/CustomerListRemove', CR, {
@@ -245,6 +257,18 @@ export class CoustomerRegisterService {
   }
   ArticalsRemove(CR) {
     this.http.post('http://localhost:3000/ListofArticalsRemove', CR, {
+    }).subscribe(data => {
+      this.datageting = data
+      if (this.datageting.success) {
+        window.alert(this.datageting.success);
+      }
+      else {
+        window.alert(this.datageting.fail);
+      }
+    })
+  }
+  EVRemove(CR) {
+    this.http.post('http://localhost:3000/ListOfEntryVouchersRemove', CR, {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {

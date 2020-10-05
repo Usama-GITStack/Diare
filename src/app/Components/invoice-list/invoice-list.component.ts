@@ -25,6 +25,7 @@ export class InvoiceListComponent implements OnInit {
   Address: String;
   FACTNUMBER: String;
   Date: String;
+  message: any;
   exportexcel() {
     console.log("Usama")
     let element = document.getElementById('excel-table');
@@ -60,14 +61,14 @@ export class InvoiceListComponent implements OnInit {
   }
   openXl(content, index) {
     this.modalService.open(content, { size: 'xl' });
-    this.Date = this.tabledata[index].Date;
-    this.FACTNUMBER = this.tabledata[index].FACTNUMBER;
-    this.Warehouse = this.tabledata[index].Warehouse;
-    this.FirstName = this.tabledata[index].FirstName;
-    this.LastName = this.tabledata[index].LastName;
-    this.Email = this.tabledata[index].Email;
-    this.Phone = this.tabledata[index].Phone;
-    this.Address = this.tabledata[index].Address
+    this.Date = this.tabledata[this.message].Date;
+    this.FACTNUMBER = this.tabledata[this.message].FACTNUMBER;
+    this.Warehouse = this.tabledata[this.message].Warehouse;
+    this.FirstName = this.tabledata[this.message].FirstName;
+    this.LastName = this.tabledata[this.message].LastName;
+    this.Email = this.tabledata[this.message].Email;
+    this.Phone = this.tabledata[this.message].Phone;
+    this.Address = this.tabledata[this.message].Address
   }
   onCourseSend() {
     const Co = {
@@ -84,8 +85,18 @@ export class InvoiceListComponent implements OnInit {
   }
   Delete(index) {
     const Co = {
-      FACTNUMBER: this.tabledata[index].FACTNUMBER
+      FACTNUMBER: this.tabledata[this.message].FACTNUMBER
     }
     this.CR.InvoiceRemove(Co);
+  }
+  openSm(content1, i) {
+    this.modalService.open(content1, { size: 'sm' });
+    this.message = i
+    console.log(this.message)
+  }
+  openSm2(content2, i) {
+    this.modalService.open(content2, { size: 'sm' });
+    this.message = i
+    console.log(this.message)
   }
 }

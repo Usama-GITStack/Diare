@@ -15,6 +15,7 @@ export class ListofArticalsComponent implements OnInit {
   datageting: any = {};
   tabledata = [];
   dataTable: any;
+  message: any;
   fileName = 'ExcelSheet.xlsx';
   ItemCode: String;
   Unit: String;
@@ -53,15 +54,15 @@ export class ListofArticalsComponent implements OnInit {
       }, 500);
     })
   }
-  openXl(content, index) {
+  openXl(content) {
     this.modalService.open(content, { size: 'xl' });
-    this.ItemCode = this.tabledata[index].ItemCode;
-    this.Unit = this.tabledata[index].Unit;
-    this.Nameofthearticle = this.tabledata[index].Nameofthearticle;
-    this.CostPrice = this.tabledata[index].CostPrice;
-    this.SellingPrice = this.tabledata[index].SellingPrice;
-    this.Category = this.tabledata[index].Category;
-    this.Margin = this.tabledata[index].Margin;
+    this.ItemCode = this.tabledata[this.message].ItemCode;
+    this.Unit = this.tabledata[this.message].Unit;
+    this.Nameofthearticle = this.tabledata[this.message].Nameofthearticle;
+    this.CostPrice = this.tabledata[this.message].CostPrice;
+    this.SellingPrice = this.tabledata[this.message].SellingPrice;
+    this.Category = this.tabledata[this.message].Category;
+    this.Margin = this.tabledata[this.message].Margin;
   }
   somethingChanged(event) {
     this.Sub = event;
@@ -82,10 +83,20 @@ export class ListofArticalsComponent implements OnInit {
     console.log(Co);
     this.CR.UpdateArticals(Co);
   }
-  Delete(index) {
+  Delete() {
     const Co = {
-      ItemCode: this.tabledata[index].ItemCode
+      ItemCode: this.tabledata[this.message].ItemCode
     }
     this.CR.ArticalsRemove(Co);
+  }
+  openSm(content1, i) {
+    this.modalService.open(content1, { size: 'sm' });
+    this.message = i
+    console.log(this.message)
+  }
+  openSm2(content2, i) {
+    this.modalService.open(content2, { size: 'sm' });
+    this.message = i
+    console.log(this.message)
   }
 }

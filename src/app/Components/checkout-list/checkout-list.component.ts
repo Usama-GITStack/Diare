@@ -14,6 +14,7 @@ export class CheckoutListComponent implements OnInit {
   @ViewChild('dataTable', { static: true }) table;
   datageting: any = {};
   tabledata = [];
+  message: any;
   dataTable: any;
   fileName = 'ExcelSheet.xlsx';
   Date: String;
@@ -44,12 +45,12 @@ export class CheckoutListComponent implements OnInit {
   constructor(private CR: CoustomerRegisterService, public config: NgbModalConfig, public modalService: NgbModal) { }
   openXl(content, index) {
     this.modalService.open(content, { size: 'xl' });
-    this.RN = this.tabledata[index].RN;
-    this.Date = this.tabledata[index].Date;
-    this.Amount = this.tabledata[index].Amount;
-    this.EXPENDITURE = this.tabledata[index].EXPENDITURE;
-    this.CM = this.tabledata[index].CM;
-    this.Wording = this.tabledata[index].Wording;
+    this.RN = this.tabledata[this.message].RN;
+    this.Date = this.tabledata[this.message].Date;
+    this.Amount = this.tabledata[this.message].Amount;
+    this.EXPENDITURE = this.tabledata[this.message].EXPENDITURE;
+    this.CM = this.tabledata[this.message].CM;
+    this.Wording = this.tabledata[this.message].Wording;
   }
   ngOnInit() {
     this.CR.getData11().subscribe(data => {
@@ -75,8 +76,18 @@ export class CheckoutListComponent implements OnInit {
   }
   Delete(index) {
     const Co = {
-      RN: this.tabledata[index].RN,
+      RN: this.tabledata[this.message].RN,
     }
     this.CR.CheckOutRemove(Co);
+  }
+  openSm(content1, i) {
+    this.modalService.open(content1, { size: 'sm' });
+    this.message = i
+    console.log(this.message)
+  }
+  openSm2(content2, i) {
+    this.modalService.open(content2, { size: 'sm' });
+    this.message = i
+    console.log(this.message)
   }
 }

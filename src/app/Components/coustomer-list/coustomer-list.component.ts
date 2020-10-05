@@ -15,6 +15,7 @@ export class CoustomerListComponent implements OnInit {
   @ViewChild('dataTable', { static: true }) table;
   datageting: any = {};
   tabledata = [];
+  message: any;
   dataTable: any;
   fileName = 'ExcelSheet.xlsx';
   searchText: any;
@@ -59,16 +60,16 @@ export class CoustomerListComponent implements OnInit {
     this.random = Math.floor((Math.random() * 10000) + 1);
   }
 
-  openXl(content, index) {
+  openXl(content) {
     this.modalService.open(content, { size: 'xl' });
-    this.CustomerCode = this.tabledata[index].CustomerCode;
-    this.LastName = this.tabledata[index].LastName;
-    this.Phone = this.tabledata[index].Phone;
-    this.City = this.tabledata[index].City;
-    this.Civility = this.tabledata[index].Civility;
-    this.FirstName = this.tabledata[index].FirstName;
-    this.Category = this.tabledata[index].Category;
-    this.Address = this.tabledata[index].MadinaAddress;
+    this.CustomerCode = this.tabledata[this.message].CustomerCode;
+    this.LastName = this.tabledata[this.message].LastName;
+    this.Phone = this.tabledata[this.message].Phone;
+    this.City = this.tabledata[this.message].City;
+    this.Civility = this.tabledata[this.message].Civility;
+    this.FirstName = this.tabledata[this.message].FirstName;
+    this.Category = this.tabledata[this.message].Category;
+    this.Address = this.tabledata[this.message].MadinaAddress;
   }
   onCourseSend() {
     const Co = {
@@ -84,16 +85,20 @@ export class CoustomerListComponent implements OnInit {
     console.log(Co);
     this.CR.CustomerListUpdate(Co);
   }
-  Delete(index) {
+  Delete() {
     const Co = {
-      CustomerCode: this.tabledata[index].CustomerCode
+      CustomerCode: this.tabledata[this.message].CustomerCode
     }
     this.CR.CustomerListRemove(Co);
   }
-  openSm(content1) {
+  openSm(content1, i) {
     this.modalService.open(content1, { size: 'sm' });
+    this.message = i
+    console.log(this.message)
   }
-  openSm2(content2) {
+  openSm2(content2, i) {
     this.modalService.open(content2, { size: 'sm' });
+    this.message = i
+    console.log(this.message)
   }
 }

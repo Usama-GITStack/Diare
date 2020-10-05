@@ -14,6 +14,7 @@ export class ListRegulationComponent implements OnInit {
   @ViewChild('dataTable', { static: true }) table;
   datageting: any = {};
   tabledata = [];
+  message: any;
   dataTable: any;
   fileName = 'ExcelSheet.xlsx';
   RC: String;
@@ -46,13 +47,13 @@ export class ListRegulationComponent implements OnInit {
   constructor(private CR: CoustomerRegisterService, public config: NgbModalConfig, public modalService: NgbModal) { }
   openXl(content, index) {
     this.modalService.open(content, { size: 'xl' });
-    this.RC = this.tabledata[index].RC;
-    this.Date = this.tabledata[index].Date;
-    this.CC = this.tabledata[index].CC;
-    this.PM = this.tabledata[index].PM;
-    this.Bank = this.tabledata[index].Bank;
-    this.Checkout = this.tabledata[index].Checkout;
-    this.Amount = this.tabledata[index].Amount;
+    this.RC = this.tabledata[this.message].RC;
+    this.Date = this.tabledata[this.message].Date;
+    this.CC = this.tabledata[this.message].CC;
+    this.PM = this.tabledata[this.message].PM;
+    this.Bank = this.tabledata[this.message].Bank;
+    this.Checkout = this.tabledata[this.message].Checkout;
+    this.Amount = this.tabledata[this.message].Amount;
   }
   ngOnInit() {
     this.CR.getData10().subscribe(data => {
@@ -80,8 +81,18 @@ export class ListRegulationComponent implements OnInit {
   }
   Delete(index) {
     const Co = {
-      RC: this.tabledata[index].RC,
+      RC: this.tabledata[this.message].RC,
     }
     this.CR.RulesRemove(Co);
+  }
+  openSm(content1, i) {
+    this.modalService.open(content1, { size: 'sm' });
+    this.message = i
+    console.log(this.message)
+  }
+  openSm2(content2, i) {
+    this.modalService.open(content2, { size: 'sm' });
+    this.message = i
+    console.log(this.message)
   }
 }

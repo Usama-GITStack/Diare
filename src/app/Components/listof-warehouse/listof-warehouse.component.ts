@@ -16,6 +16,7 @@ export class ListofWarehouseComponent implements OnInit {
   @ViewChild('dataTable', { static: true }) table;
   datageting: any = {};
   tabledata = [];
+  message: any;
   dataTable: any;
   fileName = 'ExcelSheet.xlsx';
   WAREHOUSECODE: String;
@@ -50,11 +51,11 @@ export class ListofWarehouseComponent implements OnInit {
   }
   openXl(content, index) {
     this.modalService.open(content, { size: 'xl' });
-    this.WAREHOUSECODE = this.tabledata[index].WAREHOUSECODE;
-    this.NAMEOFWAREHOUSE = this.tabledata[index].NAMEOFWAREHOUSE;
-    this.ADDRESS = this.tabledata[index].ADDRESS;
-    this.NAMEOFMANAGER = this.tabledata[index].NAMEOFMANAGER;
-    this.PHONE = this.tabledata[index].PHONE;
+    this.WAREHOUSECODE = this.tabledata[this.message].WAREHOUSECODE;
+    this.NAMEOFWAREHOUSE = this.tabledata[this.message].NAMEOFWAREHOUSE;
+    this.ADDRESS = this.tabledata[this.message].ADDRESS;
+    this.NAMEOFMANAGER = this.tabledata[this.message].NAMEOFMANAGER;
+    this.PHONE = this.tabledata[this.message].PHONE;
   }
   Transfer(index) {
     this.CR.changetMessage(index);
@@ -73,8 +74,18 @@ export class ListofWarehouseComponent implements OnInit {
   }
   Delete(index) {
     const Co = {
-      WAREHOUSECODE: this.tabledata[index].WAREHOUSECODE
+      WAREHOUSECODE: this.tabledata[this.message].WAREHOUSECODE
     }
     this.CR.WarehouseRemove(Co);
+  }
+  openSm(content1, i) {
+    this.modalService.open(content1, { size: 'sm' });
+    this.message = i
+    console.log(this.message)
+  }
+  openSm2(content2, i) {
+    this.modalService.open(content2, { size: 'sm' });
+    this.message = i
+    console.log(this.message)
   }
 }

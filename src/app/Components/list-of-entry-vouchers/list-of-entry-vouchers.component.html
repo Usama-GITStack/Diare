@@ -50,8 +50,8 @@
         <td><a (click)=Transfer(i)>{{tb.Document}}</a></td>
         <td>{{tb.Warehouse}}</td>
         <td>{{tb.Reception}}</td>
-        <td><button class="btn btn-success buttons-style  w-100 " (click)="openXl(content ,i)">Edit</button>
-          <button class="btn btn-success buttons-style  w-100 " (click)=Delete(i)>Remove</button></td>
+        <td> <button class="btn btn-success buttons-style  w-100 " (click)="openSm(content1,i);">Edit</button>
+          <button class="btn btn-success buttons-style  w-100 " (click)=openSm2(content2,i)>Remove</button></td>
       </tr>
     </tbody>
   </table>
@@ -145,6 +145,36 @@
     </form>
   </div>
   <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+  </div>
+</ng-template>
+<ng-template #content1 let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Modal title</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Do You Need To Edit</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="openXl(content) ">Yes</button>
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+  </div>
+</ng-template>
+<ng-template #content2 let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Modal title</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Do You Need To Remove</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)=Delete()>Yes</button>
     <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
   </div>
 </ng-template>

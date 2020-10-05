@@ -52,8 +52,8 @@
         <td>{{tb.MadinaAddress}}</td>
         <td>{{tb.Category}}</td>
         <td>{{tb.Civility}}</td>
-        <td> <button class="btn btn-success buttons-style  w-100 " (click)="openXl(content ,i)">Edit</button>
-          <button class="btn btn-success buttons-style  w-100 " (click)=Delete(i)>Remove</button></td>
+        <td> <button class="btn btn-success buttons-style  w-100 " (click)="openSm(content1,i);">Edit</button>
+          <button class="btn btn-success buttons-style  w-100 " (click)=openSm2(content2,i)>Remove</button></td>
       </tr>
     </tbody>
   </table>
@@ -173,7 +173,7 @@
     <p>Do You Need To Edit</p>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-primary">Yes</button>
+    <button type="button" class="btn btn-primary" (click)="openXl(content) ">Yes</button>
     <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
   </div>
 </ng-template>
@@ -188,7 +188,7 @@
     <p>Do You Need To Remove</p>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-primary">Yes</button>
+    <button type="button" class="btn btn-primary" (click)=Delete()>Yes</button>
     <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
   </div>
 </ng-template>

@@ -19,6 +19,7 @@ export class ListOfExitVouchersComponent implements OnInit {
   dataTable: any;
   fileName = 'ExcelSheet.xlsx';
   Date: String;
+  message: any;
   Document: String;
   Warehouse: String;
   Reception: String;
@@ -43,10 +44,10 @@ export class ListOfExitVouchersComponent implements OnInit {
   }
   openXl(content, index) {
     this.modalService.open(content, { size: 'xl' });
-    this.Date = this.tabledata[index].Date;
-    this.Document = this.tabledata[index].Document;
-    this.Warehouse = this.tabledata[index].Warehouse;
-    this.Reception = this.tabledata[index].Reception;
+    this.Date = this.tabledata[this.message].Date;
+    this.Document = this.tabledata[this.message].Document;
+    this.Warehouse = this.tabledata[this.message].Warehouse;
+    this.Reception = this.tabledata[this.message].Reception;
   }
   ngOnInit() {
     this.CR.getData3().subscribe(data => {
@@ -74,8 +75,18 @@ export class ListOfExitVouchersComponent implements OnInit {
   }
   Delete(index) {
     const Co = {
-      Document: this.tabledata[index].Document
+      Document: this.tabledata[this.message].Document
     }
     this.CR.EV1Remove(Co);
+  }
+  openSm(content1, i) {
+    this.modalService.open(content1, { size: 'sm' });
+    this.message = i
+    console.log(this.message)
+  }
+  openSm2(content2, i) {
+    this.modalService.open(content2, { size: 'sm' });
+    this.message = i
+    console.log(this.message)
   }
 }

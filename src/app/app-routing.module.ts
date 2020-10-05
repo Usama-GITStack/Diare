@@ -30,6 +30,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ListofArticalsComponent } from './Components/listof-articals/listof-articals.component';
 import { NewCheckoutComponent } from './Components/new-checkout/new-checkout.component';
+import { UserAccessControlComponent } from './Components/user-access-control/user-access-control.component';
 
 
 const routes: Routes = [
@@ -63,6 +64,7 @@ const routes: Routes = [
   { path: 'ListCheckout', component: CheckoutListComponent },
   { path: 'SaleHistory', component: SaleHistoryComponent },
   { path: 'RECEIPT', component: RECEIPTComponent },
+  { path: 'UserAccess', component: UserAccessControlComponent },
 
 ];
 

@@ -1,5 +1,5 @@
 <header class="header-section-bg-color ">
-  <h5 class="text-center" style="margin: auto;">LIST OF ENTRY VOUCHERS</h5>
+  <h5 class="text-center" style="margin: auto;">LIST OF Rules</h5>
 </header>
 <section class="border-color-set">
   <div class="row">
@@ -17,33 +17,25 @@
     <div class="col-md-4 border-left padding-colm-set ">
       <label for="sel1" class="text-color ">CLIENT NAME:</label>
       <select class="form-control" id="sel1">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
+        <option *ngFor="let tb of tabledata;">{{tb.CN}}</option>
+
       </select>
       <label for="sel1" class="text-color ">CUSTOMER CODE:</label>
       <select class="form-control" id="sel1">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
+        <option *ngFor="let tb of tabledata;">{{tb.CC}}</option>
+
       </select>
     </div>
     <div class="col-md-4 border-left padding-colm-set ">
       <label for="sel1" class="text-color ">RECEIPT NUMBER:</label>
       <select class="form-control" id="sel1">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
+        <option *ngFor="let tb of tabledata;">{{tb.RN}}</option>
+
       </select>
       <label for="sel1" class="text-color ">BANK // CASH</label>
       <select class="form-control" id="sel1">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
+        <option *ngFor="let tb of tabledata;">{{tb.Bank}}</option>
+
       </select>
       <button class="btn btn-success buttons-style  w-50 " style="float: right; margin-top: 5%;">APPLY FILTER</button>
     </div>
@@ -63,6 +55,7 @@
         <th scope="col">MODE OF
           RULES</th>
         <th scope="col">BANKS / CASHIER</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -74,6 +67,8 @@
         <td>{{tb.Amount}}</td>
         <td>{{tb.Checkout}}</td>
         <td>{{tb.Bank}}</td>
+        <td> <button class="btn btn-success buttons-style  w-100 " (click)="openXl(content ,i)">Edit</button>
+          <button class="btn btn-success buttons-style  w-100 " (click)=Delete(i)>Remove</button></td>
       </tr>
     </tbody>
   </table>
@@ -94,12 +89,122 @@
     <div class="col-md-2">
       <div class="row">
         <div class="col-md-6">
-          <button class="btn btn-success buttons-style  w-100 ">Edit</button>
+
         </div>
         <div class="col-md-6">
-          <button class="btn btn-success buttons-style  w-100 ">Remove</button>
+
         </div>
       </div>
     </div>
   </div>
 </section>
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Update</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form ngNativeValidate (submit)="onCourseSend()">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="col-md-12">
+            <div class="form-group row">
+              <label class="col-sm-4 col-form-label">RECEIPT No:</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" placeholder="" value="{{RC}}" disabled required>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group row">
+              <label class="col-sm-4 col-form-label">CUSTOMER CODE:</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" placeholder="" value="{{CC}}" disabled required>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group row">
+              <label class="col-sm-4 col-form-label">PAYMENT CHOICE:</label>
+              <div class="col-sm-8">
+                <select class="form-control" [(ngModel)]="PM" name="PM" required>
+                  <option>Chose Choice</option>
+                  <option>Cash</option>
+                  <option>Cheques</option>
+                  <option>Bank Transfer</option>
+                  <option>Deposit</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group row">
+              <label class="col-sm-4 col-form-label">AMOUNT:</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" placeholder="" [(ngModel)]="Amount" name="Amount" required>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="col-md-12">
+            <div class="form-group row">
+              <label class="col-sm-4 col-form-label">Date:</label>
+              <div class="col-sm-8">
+                <input type="date" class="form-control" placeholder="" [(ngModel)]="Date" name="Date" required>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group row">
+              <label class="col-sm-4 col-form-label">CLIENT NAME:</label>
+              <div class="col-sm-8">
+                <select class="form-control" [(ngModel)]="CN" name="CN">
+                  <option>User Select</option>
+                  <option *ngFor="let td of tabledata">{{td.FirstName}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group row">
+              <label class="col-sm-4 col-form-label">Bank:</label>
+              <div class="col-sm-8">
+                <select class="form-control" [(ngModel)]="Bank" name="Bank" required>
+                  <option>Chose Bank</option>
+                  <option>User Bank</option>
+                  <option>CHECKOUT</option>
+                  <option>ORABANK</option>
+                  <option>ECOBANK</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group row">
+              <label class="col-sm-4 col-form-label">CHECKOUT Case:</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" placeholder="" value="{{Checkout}}" required disabled>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-6">
+                <button type="submit" class="btn btn-success buttons-style  w-100 ">Save</button>
+              </div>
+              <div class="col-md-6">
+                <button class="btn btn-success buttons-style  w-100 ">CANCEL</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+  </div>
+</ng-template>

@@ -32,9 +32,21 @@ const GetCheckout = require("../Routes/GetCheckout");
 const CustomerListUpdate = require("../Routes/UpdationCode/CustomerListUpdate");
 const ArticalUpdate = require("../Routes/UpdationCode/ArticalUpdate");
 const NewEntryV = require("../Routes/UpdationCode/NewEntryV");
+const ExitVUpdate = require("../Routes/UpdationCode/ExitVUpdate");
+const WarehouseUpdate = require("../Routes/UpdationCode/WarehouseUpdate");
+const InvoiceUpdate = require("../Routes/UpdationCode/InvoiceUpdate");
+const UpdateRules = require("../Routes/UpdationCode/UpdateRules");
+const CheckoutUpdate = require("../Routes/UpdationCode/CheckoutUpdate");
+const UserUpdate = require("../Routes/UpdationCode/UserUpdate");
 const CustomerRemove = require("../Routes/RemoveCode/CustomerRemove");
 const ArticalRemove = require("../Routes/RemoveCode/ArticalRemove");
 const EntryVRemove = require("../Routes/RemoveCode/EntryVRemove");
+const ExitVRemove = require("../Routes/RemoveCode/ExitVRemove");
+const WarehouseRemove = require("../Routes/RemoveCode/WarehouseRemove");
+const InvoiceRemove = require("../Routes/RemoveCode/InvoiceRemove");
+const RulesRemove = require("../Routes/RemoveCode/RulesRemove");
+const CheckOutRemove = require("../Routes/RemoveCode/CheckOutRemove");
+const UserRemove = require("../Routes/RemoveCode/UserRemove");
 //DataBase
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb+srv://osama:mahmood12@cluster0-4lwks.gcp.mongodb.net/Diare?retryWrites=true&w=majority", {
@@ -78,9 +90,21 @@ app.use("/ListCheckout", GetCheckout);
 app.use("/CustomerListUpdate", CustomerListUpdate);
 app.use("/ListofArticalsUpdate", ArticalUpdate);
 app.use("/ListOfEntryVouchersUpdate", NewEntryV);
+app.use("/ListOfExitVouchersUpdate", ExitVUpdate);
+app.use("/ListofWarehouseUpdate", WarehouseUpdate);
+app.use("/InvoiceListUpdate", InvoiceUpdate);
+app.use("/ListCheckoutUpdate", CheckoutUpdate);
+app.use("/UserListUpdate", UserUpdate);
+app.use("/ListRulesUpdate", UpdateRules);
 app.use("/CustomerListRemove", CustomerRemove);
 app.use("/ListofArticalsRemove", ArticalRemove);
 app.use("/ListOfEntryVouchersRemove", EntryVRemove);
+app.use("/ListOfExitVouchersRemove", ExitVRemove);
+app.use("/ListofWarehouseRemove", WarehouseRemove);
+app.use("/InvoiceListRemove", InvoiceRemove);
+app.use("/ListRulesRemove", RulesRemove);
+app.use("/ListCheckoutRemove", CheckOutRemove);
+app.use("/UserListRemove", UserRemove);
 //Listner
 app.listen(3000, () => {
   console.log("Listning To The Port 3000....");

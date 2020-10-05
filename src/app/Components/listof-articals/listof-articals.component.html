@@ -16,20 +16,15 @@
     <div class="col-md-4 border-left padding-colm-set ">
       <div class="col-md-12">
         <label for="sel1" class="text-color ">ITEM CODE:</label>
-        <select class="form-control" id="sel1">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
+        <select class="form-control" id="sel1" *ngFor="let tb of tabledata;">
+          <option>{{tb.ItemCode}}</option>
         </select>
       </div>
       <div class="col-md-12">
         <label for="sel1" class="text-color ">ARTICLE NAME:</label>
         <select class="form-control" id="sel1">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
+          <option *ngFor="let tb of tabledata;">{{tb.Nameofthearticle}}</option>
+
         </select>
       </div>
 
@@ -37,10 +32,8 @@
     <div class="col-md-4 border-left padding-colm-set ">
       <label for="sel1" class="text-color ">ARTICLE CATEGORY:</label>
       <select class="form-control" id="sel1">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
+        <option *ngFor="let tb of tabledata;">{{tb.Category}}</option>
+
       </select>
       <button class="btn btn-success buttons-style  w-50 " style="float: right; margin-top: 5%;">APPLY FILTER</button>
     </div>

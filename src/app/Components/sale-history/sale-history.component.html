@@ -17,49 +17,31 @@
     <div class="col-md-3 border-left padding-colm-set ">
       <label for="sel1" class="text-color ">DOCUMENT No:</label>
       <select class="form-control" id="sel1">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
+        <option *ngFor="let tb of tabledata;">{{tb.CC}}</option>
       </select>
       <label for="sel1" class="text-color ">ARTICLE:</label>
       <select class="form-control" id="sel1">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
+        <option *ngFor="let tb of tabledata;">{{tb.RC}}</option>
       </select>
     </div>
     <div class="col-md-3 border-left padding-colm-set ">
       <label for="sel1" class="text-color ">UNIT PRICE:</label>
       <select class="form-control" id="sel1">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
+        <option *ngFor="let tb of tabledata;">{{tb.Amount}}</option>
       </select>
       <label for="sel1" class="text-color ">AMOUNT:</label>
       <select class="form-control" id="sel1">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
+        <option *ngFor="let tb of tabledata;">{{tb.Amount}}</option>
       </select>
     </div>
     <div class="col-md-3 border-left padding-colm-set ">
       <label for="sel1" class="text-color ">CUSTOMER CODE:</label>
       <select class="form-control" id="sel1">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
+        <option *ngFor="let tb of tabledata;">{{tb.CC}}</option>
       </select>
       <label for="sel1" class="text-color ">CLIENT NAME</label>
       <select class="form-control" id="sel1">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
+        <option *ngFor="let tb of tabledata;">{{tb.CN}}</option>
       </select>
       <button class="btn btn-success buttons-style  w-50 " style="float: right; margin-top: 5%;">APPLY FILTER</button>
     </div>

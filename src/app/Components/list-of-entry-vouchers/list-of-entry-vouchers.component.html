@@ -17,26 +17,17 @@
     <div class="col-md-4 border-left padding-colm-set ">
       <label for="sel1" class="text-color ">PROVEN WAREHOUSE:</label>
       <select class="form-control" id="sel1">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
+        <option *ngFor="let tb of tabledata;">{{tb.Warehouse}}</option>
       </select>
       <label for="sel1" class="text-color ">RECEPTION WAREHOUSE:</label>
       <select class="form-control" id="sel1">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
+        <option *ngFor="let tb of tabledata;">{{tb.Reception}}</option>
       </select>
     </div>
     <div class="col-md-4 border-left padding-colm-set ">
       <label for="sel1" class="text-color ">GOOD NUMBER:</label>
       <select class="form-control" id="sel1">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
+        <option *ngFor="let tb of tabledata;">{{tb.Reception}}</option>
       </select>
       <button class="btn btn-success buttons-style  w-50 " style="float: right; margin-top: 5%;">APPLY FILTER</button>
     </div>

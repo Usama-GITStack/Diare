@@ -242,6 +242,78 @@ export class CoustomerRegisterService {
       }
     })
   }
+  UpdateEV1(CR) {
+    this.http.post('http://localhost:3000/ListOfExitVouchersUpdate', CR, {
+    }).subscribe(data => {
+      this.datageting = data
+      if (this.datageting.success) {
+        window.alert(this.datageting.success);
+      }
+      else {
+        window.alert(this.datageting.fail);
+      }
+    })
+  }
+  UpdateWarehouse(CR) {
+    this.http.post('http://localhost:3000/ListofWarehouseUpdate', CR, {
+    }).subscribe(data => {
+      this.datageting = data
+      if (this.datageting.success) {
+        window.alert(this.datageting.success);
+      }
+      else {
+        window.alert(this.datageting.fail);
+      }
+    })
+  }
+  UpdateInvoice(CR) {
+    this.http.post('http://localhost:3000/InvoiceListUpdate', CR, {
+    }).subscribe(data => {
+      this.datageting = data
+      if (this.datageting.success) {
+        window.alert(this.datageting.success);
+      }
+      else {
+        window.alert(this.datageting.fail);
+      }
+    })
+  }
+  UpdateRules(CR) {
+    this.http.post('http://localhost:3000/ListRulesUpdate', CR, {
+    }).subscribe(data => {
+      this.datageting = data
+      if (this.datageting.success) {
+        window.alert(this.datageting.success);
+      }
+      else {
+        window.alert(this.datageting.fail);
+      }
+    })
+  }
+  CheckoutRules(CR) {
+    this.http.post('http://localhost:3000/ListCheckoutUpdate', CR, {
+    }).subscribe(data => {
+      this.datageting = data
+      if (this.datageting.success) {
+        window.alert(this.datageting.success);
+      }
+      else {
+        window.alert(this.datageting.fail);
+      }
+    })
+  }
+  UserUpdate(CR) {
+    this.http.post('http://localhost:3000/UserListUpdate', CR, {
+    }).subscribe(data => {
+      this.datageting = data
+      if (this.datageting.success) {
+        window.alert(this.datageting.success);
+      }
+      else {
+        window.alert(this.datageting.fail);
+      }
+    })
+  }
   //Remove
   CustomerListRemove(CR) {
     this.http.post('http://localhost:3000/CustomerListRemove', CR, {
@@ -269,6 +341,78 @@ export class CoustomerRegisterService {
   }
   EVRemove(CR) {
     this.http.post('http://localhost:3000/ListOfEntryVouchersRemove', CR, {
+    }).subscribe(data => {
+      this.datageting = data
+      if (this.datageting.success) {
+        window.alert(this.datageting.success);
+      }
+      else {
+        window.alert(this.datageting.fail);
+      }
+    })
+  }
+  EV1Remove(CR) {
+    this.http.post('http://localhost:3000/ListOfExitVouchersRemove', CR, {
+    }).subscribe(data => {
+      this.datageting = data
+      if (this.datageting.success) {
+        window.alert(this.datageting.success);
+      }
+      else {
+        window.alert(this.datageting.fail);
+      }
+    })
+  }
+  WarehouseRemove(CR) {
+    this.http.post('http://localhost:3000/ListofWarehouseRemove', CR, {
+    }).subscribe(data => {
+      this.datageting = data
+      if (this.datageting.success) {
+        window.alert(this.datageting.success);
+      }
+      else {
+        window.alert(this.datageting.fail);
+      }
+    })
+  }
+  InvoiceRemove(CR) {
+    this.http.post('http://localhost:3000/InvoiceListRemove', CR, {
+    }).subscribe(data => {
+      this.datageting = data
+      if (this.datageting.success) {
+        window.alert(this.datageting.success);
+      }
+      else {
+        window.alert(this.datageting.fail);
+      }
+    })
+  }
+  RulesRemove(CR) {
+    this.http.post('http://localhost:3000/ListRulesRemove', CR, {
+    }).subscribe(data => {
+      this.datageting = data
+      if (this.datageting.success) {
+        window.alert(this.datageting.success);
+      }
+      else {
+        window.alert(this.datageting.fail);
+      }
+    })
+  }
+  CheckOutRemove(CR) {
+    this.http.post('http://localhost:3000/ListCheckoutRemove', CR, {
+    }).subscribe(data => {
+      this.datageting = data
+      if (this.datageting.success) {
+        window.alert(this.datageting.success);
+      }
+      else {
+        window.alert(this.datageting.fail);
+      }
+    })
+  }
+  UserListRemove(CR) {
+    this.http.post('http://localhost:3000/UserListRemove', CR, {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {

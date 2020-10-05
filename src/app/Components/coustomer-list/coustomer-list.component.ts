@@ -90,4 +90,10 @@ export class CoustomerListComponent implements OnInit {
     }
     this.CR.CustomerListRemove(Co);
   }
+  openSm(content1) {
+    this.modalService.open(content1, { size: 'sm' });
+  }
+  openSm2(content2) {
+    this.modalService.open(content2, { size: 'sm' });
+  }
 }

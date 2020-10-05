@@ -9,6 +9,8 @@ export class UserAccessControlComponent implements OnInit {
   datageting: any = {};
   tabledata = [];
   dataTable: any;
+  UserCode: String;
+  UserName: String;
   constructor(private CR: CoustomerRegisterService) { }
 
   ngOnInit() {
@@ -17,5 +19,7 @@ export class UserAccessControlComponent implements OnInit {
       this.tabledata = this.datageting.msg;
     })
   }
+  onCourseSend() {
 
+  }
 }

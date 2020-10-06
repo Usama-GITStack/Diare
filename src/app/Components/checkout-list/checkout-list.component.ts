@@ -43,7 +43,7 @@ export class CheckoutListComponent implements OnInit {
     });
   }
   constructor(private CR: CoustomerRegisterService, public config: NgbModalConfig, public modalService: NgbModal) { }
-  openXl(content, index) {
+  openXl(content) {
     this.modalService.open(content, { size: 'xl' });
     this.RN = this.tabledata[this.message].RN;
     this.Date = this.tabledata[this.message].Date;
@@ -74,11 +74,12 @@ export class CheckoutListComponent implements OnInit {
     console.log(Co);
     this.CR.CheckoutRules(Co);
   }
-  Delete(index) {
+  Delete() {
     const Co = {
       RN: this.tabledata[this.message].RN,
     }
     this.CR.CheckOutRemove(Co);
+    this.UpdatedAuto();
   }
   openSm(content1, i) {
     this.modalService.open(content1, { size: 'sm' });
@@ -89,5 +90,18 @@ export class CheckoutListComponent implements OnInit {
     this.modalService.open(content2, { size: 'sm' });
     this.message = i
     console.log(this.message)
+  }
+  UpdatedAuto() {
+    setTimeout(() => {
+      this.CR.getData11().subscribe(data => {
+        this.datageting = data;
+        this.tabledata = this.datageting.msg;
+        setTimeout(() => {
+          this.dataTable = $(this.table.nativeElement);
+          this.dataTable.DataTable();
+        }, 500);
+
+      })
+    }, 1500);
   }
 }

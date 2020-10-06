@@ -41,7 +41,7 @@ export class ListOfEntryVouchersComponent implements OnInit {
       doc.save('Quiz.pdf');
     });
   }
-  openXl(content, index) {
+  openXl(content) {
     this.modalService.open(content, { size: 'xl' });
     this.Date = this.tabledata[this.message].Date;
     this.Document = this.tabledata[this.message].Document;
@@ -72,11 +72,12 @@ export class ListOfEntryVouchersComponent implements OnInit {
     console.log(Co);
     this.CR.UpdateEV(Co);
   }
-  Delete(index) {
+  Delete() {
     const Co = {
       Document: this.tabledata[this.message].Document
     }
     this.CR.EVRemove(Co);
+    this.UpdatedAuto();
   }
   openSm(content1, i) {
     this.modalService.open(content1, { size: 'sm' });
@@ -87,5 +88,18 @@ export class ListOfEntryVouchersComponent implements OnInit {
     this.modalService.open(content2, { size: 'sm' });
     this.message = i
     console.log(this.message)
+  }
+  UpdatedAuto() {
+    setTimeout(() => {
+      this.CR.getData2().subscribe(data => {
+        this.datageting = data;
+        this.tabledata = this.datageting.msg;
+        setTimeout(() => {
+          this.dataTable = $(this.table.nativeElement);
+          this.dataTable.DataTable();
+        }, 500);
+
+      })
+    }, 1500);
   }
 }

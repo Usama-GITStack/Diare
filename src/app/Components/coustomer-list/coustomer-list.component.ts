@@ -90,6 +90,7 @@ export class CoustomerListComponent implements OnInit {
       CustomerCode: this.tabledata[this.message].CustomerCode
     }
     this.CR.CustomerListRemove(Co);
+    this.UpdatedAuto();
   }
   openSm(content1, i) {
     this.modalService.open(content1, { size: 'sm' });
@@ -101,4 +102,18 @@ export class CoustomerListComponent implements OnInit {
     this.message = i
     console.log(this.message)
   }
+  UpdatedAuto() {
+    setTimeout(() => {
+      this.CR.getData().subscribe(data => {
+        this.datageting = data;
+        this.tabledata = this.datageting.msg;
+        setTimeout(() => {
+          this.dataTable = $(this.table.nativeElement);
+          this.dataTable.DataTable();
+        }, 500);
+
+      })
+    }, 1500);
+  }
 }
+

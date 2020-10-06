@@ -59,7 +59,7 @@ export class InvoiceListComponent implements OnInit {
     this.CR.changetMessage(index);
     this.router.navigateByUrl('/commercialinvoice');
   }
-  openXl(content, index) {
+  openXl(content) {
     this.modalService.open(content, { size: 'xl' });
     this.Date = this.tabledata[this.message].Date;
     this.FACTNUMBER = this.tabledata[this.message].FACTNUMBER;
@@ -83,11 +83,12 @@ export class InvoiceListComponent implements OnInit {
     console.log(Co);
     this.CR.UpdateInvoice(Co);
   }
-  Delete(index) {
+  Delete() {
     const Co = {
       FACTNUMBER: this.tabledata[this.message].FACTNUMBER
     }
     this.CR.InvoiceRemove(Co);
+    this.UpdatedAuto();
   }
   openSm(content1, i) {
     this.modalService.open(content1, { size: 'sm' });
@@ -98,5 +99,18 @@ export class InvoiceListComponent implements OnInit {
     this.modalService.open(content2, { size: 'sm' });
     this.message = i
     console.log(this.message)
+  }
+  UpdatedAuto() {
+    setTimeout(() => {
+      this.CR.getData5().subscribe(data => {
+        this.datageting = data;
+        this.tabledata = this.datageting.msg;
+        setTimeout(() => {
+          this.dataTable = $(this.table.nativeElement);
+          this.dataTable.DataTable();
+        }, 500);
+
+      })
+    }, 1500);
   }
 }

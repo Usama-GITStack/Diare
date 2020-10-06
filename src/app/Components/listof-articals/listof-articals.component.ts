@@ -88,6 +88,7 @@ export class ListofArticalsComponent implements OnInit {
       ItemCode: this.tabledata[this.message].ItemCode
     }
     this.CR.ArticalsRemove(Co);
+    this.UpdatedAuto();
   }
   openSm(content1, i) {
     this.modalService.open(content1, { size: 'sm' });
@@ -98,5 +99,18 @@ export class ListofArticalsComponent implements OnInit {
     this.modalService.open(content2, { size: 'sm' });
     this.message = i
     console.log(this.message)
+  }
+  UpdatedAuto() {
+    setTimeout(() => {
+      this.CR.getData1().subscribe(data => {
+        this.datageting = data;
+        this.tabledata = this.datageting.msg;
+        setTimeout(() => {
+          this.dataTable = $(this.table.nativeElement);
+          this.dataTable.DataTable();
+        }, 500);
+
+      })
+    }, 1500);
   }
 }

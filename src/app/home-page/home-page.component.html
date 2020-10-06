@@ -1,52 +1,4 @@
-<ul id="menu">
-  <li><a href="#">CLIENTS</a>
-    <ul>
-      <a routerLink="CustomerList">List of clients</a>
-      <a routerLink="RegisterCustomer">New customers</a>
-    </ul>
-  </li>
-  <li><a href="#">ARTICLES</a>
-    <ul>
-      <a routerLink="ListofArticals">List of Articles</a>
-      <a routerLink="AddArticals">New item</a>
-    </ul>
-  </li>
-
-  <li style="padding: 0px 4px;"><a routerLink="/SaleDocuments">SALES DOCUMENTS STOCK</a>
-    <ul>
-      <a routerLink="InvoiceList">List of invoices</a>
-      <a routerLink="NewInvoice">New invoices</a>
-      <a routerLink="ListRules">List of regulations</a>
-      <a routerLink="NewRules">New Rules</a>
-      <a routerLink="SaleHistory">Sales Histroy</a>
-    </ul>
-  </li>
-  <li><a routerLink="StockDocument">STOCK DOCUMENTS</a>
-
-    <ul>
-      <a routerLink="ListOfEntryVouchers">Entry voucher</a>
-      <a routerLink="ListOfExitVouchers">Release voucher</a>
-      <a routerLink="StockMovementList">Movement of Stock</a>
-      <a routerLink="Warehouse">Warehouse</a>
-    </ul>
-  </li>
-  <li><a href="#">EXPENSES</a>
-    <ul>
-      <a href="#">List of Expenses</a>
-      <a href="#">New Expenses</a>
-    </ul>
-  </li>
-  <li style="float: right;"><a href="#">USERS</a>
-    <ul>
-      <a routerLink="UserList">Users List</a>
-      <a routerLink="AddUser">New Users</a>
-      <a routerLink="UserAccess">Access Control</a>
-    </ul>
-  </li>
-</ul>
 <div class="border-color-set page-padding">
-
-
   <section class="header-section">
     <div class="header">
       <h1 class="text-center heading">TABLEAU DE BORD</h1>
@@ -54,16 +6,40 @@
   </section>
   <section class="main">
     <div class="row">
-      <div class="col-md-6">
-        <div class="col-md-8 font-set-label">
-          <label>NUMBER OF CLIENTS: 200</label>
-        </div>
-        <div class="col-md-10 font-set-label">
-          <label>TOTAL AMOUNT OF SALES: 200,530,000 GNF</label>
+      <div class="col-md-3">
+        <div class="card-counter primary">
+          <i class="fa fa-code-fork"></i>
+          <span class="count-numbers">12</span>
+          <span class="count-name">Number of Clients</span>
         </div>
       </div>
-      <div class="col-md-6">
-
+      <div class="col-md-3">
+        <div class="card-counter danger">
+          <i class="fa fa-code-fork"></i>
+          <span class="count-numbers">12</span>
+          <span class="count-name">Monthly Sales</span>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card-counter success">
+          <i class="fa fa-code-fork"></i>
+          <span class="count-numbers">12</span>
+          <span class="count-name">Monthly Expenses</span>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card-counter info">
+          <i class="fa fa-code-fork"></i>
+          <span class="count-numbers">12</span>
+          <span class="count-name">Stock </span>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card-counter warning">
+          <i class="fa fa-code-fork"></i>
+          <span class="count-numbers">12</span>
+          <span class="count-name">Sales Per Products </span>
+        </div>
       </div>
     </div>
     <div class="row">
@@ -94,3 +70,4 @@
     </div>
   </section>
 </div>
+<canvas id="myChart" width="400" height="400"></canvas>

@@ -14,7 +14,7 @@ export class CoustomerRegisterService {
   datageting: any = {}
   constructor(private http: HttpClient) { }
   CoustomerRegister(CR) {
-    this.http.post('http://localhost:3000/RegisterCustomer', CR, {
+    this.http.post('https://diarebackend.herokuapp.com/RegisterCustomer', CR, {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
@@ -26,7 +26,7 @@ export class CoustomerRegisterService {
     })
   }
   AddArticals(AR) {
-    this.http.post('http://localhost:3000/AddArticals', AR, {
+    this.http.post('https://diarebackend.herokuapp.com/AddArticals', AR, {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
@@ -38,7 +38,7 @@ export class CoustomerRegisterService {
     })
   }
   EV(CR) {
-    this.http.post('http://localhost:3000/AddEntryVouchers', CR, {
+    this.http.post('https://diarebackend.herokuapp.com/AddEntryVouchers', CR, {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
@@ -50,7 +50,7 @@ export class CoustomerRegisterService {
     })
   }
   EV1(CR) {
-    this.http.post('http://localhost:3000/AddExitVouchers', CR, {
+    this.http.post('https://diarebackend.herokuapp.com/AddExitVouchers', CR, {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
@@ -62,7 +62,7 @@ export class CoustomerRegisterService {
     })
   }
   Invoice(CR) {
-    this.http.post('http://localhost:3000/NewInvoice', CR, {
+    this.http.post('https://diarebackend.herokuapp.com/NewInvoice', CR, {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
@@ -74,7 +74,7 @@ export class CoustomerRegisterService {
     })
   }
   AddWarehouse(CR) {
-    this.http.post('http://localhost:3000/AddNewWarehouse', CR, {
+    this.http.post('https://diarebackend.herokuapp.com/AddNewWarehouse', CR, {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
@@ -86,7 +86,7 @@ export class CoustomerRegisterService {
     })
   }
   AddNewVouchers(CR) {
-    this.http.post('http://localhost:3000/NewEntryVouchers', CR, {
+    this.http.post('https://diarebackend.herokuapp.com/NewEntryVouchers', CR, {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
@@ -98,7 +98,7 @@ export class CoustomerRegisterService {
     })
   }
   AddExitVouchers(CR) {
-    this.http.post('http://localhost:3000/Newgoodexit', CR, {
+    this.http.post('https://diarebackend.herokuapp.com/Newgoodexit', CR, {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
@@ -110,7 +110,7 @@ export class CoustomerRegisterService {
     })
   }
   AddWarehouseStuff(CR) {
-    this.http.post('http://localhost:3000/Warehouse', CR, {
+    this.http.post('https://diarebackend.herokuapp.com/Warehouse', CR, {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
@@ -122,7 +122,7 @@ export class CoustomerRegisterService {
     })
   }
   UserAdd(CR) {
-    this.http.post('http://localhost:3000/AddUser', CR, {
+    this.http.post('https://diarebackend.herokuapp.com/AddUser', CR, {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
@@ -134,7 +134,7 @@ export class CoustomerRegisterService {
     })
   }
   RuleAdd(CR) {
-    this.http.post('http://localhost:3000/NewRules', CR, {
+    this.http.post('https://diarebackend.herokuapp.com/NewRules', CR, {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
@@ -146,7 +146,7 @@ export class CoustomerRegisterService {
     })
   }
   CheckoutAdd(CR) {
-    this.http.post('http://localhost:3000/NewCheckout', CR, {
+    this.http.post('https://diarebackend.herokuapp.com/NewCheckout', CR, {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
@@ -158,56 +158,56 @@ export class CoustomerRegisterService {
     })
   }
   getData() {
-    return this.http.get('http://localhost:3000/CustomerList');
+    return this.http.get('https://diarebackend.herokuapp.com/CustomerList');
   }
   getData1() {
-    return this.http.get('http://localhost:3000/ListofArticals');
+    return this.http.get('https://diarebackend.herokuapp.com/ListofArticals');
   }
   getData2() {
-    return this.http.get('http://localhost:3000/ListOfEntryVouchers');
+    return this.http.get('https://diarebackend.herokuapp.com/ListOfEntryVouchers');
   }
   getData3() {
-    return this.http.get('http://localhost:3000/ListOfExitVouchers');
+    return this.http.get('https://diarebackend.herokuapp.com/ListOfExitVouchers');
   }
   getData4() {
-    return this.http.get('http://localhost:3000/ListofWarehouse');
+    return this.http.get('https://diarebackend.herokuapp.com/ListofWarehouse');
   }
   getData5() {
-    return this.http.get('http://localhost:3000/InvoiceList');
+    return this.http.get('https://diarebackend.herokuapp.com/InvoiceList');
   }
   getData6(Finder) {
-    return this.http.get('http://localhost:3000/NewEntryVouchers1', {
+    return this.http.get('https://diarebackend.herokuapp.com/NewEntryVouchers1', {
       headers: {
         auth: Finder
       }
     });
   }
   getData7(Finder) {
-    return this.http.get('http://localhost:3000/Newgoodexit1', {
+    return this.http.get('https://diarebackend.herokuapp.com/Newgoodexit1', {
       headers: {
         auth: Finder
       }
     });
   }
   getData8(Finder) {
-    return this.http.get('http://localhost:3000/Warehouse1', {
+    return this.http.get('https://diarebackend.herokuapp.com/Warehouse1', {
       headers: {
         auth: Finder
       }
     });
   }
   getData9() {
-    return this.http.get('http://localhost:3000/UserList');
+    return this.http.get('https://diarebackend.herokuapp.com/UserList');
   }
   getData10() {
-    return this.http.get('http://localhost:3000/ListRules');
+    return this.http.get('https://diarebackend.herokuapp.com/ListRules');
   }
   getData11() {
-    return this.http.get('http://localhost:3000/ListCheckout');
+    return this.http.get('https://diarebackend.herokuapp.com/ListCheckout');
   }
   //Updation
   CustomerListUpdate(CR) {
-    this.http.post('http://localhost:3000/CustomerListUpdate', CR, {
+    this.http.post('https://diarebackend.herokuapp.com/CustomerListUpdate', CR, {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
@@ -219,7 +219,7 @@ export class CoustomerRegisterService {
     })
   }
   UpdateArticals(CR) {
-    this.http.post('http://localhost:3000/ListofArticalsUpdate', CR, {
+    this.http.post('https://diarebackend.herokuapp.com/ListofArticalsUpdate', CR, {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
@@ -231,7 +231,7 @@ export class CoustomerRegisterService {
     })
   }
   UpdateEV(CR) {
-    this.http.post('http://localhost:3000/ListOfEntryVouchersUpdate', CR, {
+    this.http.post('https://diarebackend.herokuapp.com/ListOfEntryVouchersUpdate', CR, {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
@@ -243,7 +243,7 @@ export class CoustomerRegisterService {
     })
   }
   UpdateEV1(CR) {
-    this.http.post('http://localhost:3000/ListOfExitVouchersUpdate', CR, {
+    this.http.post('https://diarebackend.herokuapp.com/ListOfExitVouchersUpdate', CR, {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
@@ -255,7 +255,7 @@ export class CoustomerRegisterService {
     })
   }
   UpdateWarehouse(CR) {
-    this.http.post('http://localhost:3000/ListofWarehouseUpdate', CR, {
+    this.http.post('https://diarebackend.herokuapp.com/ListofWarehouseUpdate', CR, {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
@@ -267,7 +267,7 @@ export class CoustomerRegisterService {
     })
   }
   UpdateInvoice(CR) {
-    this.http.post('http://localhost:3000/InvoiceListUpdate', CR, {
+    this.http.post('https://diarebackend.herokuapp.com/InvoiceListUpdate', CR, {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
@@ -279,7 +279,7 @@ export class CoustomerRegisterService {
     })
   }
   UpdateRules(CR) {
-    this.http.post('http://localhost:3000/ListRulesUpdate', CR, {
+    this.http.post('https://diarebackend.herokuapp.com/ListRulesUpdate', CR, {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
@@ -291,7 +291,7 @@ export class CoustomerRegisterService {
     })
   }
   CheckoutRules(CR) {
-    this.http.post('http://localhost:3000/ListCheckoutUpdate', CR, {
+    this.http.post('https://diarebackend.herokuapp.com/ListCheckoutUpdate', CR, {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
@@ -303,7 +303,7 @@ export class CoustomerRegisterService {
     })
   }
   UserUpdate(CR) {
-    this.http.post('http://localhost:3000/UserListUpdate', CR, {
+    this.http.post('https://diarebackend.herokuapp.com/UserListUpdate', CR, {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
@@ -316,7 +316,7 @@ export class CoustomerRegisterService {
   }
   //Remove
   CustomerListRemove(CR) {
-    this.http.post('http://localhost:3000/CustomerListRemove', CR, {
+    this.http.post('https://diarebackend.herokuapp.com/CustomerListRemove', CR, {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
@@ -328,7 +328,7 @@ export class CoustomerRegisterService {
     })
   }
   ArticalsRemove(CR) {
-    this.http.post('http://localhost:3000/ListofArticalsRemove', CR, {
+    this.http.post('https://diarebackend.herokuapp.com/ListofArticalsRemove', CR, {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
@@ -340,7 +340,7 @@ export class CoustomerRegisterService {
     })
   }
   EVRemove(CR) {
-    this.http.post('http://localhost:3000/ListOfEntryVouchersRemove', CR, {
+    this.http.post('https://diarebackend.herokuapp.com/ListOfEntryVouchersRemove', CR, {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
@@ -352,7 +352,7 @@ export class CoustomerRegisterService {
     })
   }
   EV1Remove(CR) {
-    this.http.post('http://localhost:3000/ListOfExitVouchersRemove', CR, {
+    this.http.post('https://diarebackend.herokuapp.com/ListOfExitVouchersRemove', CR, {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
@@ -364,7 +364,7 @@ export class CoustomerRegisterService {
     })
   }
   WarehouseRemove(CR) {
-    this.http.post('http://localhost:3000/ListofWarehouseRemove', CR, {
+    this.http.post('https://diarebackend.herokuapp.com/ListofWarehouseRemove', CR, {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
@@ -376,7 +376,7 @@ export class CoustomerRegisterService {
     })
   }
   InvoiceRemove(CR) {
-    this.http.post('http://localhost:3000/InvoiceListRemove', CR, {
+    this.http.post('https://diarebackend.herokuapp.com/InvoiceListRemove', CR, {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
@@ -388,7 +388,7 @@ export class CoustomerRegisterService {
     })
   }
   RulesRemove(CR) {
-    this.http.post('http://localhost:3000/ListRulesRemove', CR, {
+    this.http.post('https://diarebackend.herokuapp.com/ListRulesRemove', CR, {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
@@ -400,7 +400,7 @@ export class CoustomerRegisterService {
     })
   }
   CheckOutRemove(CR) {
-    this.http.post('http://localhost:3000/ListCheckoutRemove', CR, {
+    this.http.post('https://diarebackend.herokuapp.com/ListCheckoutRemove', CR, {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
@@ -412,7 +412,7 @@ export class CoustomerRegisterService {
     })
   }
   UserListRemove(CR) {
-    this.http.post('http://localhost:3000/UserListRemove', CR, {
+    this.http.post('https://diarebackend.herokuapp.com/UserListRemove', CR, {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {

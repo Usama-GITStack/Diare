@@ -45,7 +45,7 @@ export class ListRegulationComponent implements OnInit {
     });
   }
   constructor(private CR: CoustomerRegisterService, public config: NgbModalConfig, public modalService: NgbModal) { }
-  openXl(content, index) {
+  openXl(content) {
     this.modalService.open(content, { size: 'xl' });
     this.RC = this.tabledata[this.message].RC;
     this.Date = this.tabledata[this.message].Date;
@@ -79,11 +79,12 @@ export class ListRegulationComponent implements OnInit {
     console.log(Co);
     this.CR.UpdateRules(Co);
   }
-  Delete(index) {
+  Delete() {
     const Co = {
       RC: this.tabledata[this.message].RC,
     }
     this.CR.RulesRemove(Co);
+    this.UpdatedAuto();
   }
   openSm(content1, i) {
     this.modalService.open(content1, { size: 'sm' });
@@ -94,5 +95,18 @@ export class ListRegulationComponent implements OnInit {
     this.modalService.open(content2, { size: 'sm' });
     this.message = i
     console.log(this.message)
+  }
+  UpdatedAuto() {
+    setTimeout(() => {
+      this.CR.getData10().subscribe(data => {
+        this.datageting = data;
+        this.tabledata = this.datageting.msg;
+        setTimeout(() => {
+          this.dataTable = $(this.table.nativeElement);
+          this.dataTable.DataTable();
+        }, 500);
+
+      })
+    }, 1500);
   }
 }

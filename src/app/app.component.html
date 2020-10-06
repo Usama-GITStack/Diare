@@ -1,1 +1,47 @@
+<ul id="menu">
+  <li><a href="#">CLIENTS</a>
+    <ul>
+      <a routerLink="CustomerList">List of clients</a>
+      <a routerLink="RegisterCustomer">New customers</a>
+    </ul>
+  </li>
+  <li><a href="#">ARTICLES</a>
+    <ul>
+      <a routerLink="ListofArticals">List of Articles</a>
+      <a routerLink="AddArticals">New item</a>
+    </ul>
+  </li>
+
+  <li style="padding: 0px 4px;"><a routerLink="/SaleDocuments">SALES DOCUMENTS STOCK</a>
+    <ul>
+      <a routerLink="InvoiceList">List of invoices</a>
+      <a routerLink="NewInvoice">New invoices</a>
+      <a routerLink="ListRules">List of Payments</a>
+      <a routerLink="NewRules">New Rules</a>
+      <a routerLink="SaleHistory">Sales Histroy</a>
+    </ul>
+  </li>
+  <li><a routerLink="StockDocument">STOCK DOCUMENTS</a>
+
+    <ul>
+      <a routerLink="ListOfEntryVouchers">Entry voucher</a>
+      <a routerLink="ListOfExitVouchers">Release voucher</a>
+      <a routerLink="StockMovementList">Movement of Stock</a>
+      <a routerLink="Warehouse">Warehouse</a>
+    </ul>
+  </li>
+  <li><a href="#">EXPENSES</a>
+    <ul>
+      <a href="#">List of Expenses</a>
+      <a href="#">New Expenses</a>
+    </ul>
+  </li>
+  <li style="float: right;"><a href="#">USERS</a>
+    <ul>
+      <a routerLink="UserList">Users List</a>
+      <a routerLink="AddUser">New Users</a>
+      <a routerLink="UserAccess">Access Control</a>
+    </ul>
+  </li>
+</ul>
 <router-outlet></router-outlet>

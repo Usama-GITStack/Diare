@@ -72,11 +72,12 @@ export class ListofWarehouseComponent implements OnInit {
     console.log(Co);
     this.CR.UpdateWarehouse(Co);
   }
-  Delete(index) {
+  Delete() {
     const Co = {
       WAREHOUSECODE: this.tabledata[this.message].WAREHOUSECODE
     }
     this.CR.WarehouseRemove(Co);
+    this.UpdatedAuto();
   }
   openSm(content1, i) {
     this.modalService.open(content1, { size: 'sm' });
@@ -87,5 +88,13 @@ export class ListofWarehouseComponent implements OnInit {
     this.modalService.open(content2, { size: 'sm' });
     this.message = i
     console.log(this.message)
+  }
+  UpdatedAuto() {
+    setTimeout(() => {
+      this.CR.getData4().subscribe(data => {
+        this.datageting = data;
+        this.tabledata = this.datageting.msg;
+      })
+    }, 1500);
   }
 }

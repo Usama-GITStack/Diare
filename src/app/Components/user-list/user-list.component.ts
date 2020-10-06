@@ -61,6 +61,7 @@ export class UserListComponent implements OnInit {
       UserCOde: this.tabledata[index].UserCOde,
     }
     this.CR.UserListRemove(Co);
+
   }
   onCourseSend() {
     const Co = {
@@ -75,5 +76,12 @@ export class UserListComponent implements OnInit {
     this.CR.UserUpdate(Co);
   }
 
-
+  UpdatedAuto() {
+    setTimeout(() => {
+      this.CR.getData9().subscribe(data => {
+        this.datageting = data;
+        this.tabledata = this.datageting.msg;
+      })
+    }, 1500);
+  }
 }

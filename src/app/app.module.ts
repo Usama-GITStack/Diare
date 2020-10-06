@@ -42,6 +42,7 @@ import { NewCheckoutComponent } from './Components/new-checkout/new-checkout.com
 import { CheckoutListComponent } from './Components/checkout-list/checkout-list.component';
 import { SaleHistoryComponent } from './Components/sale-history/sale-history.component';
 import { RECEIPTComponent } from './Components/receipt/receipt.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 @NgModule({
   declarations: [
     AppComponent,
@@ -80,6 +81,7 @@ import { RECEIPTComponent } from './Components/receipt/receipt.component';
 
   ],
   imports: [
+    MatSnackBarModule,
     MatDatepickerModule,
     FormsModule,
     HttpClientModule,

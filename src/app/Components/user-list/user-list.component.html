@@ -19,8 +19,10 @@
         <td>{{tb.Name}}</td>
         <td>{{tb.Phone}}</td>
         <td>{{tb.Function}}</td>
-        <td> <button class="btn btn-success buttons-style  w-100 " (click)="openXl(content ,i)">Edit</button>
-          <button class="btn btn-success buttons-style  w-100 " (click)=Delete(i)>Remove</button></td>
+        <td> <button class="btn btn-success buttons-style  w-50 " (click)="openXl(content ,i)"><i class="fa fa-pencil"
+              aria-hidden="true"></i></button>
+          <button class="btn btn-success buttons-style  w-50 " (click)=Delete(i)><i class="fa fa-trash-o"
+              aria-hidden="true"></i></button></td>
       </tr>
     </tbody>
   </table>

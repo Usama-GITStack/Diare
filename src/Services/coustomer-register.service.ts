@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -12,16 +14,22 @@ export class CoustomerRegisterService {
   }
 
   datageting: any = {}
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private _snackBar: MatSnackBar) { }
   CoustomerRegister(CR) {
     this.http.post('https://diarebackend.herokuapp.com/RegisterCustomer', CR, {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
-        window.alert(this.datageting.success);
+        this._snackBar.open(this.datageting.success, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbar']
+        });
       }
       else {
-        window.alert(this.datageting.fail);
+        this._snackBar.open(this.datageting.fail, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbarError']
+        });
       }
     })
   }
@@ -30,22 +38,33 @@ export class CoustomerRegisterService {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
-        window.alert(this.datageting.success);
+        this._snackBar.open(this.datageting.success, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbar']
+        });
       }
       else {
-        window.alert(this.datageting.fail);
+        this._snackBar.open(this.datageting.fail, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbarError']
+        });
       }
     })
   }
   EV(CR) {
     this.http.post('https://diarebackend.herokuapp.com/AddEntryVouchers', CR, {
     }).subscribe(data => {
-      this.datageting = data
       if (this.datageting.success) {
-        window.alert(this.datageting.success);
+        this._snackBar.open(this.datageting.success, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbar']
+        });
       }
       else {
-        window.alert(this.datageting.fail);
+        this._snackBar.open(this.datageting.fail, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbarError']
+        });
       }
     })
   }
@@ -54,10 +73,16 @@ export class CoustomerRegisterService {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
-        window.alert(this.datageting.success);
+        this._snackBar.open(this.datageting.success, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbar']
+        });
       }
       else {
-        window.alert(this.datageting.fail);
+        this._snackBar.open(this.datageting.fail, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbarError']
+        });
       }
     })
   }
@@ -66,10 +91,16 @@ export class CoustomerRegisterService {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
-        window.alert(this.datageting.success);
+        this._snackBar.open(this.datageting.success, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbar']
+        });
       }
       else {
-        window.alert(this.datageting.fail);
+        this._snackBar.open(this.datageting.fail, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbarError']
+        });
       }
     })
   }
@@ -78,10 +109,16 @@ export class CoustomerRegisterService {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
-        window.alert(this.datageting.success);
+        this._snackBar.open(this.datageting.success, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbar']
+        });
       }
       else {
-        window.alert(this.datageting.fail);
+        this._snackBar.open(this.datageting.fail, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbarError']
+        });
       }
     })
   }
@@ -90,10 +127,16 @@ export class CoustomerRegisterService {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
-        window.alert(this.datageting.success);
+        this._snackBar.open(this.datageting.success, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbar']
+        });
       }
       else {
-        window.alert(this.datageting.fail);
+        this._snackBar.open(this.datageting.fail, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbarError']
+        });
       }
     })
   }
@@ -102,10 +145,16 @@ export class CoustomerRegisterService {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
-        window.alert(this.datageting.success);
+        this._snackBar.open(this.datageting.success, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbar']
+        });
       }
       else {
-        window.alert(this.datageting.fail);
+        this._snackBar.open(this.datageting.fail, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbarError']
+        });
       }
     })
   }
@@ -114,10 +163,16 @@ export class CoustomerRegisterService {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
-        window.alert(this.datageting.success);
+        this._snackBar.open(this.datageting.success, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbar']
+        });
       }
       else {
-        window.alert(this.datageting.fail);
+        this._snackBar.open(this.datageting.fail, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbarError']
+        });
       }
     })
   }
@@ -126,10 +181,16 @@ export class CoustomerRegisterService {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
-        window.alert(this.datageting.success);
+        this._snackBar.open(this.datageting.success, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbar']
+        });
       }
       else {
-        window.alert(this.datageting.fail);
+        this._snackBar.open(this.datageting.fail, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbarError']
+        });
       }
     })
   }
@@ -138,22 +199,33 @@ export class CoustomerRegisterService {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
-        window.alert(this.datageting.success);
+        this._snackBar.open(this.datageting.success, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbar']
+        });
       }
       else {
-        window.alert(this.datageting.fail);
+        this._snackBar.open(this.datageting.fail, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbarError']
+        });
       }
     })
   }
   CheckoutAdd(CR) {
     this.http.post('https://diarebackend.herokuapp.com/NewCheckout', CR, {
     }).subscribe(data => {
-      this.datageting = data
       if (this.datageting.success) {
-        window.alert(this.datageting.success);
+        this._snackBar.open(this.datageting.success, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbar']
+        });
       }
       else {
-        window.alert(this.datageting.fail);
+        this._snackBar.open(this.datageting.fail, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbarError']
+        });
       }
     })
   }
@@ -211,22 +283,33 @@ export class CoustomerRegisterService {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
-        window.alert(this.datageting.success);
+        this._snackBar.open(this.datageting.success, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbar']
+        });
       }
       else {
-        window.alert(this.datageting.fail);
+        this._snackBar.open(this.datageting.fail, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbarError']
+        });
       }
     })
   }
   UpdateArticals(CR) {
     this.http.post('https://diarebackend.herokuapp.com/ListofArticalsUpdate', CR, {
     }).subscribe(data => {
-      this.datageting = data
       if (this.datageting.success) {
-        window.alert(this.datageting.success);
+        this._snackBar.open(this.datageting.success, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbar']
+        });
       }
       else {
-        window.alert(this.datageting.fail);
+        this._snackBar.open(this.datageting.fail, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbarError']
+        });
       }
     })
   }
@@ -235,10 +318,16 @@ export class CoustomerRegisterService {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
-        window.alert(this.datageting.success);
+        this._snackBar.open(this.datageting.success, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbar']
+        });
       }
       else {
-        window.alert(this.datageting.fail);
+        this._snackBar.open(this.datageting.fail, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbarError']
+        });
       }
     })
   }
@@ -247,10 +336,16 @@ export class CoustomerRegisterService {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
-        window.alert(this.datageting.success);
+        this._snackBar.open(this.datageting.success, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbar']
+        });
       }
       else {
-        window.alert(this.datageting.fail);
+        this._snackBar.open(this.datageting.fail, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbarError']
+        });
       }
     })
   }
@@ -259,10 +354,16 @@ export class CoustomerRegisterService {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
-        window.alert(this.datageting.success);
+        this._snackBar.open(this.datageting.success, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbar']
+        });
       }
       else {
-        window.alert(this.datageting.fail);
+        this._snackBar.open(this.datageting.fail, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbarError']
+        });
       }
     })
   }
@@ -271,10 +372,16 @@ export class CoustomerRegisterService {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
-        window.alert(this.datageting.success);
+        this._snackBar.open(this.datageting.success, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbar']
+        });
       }
       else {
-        window.alert(this.datageting.fail);
+        this._snackBar.open(this.datageting.fail, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbarError']
+        });
       }
     })
   }
@@ -283,10 +390,16 @@ export class CoustomerRegisterService {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
-        window.alert(this.datageting.success);
+        this._snackBar.open(this.datageting.success, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbar']
+        });
       }
       else {
-        window.alert(this.datageting.fail);
+        this._snackBar.open(this.datageting.fail, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbarError']
+        });
       }
     })
   }
@@ -295,10 +408,16 @@ export class CoustomerRegisterService {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
-        window.alert(this.datageting.success);
+        this._snackBar.open(this.datageting.success, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbar']
+        });
       }
       else {
-        window.alert(this.datageting.fail);
+        this._snackBar.open(this.datageting.fail, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbarError']
+        });
       }
     })
   }
@@ -307,10 +426,16 @@ export class CoustomerRegisterService {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
-        window.alert(this.datageting.success);
+        this._snackBar.open(this.datageting.success, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbar']
+        });
       }
       else {
-        window.alert(this.datageting.fail);
+        this._snackBar.open(this.datageting.fail, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbarError']
+        });
       }
     })
   }
@@ -320,10 +445,16 @@ export class CoustomerRegisterService {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
-        window.alert(this.datageting.success);
+        this._snackBar.open(this.datageting.msg, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbar']
+        });
       }
       else {
-        window.alert(this.datageting.fail);
+        this._snackBar.open(this.datageting.fail, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbarError']
+        });
       }
     })
   }
@@ -332,10 +463,16 @@ export class CoustomerRegisterService {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
-        window.alert(this.datageting.success);
+        this._snackBar.open(this.datageting.msg, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbar']
+        });
       }
       else {
-        window.alert(this.datageting.fail);
+        this._snackBar.open(this.datageting.fail, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbarError']
+        });
       }
     })
   }
@@ -344,10 +481,16 @@ export class CoustomerRegisterService {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
-        window.alert(this.datageting.success);
+        this._snackBar.open(this.datageting.msg, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbar']
+        });
       }
       else {
-        window.alert(this.datageting.fail);
+        this._snackBar.open(this.datageting.fail, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbarError']
+        });
       }
     })
   }
@@ -356,22 +499,33 @@ export class CoustomerRegisterService {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
-        window.alert(this.datageting.success);
+        this._snackBar.open(this.datageting.msg, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbar']
+        });
       }
       else {
-        window.alert(this.datageting.fail);
+        this._snackBar.open(this.datageting.fail, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbarError']
+        });
       }
     })
   }
   WarehouseRemove(CR) {
     this.http.post('https://diarebackend.herokuapp.com/ListofWarehouseRemove', CR, {
     }).subscribe(data => {
-      this.datageting = data
       if (this.datageting.success) {
-        window.alert(this.datageting.success);
+        this._snackBar.open(this.datageting.msg, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbar']
+        });
       }
       else {
-        window.alert(this.datageting.fail);
+        this._snackBar.open(this.datageting.msg, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbarError']
+        });
       }
     })
   }
@@ -380,10 +534,16 @@ export class CoustomerRegisterService {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
-        window.alert(this.datageting.success);
+        this._snackBar.open(this.datageting.msg, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbar']
+        });
       }
       else {
-        window.alert(this.datageting.fail);
+        this._snackBar.open(this.datageting.msg, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbarError']
+        });
       }
     })
   }
@@ -392,10 +552,16 @@ export class CoustomerRegisterService {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
-        window.alert(this.datageting.success);
+        this._snackBar.open(this.datageting.msg, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbar']
+        });
       }
       else {
-        window.alert(this.datageting.fail);
+        this._snackBar.open(this.datageting.msg, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbarError']
+        });
       }
     })
   }
@@ -404,10 +570,16 @@ export class CoustomerRegisterService {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
-        window.alert(this.datageting.success);
+        this._snackBar.open(this.datageting.msg, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbar']
+        });
       }
       else {
-        window.alert(this.datageting.fail);
+        this._snackBar.open(this.datageting.msg, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbarError']
+        });
       }
     })
   }
@@ -416,10 +588,16 @@ export class CoustomerRegisterService {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
-        window.alert(this.datageting.success);
+        this._snackBar.open(this.datageting.msg, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbar']
+        });
       }
       else {
-        window.alert(this.datageting.fail);
+        this._snackBar.open(this.datageting.msg, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbarError']
+        });
       }
     })
   }

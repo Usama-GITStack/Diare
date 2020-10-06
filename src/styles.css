@@ -15,6 +15,35 @@ body {
   color: white;
 }
 
+.blue-snackbar {
+  background: #d4edda !important;
+  color: #259940;
+}
+
+
+.blue-snackbar button {
+  color: #259940;
+}
+
+.blue-snackbarError {
+  background: #f8d7da !important;
+  color: #bb2b3a;
+}
+
+.blue-snackbarError button {
+  color: #bb2b3a;
+}
+
+.blue-snackbarCLO {
+  background: #cce5ff !important;
+  color: #609ee0;
+}
+
+
+.blue-snackbarCLO button {
+  color: #609ee0;
+}
+
 html,
 body {
   height: 100%;

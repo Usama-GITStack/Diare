@@ -44,16 +44,18 @@
     </thead>
     <tbody>
       <tr *ngFor="let tb of tabledata | filter:searchText; let i=index">
-        <td>{{tb.CustomerCode}}</td>
+        <td><a (click)=Transfer(i)>{{tb.CustomerCode}}</a></td>
         <td>{{tb.LastName}}</td>
         <td>{{tb.FirstName}}</td>
         <td>{{tb.Phone}}</td>
         <td>{{tb.City}}</td>
         <td>{{tb.MadinaAddress}}</td>
         <td>{{tb.Category}}</td>
-        <td>{{tb.Civility}}</td>
-        <td> <button class="btn btn-success buttons-style  w-100 " (click)="openSm(content1,i);">Edit</button>
-          <button class="btn btn-success buttons-style  w-100 " (click)=openSm2(content2,i)>Remove</button></td>
+        <td>1000</td>
+        <td> <button class="btn btn-success buttons-style  w-50 " (click)="openSm(content1,i);"><i class="fa fa-pencil"
+              aria-hidden="true"></i></button>
+          <button class="btn btn-success buttons-style  w-50 " (click)=openSm2(content2,i)><i class="fa fa-trash-o"
+              aria-hidden="true"></i></button></td>
       </tr>
     </tbody>
   </table>

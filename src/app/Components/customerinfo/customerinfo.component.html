@@ -14,17 +14,7 @@
           <label style="margin: auto;">Coded:</label>
         </div>
         <div class="col-md-6 set-border ">
-          <label style="margin: auto;">Data</label>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-2 margin-set">
-      <div class="row">
-        <div class="col-md-6 home-page-color-bg1">
-          <label style="margin: auto;">Last Name:</label>
-        </div>
-        <div class="col-md-6 set-border ">
-          <label style="margin: auto;">Data</label>
+          <label style="margin: auto;">{{Code}}</label>
         </div>
       </div>
     </div>
@@ -34,7 +24,17 @@
           <label style="margin: auto;">First Name:</label>
         </div>
         <div class="col-md-6 set-border ">
-          <label style="margin: auto;">Data</label>
+          <label style="margin: auto;">{{F}}</label>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2 margin-set">
+      <div class="row">
+        <div class="col-md-6 home-page-color-bg1">
+          <label style="margin: auto;">Last Name:</label>
+        </div>
+        <div class="col-md-6 set-border ">
+          <label style="margin: auto;">{{L}}</label>
         </div>
       </div>
     </div>
@@ -44,7 +44,7 @@
           <label style="margin: auto;">Phone:</label>
         </div>
         <div class="col-md-6 set-border ">
-          <label style="margin: auto;">Data</label>
+          <label style="margin: auto;">{{P}}</label>
         </div>
       </div>
     </div>
@@ -54,7 +54,7 @@
           <label style="margin: auto;">Category:</label>
         </div>
         <div class="col-md-6 set-border ">
-          <label style="margin: auto;">Data</label>
+          <label style="margin: auto;">{{C}}</label>
         </div>
       </div>
     </div>
@@ -73,7 +73,7 @@
           <label style="margin: auto;">Initial balance:</label>
         </div>
         <div class="col-md-6 set-border ">
-          <label style="margin: auto;">Data</label>
+          <label style="margin: auto;">145,000,000 Fg</label>
         </div>
       </div>
     </div>
@@ -83,7 +83,7 @@
           <label style="margin: auto;">Total Billing:</label>
         </div>
         <div class="col-md-6 set-border ">
-          <label style="margin: auto;">Data</label>
+          <label style="margin: auto;">350,000,000 FG</label>
         </div>
       </div>
     </div>
@@ -93,19 +93,19 @@
           <label style="margin: auto;">Total payment:</label>
         </div>
         <div class="col-md-6 set-border ">
-          <label style="margin: auto;">Data</label>
+          <label style="margin: auto;">100,000,000 FG</label>
         </div>
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col-md-2 set-actionbutton">
-      <button class="btn btn-success buttons-style  w-100 ">Actions</button>
+      <button class="btn btn-success buttons-style  w-100 " (click)=exportexcel()>Actions</button>
     </div>
   </div>
 </section>
 <section class="section-space">
-  <table id="customers" #dataTable class="display table table_size table_background" style="width:100%">
+  <table id="excel-table" #dataTable class="display table table_size table_background" style="width:100%">
     <thead>
       <tr class="home-page-color-bg1">
         <th scope="col">DATED</th>
@@ -116,10 +116,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let tb of tabledata">
-        <td>{{tb.Teachers}}</td>
-        <td>{{tb.Subjects}}</td>
-        <td>{{tb.TAI}}</td>
+      <tr *ngFor="let tb of tabledata1">
+        <td>{{tb.DATED}}</td>
+        <td><a routerLink="/RECEIPT">{{tb.DOCUMENT}}</a></td>
+        <td>{{tb.Total}}</td>
+        <td>{{tb.Totalp}}</td>
+        <td>{{tb.GNF}}</td>
       </tr>
     </tbody>
   </table>

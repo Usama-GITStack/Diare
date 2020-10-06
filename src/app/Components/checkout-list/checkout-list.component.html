@@ -58,8 +58,10 @@
         <td>{{tb.Amount}}</td>
         <td>{{tb.EXPENDITURE}}</td>
         <td>{{tb.CM}}</td>
-        <td> <button class="btn btn-success buttons-style  w-100 " (click)="openSm(content1,i);">Edit</button>
-          <button class="btn btn-success buttons-style  w-100 " (click)=openSm2(content2,i)>Remove</button></td>
+        <td> <button class="btn btn-success buttons-style  w-50 " (click)="openSm(content1,i);"><i class="fa fa-pencil"
+              aria-hidden="true"></i></button>
+          <button class="btn btn-success buttons-style  w-50 " (click)=openSm2(content2,i)><i class="fa fa-trash-o"
+              aria-hidden="true"></i></button></td>
       </tr>
     </tbody>
   </table>
@@ -168,7 +170,7 @@
                 <button type="submit" class="btn btn-success buttons-style  w-100 " (click)=UpdatedAuto()>Save</button>
               </div>
               <div class="col-md-6">
-                <button class="btn btn-success buttons-style  w-100 ">CANCEL</button>
+                <button class="btn btn-success buttons-style  w-100 " type="reset">CANCEL</button>
               </div>
             </div>
           </div>

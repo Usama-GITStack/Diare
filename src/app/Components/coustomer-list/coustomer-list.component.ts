@@ -4,6 +4,7 @@ import * as XLSX from 'xlsx';
 import { jsPDF } from "jspdf";
 import html2canvas from 'html2canvas';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Router, Routes } from '@angular/router';
 @Component({
   selector: 'app-coustomer-list',
   templateUrl: './coustomer-list.component.html',
@@ -11,7 +12,7 @@ import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class CoustomerListComponent implements OnInit {
 
-  constructor(private CR: CoustomerRegisterService, public config: NgbModalConfig, public modalService: NgbModal) { }
+  constructor(private CR: CoustomerRegisterService, private router: Router, public config: NgbModalConfig, public modalService: NgbModal) { }
   @ViewChild('dataTable', { static: true }) table;
   datageting: any = {};
   tabledata = [];
@@ -39,7 +40,7 @@ export class CoustomerListComponent implements OnInit {
     this.SavePDF();
   }
   public SavePDF() {
-    let element = document.getElementById("PDF")
+    let element = document.getElementById("excel-table")
     html2canvas(element).then((canvas) => {
       var imdData = canvas.toDataURL('image/png')
       var doc = new jsPDF()
@@ -114,6 +115,10 @@ export class CoustomerListComponent implements OnInit {
 
       })
     }, 1500);
+  }
+  Transfer(index) {
+    this.CR.changetMessage(index);
+    this.router.navigateByUrl('/CustomerInfo');
   }
 }
 

@@ -36,7 +36,7 @@ export class InvoiceListComponent implements OnInit {
     this.SavePDF();
   }
   public SavePDF() {
-    let element = document.getElementById("PDF")
+    let element = document.getElementById("excel-table")
     html2canvas(element).then((canvas) => {
       var imdData = canvas.toDataURL('image/png')
       var doc = new jsPDF()

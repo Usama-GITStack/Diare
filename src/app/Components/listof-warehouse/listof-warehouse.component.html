@@ -21,8 +21,10 @@
         <td>{{tb.ADDRESS}}</td>
         <td>{{tb.NAMEOFMANAGER}}</td>
         <td>{{tb.PHONE}}</td>
-        <td> <button class="btn btn-success buttons-style  w-100 " (click)="openSm(content1,i);">Edit</button>
-          <button class="btn btn-success buttons-style  w-100 " (click)=openSm2(content2,i)>Remove</button></td>
+        <td> <button class="btn btn-success buttons-style  w-50 " (click)="openSm(content1,i);"><i class="fa fa-pencil"
+              aria-hidden="true"></i></button>
+          <button class="btn btn-success buttons-style  w-50 " (click)=openSm2(content2,i)><i class="fa fa-trash-o"
+              aria-hidden="true"></i></button></td>
       </tr>
     </tbody>
   </table>

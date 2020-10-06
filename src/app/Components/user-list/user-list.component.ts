@@ -32,7 +32,7 @@ export class UserListComponent implements OnInit {
     this.SavePDF();
   }
   public SavePDF() {
-    let element = document.getElementById("PDF")
+    let element = document.getElementById("excel-table")
     html2canvas(element).then((canvas) => {
       var imdData = canvas.toDataURL('image/png')
       var doc = new jsPDF()
@@ -60,8 +60,14 @@ export class UserListComponent implements OnInit {
     const Co = {
       UserCOde: this.tabledata[index].UserCOde,
     }
-    this.CR.UserListRemove(Co);
 
+    this.CR.UserListRemove(Co);
+    setTimeout(() => {
+      this.CR.getData9().subscribe(data => {
+        this.datageting = data;
+        this.tabledata = this.datageting.msg;
+      })
+    }, 1500);
   }
   onCourseSend() {
     const Co = {

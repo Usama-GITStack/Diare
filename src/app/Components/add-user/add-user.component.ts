@@ -29,7 +29,10 @@ export class AddUserComponent implements OnInit {
     }
     console.log(Co);
     this.CR.UserAdd(Co);
-    this.router.navigateByUrl('/AddUser');
+    setTimeout(() => {
+      this.router.navigateByUrl('/AddUser');
+    }, 2000);
+
   }
 
 }

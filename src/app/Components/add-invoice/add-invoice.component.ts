@@ -25,8 +25,10 @@ export class AddInvoiceComponent implements OnInit {
     }
     console.log(Co);
     this.CR.Invoice(Co);
+    setTimeout(() => {
+      this.router.navigateByUrl('/InvoiceList');
+    }, 2000);
 
-    this.router.navigateByUrl('/InvoiceList');
   }
   ngOnInit() {
   }

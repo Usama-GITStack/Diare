@@ -12,10 +12,13 @@ export class WarehouseComponent implements OnInit {
   constructor(public config: NgbModalConfig, public modalService: NgbModal, private CR: CoustomerRegisterService) { }
   message: any;
   datageting: any = {};
+  datageting1: any = {};
   dataTable: any;
   tabledata = [
   ];
   tabledata1 = [];
+  tabledata2 = [];
+  tabledata3 = [];
   getdata: any;
   getdata1: any;
   WAREHOUSECODE: any;
@@ -27,7 +30,12 @@ export class WarehouseComponent implements OnInit {
   QUANTITYINSTOCK: String;
   UNITS: String;
   random: any;
+  DataQuiz: any;
   ngOnInit() {
+    this.CR.getData1().subscribe(data => {
+      this.datageting1 = data;
+      this.tabledata2 = this.datageting1.msg;
+    });
     this.CR.currentMessage.subscribe(message => {
       this.message = message
       console.log(this.message)
@@ -46,12 +54,19 @@ export class WarehouseComponent implements OnInit {
       this.CR.getData8(this.tabledata[this.message].WAREHOUSECODE).subscribe(data => {
         this.datageting = data;
         this.tabledata1 = this.datageting.msg;
-        setTimeout(() => {
-          this.dataTable = $(this.table.nativeElement);
-          this.dataTable.DataTable();
-        }, 500);
       })
+      for (var i = 0; i < this.tabledata2.length; i++) {
+        if (this.tabledata[this.message].NAMEOFWAREHOUSE == this.tabledata2[i].Warehouse) {
+          console.log("Here")
+          this.tabledata3[i] = this.tabledata2[i];
+        }
+      }
+      let arr = [];
+      arr = Object.keys(this.tabledata3).map(i => this.tabledata3[i])
+      console.log(arr);
+      this.DataQuiz = arr;
     }, 1000);
+
   }
   openXl(content) {
     this.modalService.open(content, { size: 'xl' });

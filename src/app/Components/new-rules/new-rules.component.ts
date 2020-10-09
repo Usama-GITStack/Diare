@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CoustomerRegisterService } from './../../../Services/coustomer-register.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-new-rules',
   templateUrl: './new-rules.component.html',
@@ -12,7 +13,8 @@ export class NewRulesComponent implements OnInit {
   datageting: any = {};
   tabledata = [];
   dataTable: any;
-  constructor(private CR: CoustomerRegisterService) { }
+  constructor(private CR: CoustomerRegisterService, private router: Router
+  ) { }
   RC: String;
   Date: String;
   CC: String;
@@ -43,5 +45,9 @@ export class NewRulesComponent implements OnInit {
     }
     console.log(Co);
     this.CR.RuleAdd(Co);
+    setTimeout(() => {
+      this.router.navigateByUrl('/CustomerList');
+    }, 2000);
+
   }
 }

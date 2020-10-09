@@ -53,6 +53,9 @@ export class NewInvoiceComponent implements OnInit {
     }
     console.log(Co);
     this.CR.Invoice(Co);
-    this.router.navigateByUrl('/InvoiceList');
+    setTimeout(() => {
+      this.router.navigateByUrl('/InvoiceList');
+    }, 2000);
+
   }
 }

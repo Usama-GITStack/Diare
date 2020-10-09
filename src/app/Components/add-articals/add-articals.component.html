@@ -77,6 +77,17 @@
                   </div>
                 </div>
               </div>
+              <div class="col-md-12">
+                <div class="form-group row">
+                  <label class="col-sm-4 col-form-label">Warehouse:</label>
+                  <div class="col-sm-8">
+                    <select class="form-control" id="sel1" [(ngModel)]="Warehouse" name="Warehouse" required>
+                      <option>Warehouse Select</option>
+                      <option *ngFor="let td of tabledata">{{td.NAMEOFWAREHOUSE}}</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div class="col-md-12">

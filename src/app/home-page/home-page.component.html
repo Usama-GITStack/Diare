@@ -14,28 +14,28 @@
           <div class="card-body">
             <div class="row">
               <div class="col-md-2">
-                <button class="btn btn-primary setbutton"><i class="fa fa-cubes"
+                <button class="btn btn-primary setbutton" routerLink="/ListofArticals"><i class="fa fa-cubes"
                     aria-hidden="true"></i><br>Product</button>
               </div>
               <div class="col-md-2">
-                <button class="btn btn-secondary setbutton"><i class="fa fa-balance-scale"
+                <button class="btn btn-secondary setbutton" routerLink="/InvoiceList"><i class="fa fa-balance-scale"
                     aria-hidden="true"></i><br>Sales</button>
               </div>
               <div class="col-md-2">
-                <button class="btn btn-success setbutton"><i class="fa fa-credit-card-alt"
+                <button class="btn btn-success setbutton" routerLink="/InvoiceList"><i class="fa fa-credit-card-alt"
                     aria-hidden="true"></i><br>Purchases</button>
               </div>
               <div class="col-md-2">
-                <button class="btn btn-danger setbutton"><i class="fa fa-id-badge"
+                <button class="btn btn-danger setbutton" routerLink="/CustomerList"><i class="fa fa-id-badge"
                     aria-hidden="true"></i><br>Customer</button>
               </div>
               <div class="col-md-2">
-                <button class="btn btn-dark setbutton"><i class="fa fa-bar-chart"
-                    aria-hidden="true"></i><br>Suppliers</button>
+                <button class="btn btn-dark setbutton" routerLink="/StockDocument"><i class="fa fa-bar-chart"
+                    aria-hidden="true"></i><br>Stock Document</button>
               </div>
               <div class="col-md-2">
-                <button class="btn btn-success setbutton"><i class="fa fa-handshake-o"
-                    aria-hidden="true"></i><br>Transfer</button>
+                <button class="btn btn-success setbutton" routerLink="/SaleDocuments"><i class="fa fa-handshake-o"
+                    aria-hidden="true"></i><br>Sales Document</button>
               </div>
             </div>
           </div>
@@ -52,35 +52,35 @@
           </div>
           <div class="card-body">
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-6" routerLink="/CustomerList">
                 <div class="card-counter primary">
                   <i class="fa fa-user"></i>
                   <span class="count-numbers">{{CL}}</span>
                   <span class="count-name">Number of Clients</span>
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-6" routerLink="/InvoiceList">
                 <div class="card-counter danger">
                   <i class="fa fa-balance-scale"></i>
                   <span class="count-numbers">{{Sales}}</span>
                   <span class="count-name">Monthly Sales</span>
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-6" routerLink="/InvoiceList">
                 <div class="card-counter success">
                   <i class="fa fa-handshake-o"></i>
                   <span class="count-numbers">{{Ex}}</span>
                   <span class="count-name">Monthly Expenses</span>
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-6" routerLink="/StockMovementList">
                 <div class="card-counter info">
                   <i class="fa fa-code-fork"></i>
                   <span class="count-numbers">{{Stock}}</span>
                   <span class="count-name">Stock </span>
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-6" routerLink="/InvoiceList">
                 <div class="card-counter warning">
                   <i class="fa fa-bar-chart"></i>
                   <span class="count-numbers">{{SP}}</span>

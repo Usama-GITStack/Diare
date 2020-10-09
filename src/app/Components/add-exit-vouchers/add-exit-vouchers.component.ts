@@ -24,6 +24,9 @@ export class AddExitVouchersComponent implements OnInit {
     }
     console.log(Co);
     this.CR.EV1(Co);
-    this.router.navigateByUrl('/ListOfExitVouchers');
+    setTimeout(() => {
+      this.router.navigateByUrl('/ListOfExitVouchers');
+    }, 2000);
+
   }
 }

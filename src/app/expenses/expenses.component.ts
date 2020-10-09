@@ -27,7 +27,9 @@ export class ExpensesComponent implements OnInit {
       Category: this.Category
     }
     console.log(Co);
-    this.CR.UserAdd(Co);
-    this.router.navigateByUrl('/ExpensesList');
+    this.CR.ExpenseAdd(Co);
+    setTimeout(() => {
+      this.router.navigateByUrl('/ExpensesList');
+    }, 1000);
   }
 }

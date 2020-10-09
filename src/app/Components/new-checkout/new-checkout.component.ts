@@ -31,6 +31,9 @@ export class NewCheckoutComponent implements OnInit {
     }
     console.log(Co);
     this.CR.CheckoutAdd(Co);
-    this.router.navigateByUrl('/ListCheckout');
+    setTimeout(() => {
+      this.router.navigateByUrl('/ListCheckout');
+    }, 2000);
+
   }
 }

@@ -26,6 +26,9 @@ export class AddEntryVouchersComponent implements OnInit {
     }
     console.log(Co);
     this.CR.EV(Co);
-    this.router.navigateByUrl('/ListOfEntryVouchers');
+    setTimeout(() => {
+      this.router.navigateByUrl('/ListOfEntryVouchers');
+    }, 2000);
+
   }
 }

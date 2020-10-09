@@ -27,6 +27,9 @@ export class AddNewWarehouseComponent implements OnInit {
     }
     console.log(Co);
     this.CR.AddWarehouse(Co);
-    this.router.navigateByUrl('/AddNewWarehouse');
+    setTimeout(() => {
+      this.router.navigateByUrl('/AddNewWarehouse');
+    }, 2000);
+
   }
 }

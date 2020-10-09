@@ -11,15 +11,23 @@ export class AddArticalsComponent implements OnInit {
   constructor(private CR: CoustomerRegisterService, private router: Router) { }
   ItemCode: String;
   Unit: String;
+  datageting: any = {};
+  tabledata = [];
+  message: any;
+  dataTable: any;
   Nameofthearticle: String;
   CostPrice: String;
   SellingPrice: String;
   Category: String;
   Margin: String;
   Sub: any;
+  Warehouse: String;
   ngOnInit() {
     this.random = Math.floor((Math.random() * 10000) + 1);
-
+    this.CR.getData4().subscribe(data => {
+      this.datageting = data;
+      this.tabledata = this.datageting.msg;
+    })
   }
   somethingChanged(event) {
     this.Sub = event;
@@ -35,10 +43,14 @@ export class AddArticalsComponent implements OnInit {
       CostPrice: this.CostPrice,
       SellingPrice: this.SellingPrice,
       Category: this.Category,
-      Margin: this.Sub
+      Margin: this.Sub,
+      Warehouse: this.Warehouse
     }
     console.log(Co);
-    this.router.navigateByUrl('/ListofArticals');
+    setTimeout(() => {
+      this.router.navigateByUrl('/ListofArticals');
+    }, 2000);
+
     this.CR.AddArticals(Co);
   }
 }

@@ -16,8 +16,8 @@
     <div class="col-md-4 border-left padding-colm-set ">
       <div class="col-md-12">
         <label for="sel1" class="text-color ">ITEM CODE:</label>
-        <select class="form-control" id="sel1" *ngFor="let tb of tabledata;">
-          <option>{{tb.ItemCode}}</option>
+        <select class="form-control" id="sel1">
+          <option *ngFor="let tb of tabledata;">{{tb.ItemCode}}</option>
         </select>
       </div>
       <div class="col-md-12">

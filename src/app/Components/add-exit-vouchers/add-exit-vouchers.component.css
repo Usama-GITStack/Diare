@@ -1,26 +1,4 @@
-.header-section-bg-color {
-  border: 6px solid #1b7c17;
-  background-color: #54a020;
-  padding: 10px;
-  color: white;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.set-section {
-  width: 70%;
-}
-
-.regirstration-box {
-  background-color: #54a020;
-  padding: 40px;
-}
-
-.form-control {
-  border-radius: 0px;
-}
-
-label {
-  font-weight: 500;
-  font-size: 18px;
+.container-set {
+  margin-left: 10%;
+  margin-right: 10%;
 }

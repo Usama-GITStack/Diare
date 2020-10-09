@@ -12,7 +12,9 @@ export class AddEntryVouchersComponent implements OnInit {
   Document: String;
   Warehouse: String;
   Reception: String;
+  AA: number;
   ngOnInit() {
+    console.log(this.AA);
   }
   onCourseSend() {
     const Co = {

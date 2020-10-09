@@ -1,100 +1,102 @@
-<div class="set-section">
-  <header class="header-section-bg-color ">
-    <h5 class="text-center" style="margin: auto;">Add a New Article</h5>
-  </header>
-  <section>
-    <div class="regirstration-box">
-      <form ngNativeValidate (submit)="onCourseSend()">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="col-md-12">
-              <div class="form-group row">
-                <label class="col-sm-4 col-form-label">Item Code:</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" placeholder="" value="AR-{{random}}" required>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <div class="form-group row">
-                <label class="col-sm-4 col-form-label">Name of
-                  the article:</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" placeholder="" [(ngModel)]="Nameofthearticle"
-                    name="Nameofthearticle" required>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <div class="form-group row">
-                <label class="col-sm-4 col-form-label">Cost Price:</label>
-                <div class="col-sm-8">
-                  <input type="tel" class="form-control" placeholder="" [(ngModel)]="CostPrice" name="CostPrice"
-                    (ngModelChange)="somethingChanged($event)" required>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <div class="form-group row">
-                <label class="col-sm-4 col-form-label">Selling Price:</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" placeholder="" [(ngModel)]="SellingPrice" name="SellingPrice"
-                    (ngModelChange)="somethingChanged1($event)" required>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <div class="form-group row">
-                <label class="col-sm-4 col-form-label">Margin:</label>
-                <div class="col-sm-8">
-                  <input type="" class="form-control" placeholder="" value="{{Sub}}" [(ngModel)]="Margin" name="Margin"
-                    required>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="col-md-12">
-              <div class="form-group row">
-                <label class="col-sm-4 col-form-label">Unit:</label>
-                <div class="col-sm-8">
-                  <select class="form-control" id="sel1" [(ngModel)]="Unit" name="Unit" required>
-                    <option>Boxes</option>
-                    <option>Meters</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <div class="form-group row">
-                <label class="col-sm-4 col-form-label">Category:</label>
-                <div class="col-sm-8">
-                  <select class="form-control" id="sel1" [(ngModel)]="Category" name="Category" required>
-                    <option>Milk</option>
-                    <option>Products</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-12">
+<section class="main container-set">
+  <div class="card">
+    <div class="card-header">
+      ADD A NEW ARTICAL
+    </div>
+    <div class="card-body">
+      <div class="regirstration-box">
+        <form ngNativeValidate (submit)="onCourseSend()">
           <div class="row">
             <div class="col-md-6">
+              <div class="col-md-12">
+                <div class="form-group row">
+                  <label class="col-sm-4 col-form-label">Item Code:</label>
+                  <div class="col-sm-8">
+                    <input type="text" class="form-control" placeholder="" value="AR-{{random}}" required>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group row">
+                  <label class="col-sm-4 col-form-label">Name of
+                    the article:</label>
+                  <div class="col-sm-8">
+                    <input type="text" class="form-control" placeholder="" [(ngModel)]="Nameofthearticle"
+                      name="Nameofthearticle" required>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group row">
+                  <label class="col-sm-4 col-form-label">Cost Price:</label>
+                  <div class="col-sm-8">
+                    <input type="tel" class="form-control" placeholder="" [(ngModel)]="CostPrice" name="CostPrice"
+                      (ngModelChange)="somethingChanged($event)" required>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group row">
+                  <label class="col-sm-4 col-form-label">Selling Price:</label>
+                  <div class="col-sm-8">
+                    <input type="text" class="form-control" placeholder="" [(ngModel)]="SellingPrice"
+                      name="SellingPrice" (ngModelChange)="somethingChanged1($event)" required>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group row">
+                  <label class="col-sm-4 col-form-label">Margin:</label>
+                  <div class="col-sm-8">
+                    <input type="" class="form-control" placeholder="" value="{{Sub}}" [(ngModel)]="Margin"
+                      name="Margin" required>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="col-md-6">
-              <div class="row">
-                <div class="col-md-6">
-                  <button type="submit" class="btn btn-success buttons-style  w-100 ">SAVE</button>
+              <div class="col-md-12">
+                <div class="form-group row">
+                  <label class="col-sm-4 col-form-label">Unit:</label>
+                  <div class="col-sm-8">
+                    <select class="form-control" id="sel1" [(ngModel)]="Unit" name="Unit" required>
+                      <option>Boxes</option>
+                      <option>Meters</option>
+                    </select>
+                  </div>
                 </div>
-                <div class="col-md-6">
-                  <button class="btn btn-success buttons-style  w-100 " type="reset">CANCEL</button>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group row">
+                  <label class="col-sm-4 col-form-label">Category:</label>
+                  <div class="col-sm-8">
+                    <select class="form-control" id="sel1" [(ngModel)]="Category" name="Category" required>
+                      <option>Milk</option>
+                      <option>Products</option>
+                    </select>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </form>
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-6">
+              </div>
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-md-6">
+                    <button type="submit" class="btn btn-success buttons-style  w-100 ">SAVE</button>
+                  </div>
+                  <div class="col-md-6">
+                    <button class="btn btn-success buttons-style  w-100 " type="reset">CANCEL</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
-  </section>
-</div>
+  </div>
+</section>

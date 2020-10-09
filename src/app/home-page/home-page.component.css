@@ -1,8 +1,3 @@
-.border-color-set {
-  border: 3px solid #54a020;
-
-}
-
 .page-padding {
   padding: 20px;
 }
@@ -11,16 +6,9 @@
   padding-top: 10px;
 }
 
-.header {
-  border: 3px solid #54a020;
-}
 
 .heading {
-  color: #90c226;
-  -webkit-text-fill-color: white;
-  /* Will override color (regardless of order) */
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #90c226;
+  color: #333333;
 }
 
 .font-set-label {
@@ -35,9 +23,6 @@
   margin: auto;
 }
 
-.main {
-  padding: 130px 20px 5px;
-}
 
 #menu,
 #menu ul {
@@ -171,4 +156,8 @@
   opacity: 0.5;
   display: block;
   font-size: 18px;
+}
+
+.setbutton {
+  padding: 15% 25%;
 }

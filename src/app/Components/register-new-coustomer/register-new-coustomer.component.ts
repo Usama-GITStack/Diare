@@ -1,6 +1,6 @@
+import { Router } from '@angular/router';
 import { CoustomerRegisterService } from './../../../Services/coustomer-register.service';
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-register-new-coustomer',
   templateUrl: './register-new-coustomer.component.html',
@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterNewCoustomerComponent implements OnInit {
   random: any;
-  constructor(private CR: CoustomerRegisterService) { }
+  constructor(private CR: CoustomerRegisterService, private router: Router) { }
   CustomerCode: String;
   LastName: String;
   Phone: String;
@@ -32,6 +32,8 @@ export class RegisterNewCoustomerComponent implements OnInit {
       Address: this.Address
     }
     console.log(Co);
+    this.router.navigateByUrl('/CustomerList');
     this.CR.CoustomerRegister(Co);
+
   }
 }

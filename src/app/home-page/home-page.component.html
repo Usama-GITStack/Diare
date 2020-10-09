@@ -1,48 +1,120 @@
-<div class="border-color-set page-padding">
+<div class="page-padding">
   <section class="header-section">
     <div class="header">
-      <h1 class="text-center heading">TABLEAU DE BORD</h1>
+      <h2 class="heading">Dashboard</h2>
+    </div>
+  </section>
+  <section>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            Quick Links
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-2">
+                <button class="btn btn-primary setbutton"><i class="fa fa-cubes"
+                    aria-hidden="true"></i><br>Product</button>
+              </div>
+              <div class="col-md-2">
+                <button class="btn btn-secondary setbutton"><i class="fa fa-balance-scale"
+                    aria-hidden="true"></i><br>Sales</button>
+              </div>
+              <div class="col-md-2">
+                <button class="btn btn-success setbutton"><i class="fa fa-credit-card-alt"
+                    aria-hidden="true"></i><br>Purchases</button>
+              </div>
+              <div class="col-md-2">
+                <button class="btn btn-danger setbutton"><i class="fa fa-id-badge"
+                    aria-hidden="true"></i><br>Customer</button>
+              </div>
+              <div class="col-md-2">
+                <button class="btn btn-dark setbutton"><i class="fa fa-bar-chart"
+                    aria-hidden="true"></i><br>Suppliers</button>
+              </div>
+              <div class="col-md-2">
+                <button class="btn btn-success setbutton"><i class="fa fa-handshake-o"
+                    aria-hidden="true"></i><br>Transfer</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
   <section class="main">
     <div class="row">
-      <div class="col-md-4">
-        <div class="card-counter primary">
-          <i class="fa fa-code-fork"></i>
-          <span class="count-numbers">{{CL}}</span>
-          <span class="count-name">Number of Clients</span>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            Progress
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="card-counter primary">
+                  <i class="fa fa-user"></i>
+                  <span class="count-numbers">{{CL}}</span>
+                  <span class="count-name">Number of Clients</span>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card-counter danger">
+                  <i class="fa fa-balance-scale"></i>
+                  <span class="count-numbers">{{Sales}}</span>
+                  <span class="count-name">Monthly Sales</span>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card-counter success">
+                  <i class="fa fa-handshake-o"></i>
+                  <span class="count-numbers">{{Ex}}</span>
+                  <span class="count-name">Monthly Expenses</span>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card-counter info">
+                  <i class="fa fa-code-fork"></i>
+                  <span class="count-numbers">{{Stock}}</span>
+                  <span class="count-name">Stock </span>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card-counter warning">
+                  <i class="fa fa-bar-chart"></i>
+                  <span class="count-numbers">{{SP}}</span>
+                  <span class="count-name">Sales Per Products</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card-counter danger">
-          <i class="fa fa-code-fork"></i>
-          <span class="count-numbers">{{Sales}}</span>
-          <span class="count-name">Monthly Sales</span>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            Chat Progress
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <canvas id="myChart" width="700" height="330"></canvas>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card-counter success">
-          <i class="fa fa-code-fork"></i>
-          <span class="count-numbers">{{Ex}}</span>
-          <span class="count-name">Monthly Expenses</span>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card-counter info">
-          <i class="fa fa-code-fork"></i>
-          <span class="count-numbers">{{Stock}}</span>
-          <span class="count-name">Stock </span>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card-counter warning">
-          <i class="fa fa-code-fork"></i>
-          <span class="count-numbers">{{SP}}</span>
-          <span class="count-name">Sales Per Products</span>
+      <div class="col-md-12 main">
+        <div class="card">
+          <div class="card-header">
+            Chat Progress
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <canvas id="myChart1" width="1500" height="400"></canvas>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-
   </section>
 </div>
-<canvas id="myChart" width="400" height="400"></canvas>

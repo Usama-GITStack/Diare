@@ -1,5 +1,5 @@
 import { CoustomerRegisterService } from './../../Services/coustomer-register.service';
-import { Chart } from 'chart.js';
+import * as Chart from 'chart.js'
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -29,7 +29,61 @@ export class HomePageComponent implements OnInit {
   constructor(private CR: CoustomerRegisterService) { }
   chart: any = [];
   Ex: number = 0;
+  canvas: any;
+  ctx: any;
+  canvas1: any;
+  ctx1: any;
   ngOnInit() {
+    this.canvas = document.getElementById('myChart');
+    this.canvas1 = document.getElementById('myChart1');
+    this.ctx = this.canvas.getContext('2d');
+    this.ctx1 = this.canvas1.getContext('2d');
+    setTimeout(() => {
+      let myChart = new Chart(this.ctx, {
+        type: 'line',
+        data: {
+          labels: ["Clients", "Sales", "Stock"],
+          datasets: [{
+            label: 'DGI Progress',
+            data: [this.CL, this.Sales, this.Stock],
+            backgroundColor: [
+              'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)'
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: false,
+
+        }
+      });
+
+    }, 1000);
+    setTimeout(() => {
+      let myChart1 = new Chart(this.ctx1, {
+        type: 'bar',
+        data: {
+          labels: ["Clients", "Sales", "Stock"],
+          datasets: [{
+            label: 'DGI Progress',
+            data: [this.CL, this.Sales, this.Stock],
+            backgroundColor: [
+              'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)'
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: false,
+
+        }
+      });
+    }, 1000);
+
     this.CR.getData().subscribe(data => {
       this.datageting = data;
       this.tabledata = this.datageting.msg;

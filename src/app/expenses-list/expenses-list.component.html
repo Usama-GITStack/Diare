@@ -1,1 +1,87 @@
-<p>expenses-list works!</p>
+<header class="header-section-bg-color ">
+  <h5 class="text-center" style="margin: auto;">LIST OF Expense</h5>
+</header>
+<section class="border-color-set">
+  <div class="row">
+    <div class="col-md-4 padding-colm-set ">
+      <div class="col-md-12">
+        <label for="birthday" class="text-color ">From:</label>
+        <input type="date" class="form-control" id="" name="">
+      </div>
+      <div class="col-md-12">
+        <label for="birthday" class="text-color ">To:</label>
+        <input type="date" class="form-control" id="" name="">
+      </div>
+    </div>
+    <div class="col-md-4 border-left padding-colm-set ">
+      <label for="sel1" class="text-color ">ARTICLE CATEGORY:</label>
+      <select class="form-control" id="sel1">
+        <option *ngFor="let tb of tabledata;">{{tb.Category}}</option>
+
+      </select>
+      <button class="btn btn-success buttons-style  w-50 " style="float: right; margin-top: 5%;">APPLY FILTER</button>
+    </div>
+  </div>
+</section>
+<section class="section-space" id="PDF">
+  <table id="excel-table" #dataTable class="display table table_size table_background" style="width:100%">
+    <thead>
+      <tr class="home-page-color-bg">
+        <th scope="col">Referance</th>
+        <th scope="col">Date</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Note</th>
+        <th scope="col">Category</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tb of tabledata; let i=index">
+        <td>{{tb.Referance}}</td>
+        <td>{{tb.Date}}</td>
+        <td>{{tb.Amount}}</td>
+        <td>{{tb.Note}}</td>
+        <td>{{tb.Category}}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<section>
+  <div class="row">
+    <div class="col-md-10">
+      <div class="row">
+        <div class="col-md-2">
+          <button class="btn btn-success buttons-style  w-100 " routerLink="/AddArticals">Add</button>
+        </div>
+        <div class="col-md-2">
+             <button class="btn btn-success buttons-style  w-100 " (click)="openSm3(content3);">Actions</button>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-md-2">
+      <div class="row">
+        <div class="col-md-6">
+
+        </div>
+        <div class="col-md-6">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<ng-template #content3 let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Download</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+    <div class="modal-body">
+        <p>What Do You Need</p>
+      </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)=SavePDF()>PDF</button>
+        <button type="button" class="btn btn-success" (click)=exportexcel()>Excel</button>
+      </div>
+</ng-template>

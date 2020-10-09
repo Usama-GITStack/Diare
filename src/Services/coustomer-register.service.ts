@@ -294,6 +294,9 @@ export class CoustomerRegisterService {
   getData11() {
     return this.http.get('https://diarebackend.herokuapp.com/ListCheckout');
   }
+  getData12() {
+    return this.http.get('https://diarebackend.herokuapp.com/ExpensesList');
+  }
   //Updation
   CustomerListUpdate(CR) {
     this.http.post('https://diarebackend.herokuapp.com/CustomerListUpdate', CR, {

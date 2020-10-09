@@ -1,0 +1,47 @@
+.table_background {
+  background-color: gray;
+  font-size: 14px;
+}
+
+tr:nth-child(even) {
+  background-color: #eef4e8;
+}
+
+tr:nth-child(odd) {
+  background-color: #dbe9cd;
+}
+
+#customers td,
+#customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.section-space {
+  padding-top: 50px;
+}
+
+select {
+  border-radius: 0px;
+}
+
+.border-color-set {
+  padding: 7px 5px;
+}
+
+.padding-colm-set {
+  padding: 0px 25px;
+}
+
+.border-left {
+  border-left: 2px solid #7c8a72 !important;
+}
+
+.header-section-bg-color {
+  border: 2px solid #f3f9ff;
+  background-color: #7c8a72;
+  padding: 10px;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

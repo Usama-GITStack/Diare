@@ -1,5 +1,6 @@
 import { CoustomerRegisterService } from './../../../Services/coustomer-register.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-add-user',
   templateUrl: './add-user.component.html',
@@ -12,7 +13,7 @@ export class AddUserComponent implements OnInit {
   Password: String;
   PasswordC: String;
   random: any
-  constructor(private CR: CoustomerRegisterService) { }
+  constructor(private CR: CoustomerRegisterService, private router: Router) { }
 
   ngOnInit() {
     this.random = Math.floor((Math.random() * 10000) + 1);
@@ -28,6 +29,7 @@ export class AddUserComponent implements OnInit {
     }
     console.log(Co);
     this.CR.UserAdd(Co);
+    this.router.navigateByUrl('/AddUser');
   }
 
 }

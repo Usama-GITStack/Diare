@@ -1,5 +1,6 @@
 import { CoustomerRegisterService } from './../../../Services/coustomer-register.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-new-invoice',
   templateUrl: './new-invoice.component.html',
@@ -21,7 +22,7 @@ export class NewInvoiceComponent implements OnInit {
     { DESCRIPTION: "NON DAIRY CREAMER", AMOUNT: "100", UNIT: "BOXES", SELLINGPRICE: "165,000 GNF", TOTAL: "16500000 GNF" },
   ]
   @ViewChild('dataTable', { static: true }) table;
-  constructor(private CR: CoustomerRegisterService) { }
+  constructor(private CR: CoustomerRegisterService, private router: Router) { }
   dataTable: any;
   tabledata = [];
   TotalAdd = 0;
@@ -52,5 +53,6 @@ export class NewInvoiceComponent implements OnInit {
     }
     console.log(Co);
     this.CR.Invoice(Co);
+    this.router.navigateByUrl('/InvoiceList');
   }
 }

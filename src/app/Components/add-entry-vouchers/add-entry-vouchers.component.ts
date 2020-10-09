@@ -1,5 +1,6 @@
 import { CoustomerRegisterService } from './../../../Services/coustomer-register.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-add-entry-vouchers',
   templateUrl: './add-entry-vouchers.component.html',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddEntryVouchersComponent implements OnInit {
 
-  constructor(private CR: CoustomerRegisterService) { }
+  constructor(private CR: CoustomerRegisterService, private router: Router) { }
   Date: String;
   Document: String;
   Warehouse: String;
@@ -25,5 +26,6 @@ export class AddEntryVouchersComponent implements OnInit {
     }
     console.log(Co);
     this.CR.EV(Co);
+    this.router.navigateByUrl('/ListOfEntryVouchers');
   }
 }

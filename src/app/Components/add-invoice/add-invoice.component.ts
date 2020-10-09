@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CoustomerRegisterService } from './../../../Services/coustomer-register.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-add-invoice',
   templateUrl: './add-invoice.component.html',
@@ -7,7 +8,7 @@ import { CoustomerRegisterService } from './../../../Services/coustomer-register
 })
 export class AddInvoiceComponent implements OnInit {
 
-  constructor(private CR: CoustomerRegisterService) { }
+  constructor(private CR: CoustomerRegisterService, private router: Router) { }
   DATED: String;
   CLIENTNAME: String;
   DOCUMENTNUMBER: String;
@@ -24,6 +25,8 @@ export class AddInvoiceComponent implements OnInit {
     }
     console.log(Co);
     this.CR.Invoice(Co);
+
+    this.router.navigateByUrl('/InvoiceList');
   }
   ngOnInit() {
   }

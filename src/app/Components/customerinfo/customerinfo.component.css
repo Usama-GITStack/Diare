@@ -1,3 +1,8 @@
+.table_background {
+  background-color: gray;
+  font-size: 14px;
+}
+
 tr:nth-child(even) {
   background-color: #eef4e8;
 }
@@ -18,57 +23,25 @@ tr:nth-child(odd) {
 
 select {
   border-radius: 0px;
-  border: 2px solid #90c226;
 }
 
 .border-color-set {
-  border: 3px solid #54a020;
-  padding: 38px 5px;
+  padding: 7px 5px;
 }
 
 .padding-colm-set {
-  padding: 35px;
+  padding: 0px 25px;
 }
 
 .border-left {
-  border-left: 2px solid #54a020 !important;
+  border-left: 2px solid #7c8a72 !important;
 }
 
 .header-section-bg-color {
-  border: 6px solid #90c226;
-  background-color: #54a020;
+  border: 2px solid #f3f9ff;
+  background-color: #7c8a72;
   padding: 10px;
   color: white;
   margin-top: 10px;
   margin-bottom: 10px;
-}
-
-.header-section-bg-color1 {
-  border: 3px solid #0a4d1b;
-  background-color: #54a020;
-  padding: 10px;
-  color: white;
-  position: relative;
-  top: -38px;
-  margin-bottom: 10px;
-}
-
-.set-border {
-  border: 2px solid #90c226;
-  padding: 8px;
-}
-
-.margin-set {
-  margin-left: 2%;
-}
-
-.home-page-color-bg1 {
-  background-color: #90c226 !important;
-  color: white;
-  padding: 8px;
-}
-
-.set-actionbutton {
-  margin-left: auto;
-  margin-top: 10px;
 }

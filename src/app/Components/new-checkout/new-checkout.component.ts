@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CoustomerRegisterService } from './../../../Services/coustomer-register.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-new-checkout',
   templateUrl: './new-checkout.component.html',
@@ -7,7 +8,7 @@ import { CoustomerRegisterService } from './../../../Services/coustomer-register
 })
 export class NewCheckoutComponent implements OnInit {
   random: any;
-  constructor(private CR: CoustomerRegisterService) { }
+  constructor(private CR: CoustomerRegisterService, private router: Router) { }
   Date: String;
   Amount: String;
   EXPENDITURE: String;
@@ -30,5 +31,6 @@ export class NewCheckoutComponent implements OnInit {
     }
     console.log(Co);
     this.CR.CheckoutAdd(Co);
+    this.router.navigateByUrl('/ListCheckout');
   }
 }

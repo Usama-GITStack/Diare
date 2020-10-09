@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CoustomerRegisterService } from './../../../Services/coustomer-register.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-add-new-warehouse',
   templateUrl: './add-new-warehouse.component.html',
@@ -7,7 +8,7 @@ import { CoustomerRegisterService } from './../../../Services/coustomer-register
 })
 export class AddNewWarehouseComponent implements OnInit {
   random: any;
-  constructor(private CR: CoustomerRegisterService) { }
+  constructor(private CR: CoustomerRegisterService, private router: Router) { }
   WAREHOUSECODE: String;
   NAMEOFWAREHOUSE: String;
   ADDRESS: String;
@@ -26,5 +27,6 @@ export class AddNewWarehouseComponent implements OnInit {
     }
     console.log(Co);
     this.CR.AddWarehouse(Co);
+    this.router.navigateByUrl('/AddNewWarehouse');
   }
 }

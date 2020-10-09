@@ -43,6 +43,8 @@ import { CheckoutListComponent } from './Components/checkout-list/checkout-list.
 import { SaleHistoryComponent } from './Components/sale-history/sale-history.component';
 import { RECEIPTComponent } from './Components/receipt/receipt.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { ExpensesComponent } from './expenses/expenses.component';
+import { ExpensesListComponent } from './expenses-list/expenses-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -78,6 +80,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     CheckoutListComponent,
     SaleHistoryComponent,
     RECEIPTComponent,
+    ExpensesComponent,
+    ExpensesListComponent,
 
   ],
   imports: [

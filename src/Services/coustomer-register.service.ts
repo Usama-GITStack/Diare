@@ -229,6 +229,23 @@ export class CoustomerRegisterService {
       }
     })
   }
+  ExpenseAdd(CR) {
+    this.http.post('https://diarebackend.herokuapp.com/Expenses', CR, {
+    }).subscribe(data => {
+      if (this.datageting.success) {
+        this._snackBar.open(this.datageting.success, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbar']
+        });
+      }
+      else {
+        this._snackBar.open(this.datageting.fail, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbarError']
+        });
+      }
+    })
+  }
   getData() {
     return this.http.get('https://diarebackend.herokuapp.com/CustomerList');
   }

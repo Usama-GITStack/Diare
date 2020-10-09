@@ -1,3 +1,5 @@
+import { ExpensesListComponent } from './expenses-list/expenses-list.component';
+import { ExpensesComponent } from './expenses/expenses.component';
 import { RECEIPTComponent } from './Components/receipt/receipt.component';
 import { SaleHistoryComponent } from './Components/sale-history/sale-history.component';
 import { CheckoutListComponent } from './Components/checkout-list/checkout-list.component';
@@ -65,6 +67,8 @@ const routes: Routes = [
   { path: 'SaleHistory', component: SaleHistoryComponent },
   { path: 'RECEIPT', component: RECEIPTComponent },
   { path: 'UserAccess', component: UserAccessControlComponent },
+  { path: 'Expenses', component: ExpensesComponent },
+  { path: 'ExpensesList', component: ExpensesListComponent },
 
 ];
 

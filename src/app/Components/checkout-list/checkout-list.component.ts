@@ -30,7 +30,6 @@ export class CheckoutListComponent implements OnInit {
     const wb: XLSX.WorkBook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
     XLSX.writeFile(wb, this.fileName);
-    this.SavePDF();
   }
   public SavePDF() {
     let element = document.getElementById("PDF")
@@ -90,6 +89,9 @@ export class CheckoutListComponent implements OnInit {
     this.modalService.open(content2, { size: 'sm' });
     this.message = i
     console.log(this.message)
+  }
+  openSm3(content3) {
+    this.modalService.open(content3, { size: 'sm' });
   }
   UpdatedAuto() {
     setTimeout(() => {

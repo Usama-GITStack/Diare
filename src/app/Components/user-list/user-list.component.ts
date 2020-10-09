@@ -90,4 +90,7 @@ export class UserListComponent implements OnInit {
       })
     }, 1500);
   }
+  openSm3(content3) {
+    this.modalService.open(content3, { size: 'sm' });
+  }
 }

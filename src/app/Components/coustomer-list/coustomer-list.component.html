@@ -73,7 +73,7 @@
           <button class="btn btn-success buttons-style  w-100 " routerLink="/CustomerInfo">Customer account</button>
         </div>
         <div class="col-md-2">
-          <button class="btn btn-success buttons-style  w-100 " (click)="exportexcel() ">Actions</button>
+             <button class="btn btn-success buttons-style  w-100 " (click)="openSm3(content3);">Actions</button>
         </div>
       </div>
 
@@ -194,3 +194,17 @@
     <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
   </div>
 </ng-template>
+<ng-template #content3 let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Download</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+    <div class="modal-body">
+        <p>What Do You Need</p>
+      </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)=SavePDF()>PDF</button>
+        <button type="button" class="btn btn-success" (click)=exportexcel()>Excel</button>
+      </div>

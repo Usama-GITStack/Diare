@@ -4,6 +4,7 @@ import * as XLSX from 'xlsx';
 import { jsPDF } from "jspdf";
 import html2canvas from 'html2canvas';
 import { Router, Routes } from '@angular/router';
+import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-sale-history',
   templateUrl: './sale-history.component.html',
@@ -22,7 +23,6 @@ export class SaleHistoryComponent implements OnInit {
     const wb: XLSX.WorkBook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
     XLSX.writeFile(wb, this.fileName);
-    this.SavePDF();
   }
   public SavePDF() {
     let element = document.getElementById("PDF")
@@ -34,7 +34,7 @@ export class SaleHistoryComponent implements OnInit {
       doc.save('Quiz.pdf');
     });
   }
-  constructor(private CR: CoustomerRegisterService,) { }
+  constructor(private CR: CoustomerRegisterService, public config: NgbModalConfig, public modalService: NgbModal) { }
 
   ngOnInit() {
     this.CR.getData10().subscribe(data => {
@@ -46,5 +46,7 @@ export class SaleHistoryComponent implements OnInit {
       }, 500);
     })
   }
-
+  openSm3(content3) {
+    this.modalService.open(content3, { size: 'sm' });
+  }
 }

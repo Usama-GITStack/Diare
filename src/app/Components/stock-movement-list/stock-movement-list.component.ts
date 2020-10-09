@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import * as XLSX from 'xlsx';
 import { jsPDF } from "jspdf";
 import html2canvas from 'html2canvas';
+import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-stock-movement-list',
   templateUrl: './stock-movement-list.component.html',
@@ -13,6 +14,7 @@ export class StockMovementListComponent implements OnInit {
   tabledata = [];
   dataTable: any;
   fileName = 'ExcelSheet.xlsx';
+  constructor(public config: NgbModalConfig, public modalService: NgbModal) { }
   exportexcel() {
     console.log("Usama")
     let element = document.getElementById('excel-table');
@@ -20,7 +22,7 @@ export class StockMovementListComponent implements OnInit {
     const wb: XLSX.WorkBook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
     XLSX.writeFile(wb, this.fileName);
-    this.SavePDF();
+
   }
   public SavePDF() {
     let element = document.getElementById("PDF")
@@ -36,6 +38,8 @@ export class StockMovementListComponent implements OnInit {
     this.dataTable = $(this.table.nativeElement);
     this.dataTable.DataTable();
   }
-
+  openSm3(content3) {
+    this.modalService.open(content3, { size: 'sm' });
+  }
 
 }

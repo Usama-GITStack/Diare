@@ -37,7 +37,7 @@ export class CoustomerListComponent implements OnInit {
     const wb: XLSX.WorkBook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
     XLSX.writeFile(wb, this.fileName);
-    this.SavePDF();
+
   }
   public SavePDF() {
     let element = document.getElementById("excel-table")
@@ -119,6 +119,9 @@ export class CoustomerListComponent implements OnInit {
   Transfer(index) {
     this.CR.changetMessage(index);
     this.router.navigateByUrl('/CustomerInfo');
+  }
+  openSm3(content3) {
+    this.modalService.open(content3, { size: 'sm' });
   }
 }
 

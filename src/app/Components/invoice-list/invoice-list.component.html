@@ -40,7 +40,6 @@
   <table id="excel-table" #dataTable class="display table table_size table_background" style="width:100%">
     <thead>
       <tr class="home-page-color-bg">
-        <th scope="col">DATED</th>
         <th scope="col">CLIENT NAME</th>
         <th scope="col">DOCUMENT NUMBER</th>
         <th scope="col">TOTAL AMOUNT</th>
@@ -50,7 +49,6 @@
     </thead>
     <tbody>
       <tr *ngFor="let tb of tabledata; let i=index">
-        <td>{{tb.Date | date:'shortDate'}}</td>
         <td>{{tb.FirstName}}</td>
         <td><a (click)=Target(i)>{{tb.FACTNUMBER}}</a></td>
         <td>{{tb.TotalInvoice}}</td>
@@ -71,7 +69,7 @@
           <button class="btn btn-success buttons-style  w-100 " routerLink="/NewInvoice">New Invoice</button>
         </div>
         <div class="col-md-2">
-           <button class="btn btn-success buttons-style  w-100 " (click)="openSm3(content3);">Actions</button>
+           <button class="btn btn-success buttons-style w-100 " (click)="openSm3(content3);">Actions</button>
         </div>
         <div class="col-md-4">
           <button class="btn btn-success buttons-style  w-100 ">Generate a Delivery Note</button>
@@ -207,7 +205,7 @@
         <p>What Do You Need</p>
       </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-danger" (click)=SavePDF()>PDF</button>
-        <button type="button" class="btn btn-success" (click)=exportexcel()>Excel</button>
+        <button type="button" class="btn btn-danger" (click)=SavePDF()>PDF</button>
+        <button type="button" class="btn btn-success" (click)=exportexcel()>Excel</button>
       </div>
 </ng-template>

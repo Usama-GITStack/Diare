@@ -66,6 +66,17 @@ export class NewgoodexitComponent implements OnInit {
       TOTALVALUE: this.TOTALVALUE
     }
     console.log(Co);
+
     this.CR.AddExitVouchers(Co);
+    setTimeout(() => {
+      this.CR.getData7(this.tabledata[this.message].Document).subscribe(data => {
+        this.datageting = data;
+        this.tabledata1 = this.datageting.msg;
+        setTimeout(() => {
+          this.dataTable = $(this.table.nativeElement);
+          this.dataTable.DataTable();
+        }, 500);
+      })
+    }, 1000);
   }
 }

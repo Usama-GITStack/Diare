@@ -21,7 +21,7 @@
         <td>{{tb.Function}}</td>
         <td> <button class="btn btn-success buttons-style  w-50 " (click)="openXl(content ,i)"><i class="fa fa-pencil"
               aria-hidden="true"></i></button>
-          <button class="btn btn-success buttons-style  w-50 " (click)=Delete(i)><i class="fa fa-trash-o"
+          <button class="btn btn-danger buttons-style  w-50 " (click)=Delete(i)><i class="fa fa-trash-o"
               aria-hidden="true"></i></button></td>
       </tr>
     </tbody>
@@ -35,7 +35,7 @@
           <button class="btn btn-success buttons-style  w-100 " routerLink="/AddUser">Add</button>
         </div>
         <div class="col-md-2">
-             <button class="btn btn-success buttons-style  w-100 " (click)="openSm3(content3);">Actions</button>
+             <button class="btn btn-success buttons-style w-100 " (click)="openSm3(content3);">Actions</button>
 
         </div>
       </div>
@@ -47,7 +47,7 @@
           <button class="btn btn-success buttons-style  w-100 ">Edit</button>
         </div>
         <div class="col-md-6">
-          <button class="btn btn-success buttons-style  w-100 ">Remove</button>
+          <button class="btn btn-success buttons-style w-100 ">Remove</button>
         </div>
       </div>
     </div>
@@ -147,7 +147,7 @@
         <p>What Do You Need</p>
       </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-danger" (click)=SavePDF()>PDF</button>
-        <button type="button" class="btn btn-success" (click)=exportexcel()>Excel</button>
+        <button type="button" class="btn btn-danger" (click)=SavePDF()>PDF</button>
+        <button type="button" class="btn btn-success" (click)=exportexcel()>Excel</button>
       </div>
 </ng-template>

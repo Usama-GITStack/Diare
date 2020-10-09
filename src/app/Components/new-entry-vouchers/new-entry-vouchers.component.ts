@@ -70,5 +70,18 @@ export class NewEntryVouchersComponent implements OnInit {
     }
     console.log(Co);
     this.CR.AddNewVouchers(Co);
+    setTimeout(() => {
+      const CC = {
+        Finder: this.tabledata[this.message].Document
+      }
+      this.CR.getData6(this.tabledata[this.message].Document).subscribe(data => {
+        this.datageting = data;
+        this.tabledata1 = this.datageting.msg;
+        setTimeout(() => {
+          this.dataTable = $(this.table.nativeElement);
+          this.dataTable.DataTable();
+        }, 500);
+      })
+    }, 1000);
   }
 }

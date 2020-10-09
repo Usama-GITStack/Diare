@@ -1,81 +1,83 @@
-<div class="set-section">
-  <header class="header-section-bg-color ">
-    <h5 class="text-center" style="margin: auto;">USER ACCESS CONTROL</h5>
-  </header>
-  <section>
-    <div class="regirstration-box">
-      <form method="post" ngNativeValidate (submit)="onCourseSend()">
-        <div class="row">
-          <div class="col-md-12">
+<section class="main container-set">
+  <div class="card">
+    <div class="card-header">
+      USER ACCESS CONTROL
+    </div>
+    <div class="card-body">
+      <div class="regirstration-box">
+        <form method="post" ngNativeValidate (submit)="onCourseSend()">
+          <div class="row">
             <div class="col-md-12">
-              <div class="form-group row">
-                <label class="col-sm-4 col-form-label">User Code:</label>
-                <div class="col-sm-8">
-                  <select class="form-control" id="sel1" [(ngModel)]="UserCode" name="UserCode">
-                    <option>User Code</option>
-                    <option *ngFor="let td of tabledata">{{td.UserCOde}}</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <div class="form-group row">
-                <label class="col-sm-4 col-form-label">User Name:</label>
-                <div class="col-sm-8">
-                  <select class="form-control" id="sel1" [(ngModel)]="UserName" name="UserName">
-                    <option>User Name</option>
-                    <option *ngFor="let td of tabledata">{{td.Name}}</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <div class="form-group row">
-                <label class="col-sm-4 col-form-label">ADMINISTRATOR:</label>
-                <div class="col-sm-8">
-                  <div class="radio">
-                    <label><input type="radio" name="optradio" checked>He has access to all the features of the
-                      application</label>
+              <div class="col-md-12">
+                <div class="form-group row">
+                  <label class="col-sm-4 col-form-label">User Code:</label>
+                  <div class="col-sm-8">
+                    <select class="form-control" id="sel1" [(ngModel)]="UserCode" name="UserCode">
+                      <option>User Code</option>
+                      <option *ngFor="let td of tabledata">{{td.UserCOde}}</option>
+                    </select>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-md-12">
-              <div class="form-group row">
-                <label class="col-sm-4 col-form-label">COMMERCIAL:</label>
-                <div class="col-sm-8">
-                  <div class="radio">
-                    <label><input type="radio" name="optradio">He has access to all the functionalities, but he cannot
-                      modify or delete an operation.</label>
+              <div class="col-md-12">
+                <div class="form-group row">
+                  <label class="col-sm-4 col-form-label">User Name:</label>
+                  <div class="col-sm-8">
+                    <select class="form-control" id="sel1" [(ngModel)]="UserName" name="UserName">
+                      <option>User Name</option>
+                      <option *ngFor="let td of tabledata">{{td.Name}}</option>
+                    </select>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-md-12">
-              <div class="form-group row">
-                <label class="col-sm-4 col-form-label">VISITOR:</label>
-                <div class="col-sm-8">
-                  <div class="radio disabled">
-                    <label><input type="radio" name="optradio">He has access to the various modules, but he is
-                      not authorized to perform an entry and deletion operation. He's right there,
-                      as a visitor.</label>
+              <div class="col-md-12">
+                <div class="form-group row">
+                  <label class="col-sm-4 col-form-label">ADMINISTRATOR:</label>
+                  <div class="col-sm-8">
+                    <div class="radio">
+                      <label><input type="radio" name="optradio" checked>He has access to all the features of the
+                        application</label>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-md-12">
-              <div class="row">
-                <div class="col-md-6">
-                  <button type="submit" class="btn btn-success buttons-style  w-100 ">Save</button>
+              <div class="col-md-12">
+                <div class="form-group row">
+                  <label class="col-sm-4 col-form-label">COMMERCIAL:</label>
+                  <div class="col-sm-8">
+                    <div class="radio">
+                      <label><input type="radio" name="optradio">He has access to all the functionalities, but he cannot
+                        modify or delete an operation.</label>
+                    </div>
+                  </div>
                 </div>
-                <div class="col-md-6">
-                  <button class="btn btn-success buttons-style  w-100 ">TO CANCEL</button>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group row">
+                  <label class="col-sm-4 col-form-label">VISITOR:</label>
+                  <div class="col-sm-8">
+                    <div class="radio disabled">
+                      <label><input type="radio" name="optradio">He has access to the various modules, but he is
+                        not authorized to perform an entry and deletion operation. He's right there,
+                        as a visitor.</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-6">
+                    <button type="submit" class="btn btn-success buttons-style  w-50 ">Save</button>
+                  </div>
+                  <div class="col-md-6">
+                    <button class="btn btn-success buttons-style  w-50 ">TO CANCEL</button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
-  </section>
-</div>
+  </div>
+</section>

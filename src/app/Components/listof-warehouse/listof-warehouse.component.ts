@@ -49,7 +49,7 @@ export class ListofWarehouseComponent implements OnInit {
       this.tabledata = this.datageting.msg;
     })
   }
-  openXl(content, index) {
+  openXl(content) {
     this.modalService.open(content, { size: 'xl' });
     this.WAREHOUSECODE = this.tabledata[this.message].WAREHOUSECODE;
     this.NAMEOFWAREHOUSE = this.tabledata[this.message].NAMEOFWAREHOUSE;

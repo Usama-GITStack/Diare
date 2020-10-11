@@ -1,3 +1,4 @@
+import { LoginPageComponent } from './Components/login-page/login-page.component';
 import { ExpensesListComponent } from './expenses-list/expenses-list.component';
 import { ExpensesComponent } from './expenses/expenses.component';
 import { RECEIPTComponent } from './Components/receipt/receipt.component';
@@ -36,7 +37,8 @@ import { UserAccessControlComponent } from './Components/user-access-control/use
 
 
 const routes: Routes = [
-  { path: '', component: HomePageComponent },
+  { path: '', component: LoginPageComponent },
+  { path: 'dashboard', component: HomePageComponent },
   { path: 'CustomerList', component: CoustomerListComponent },
   { path: 'RegisterCustomer', component: RegisterNewCoustomerComponent },
   { path: 'CustomerInfo', component: CustomerinfoComponent },

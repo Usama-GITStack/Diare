@@ -1,8 +1,8 @@
+import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { MatSnackBar } from '@angular/material/snack-bar';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -14,7 +14,25 @@ export class CoustomerRegisterService {
   }
 
   datageting: any = {}
-  constructor(private http: HttpClient, private _snackBar: MatSnackBar) { }
+  constructor(private http: HttpClient, private _snackBar: MatSnackBar, private Rout: Router) { }
+  authenticateUser(user) {
+    this.http.post('https://diarebackend.herokuapp.com/', user).subscribe(data => {
+      this.datageting = data
+      if (this.datageting.success) {
+        this.Rout.navigateByUrl('/dashboard');
+        this._snackBar.open(this.datageting.success, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbar']
+        });
+      }
+      else {
+        this._snackBar.open(this.datageting.message, "OK", {
+          duration: 2000,
+          panelClass: ['blue-snackbarError']
+        });
+      }
+    })
+  }
   CoustomerRegister(CR) {
     this.http.post('https://diarebackend.herokuapp.com/RegisterCustomer', CR, {
     }).subscribe(data => {

@@ -45,6 +45,7 @@ import { RECEIPTComponent } from './Components/receipt/receipt.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ExpensesComponent } from './expenses/expenses.component';
 import { ExpensesListComponent } from './expenses-list/expenses-list.component';
+import { LoginPageComponent } from './Components/login-page/login-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -82,6 +83,7 @@ import { ExpensesListComponent } from './expenses-list/expenses-list.component';
     RECEIPTComponent,
     ExpensesComponent,
     ExpensesListComponent,
+    LoginPageComponent,
 
   ],
   imports: [

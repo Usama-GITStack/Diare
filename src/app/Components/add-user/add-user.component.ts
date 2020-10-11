@@ -12,6 +12,7 @@ export class AddUserComponent implements OnInit {
   Function: String;
   Password: String;
   PasswordC: String;
+  Email: String;
   random: any
   constructor(private CR: CoustomerRegisterService, private router: Router) { }
 
@@ -22,6 +23,7 @@ export class AddUserComponent implements OnInit {
     const Co = {
       UserCOde: "UT-" + this.random,
       Name: this.Name,
+      Email: this.Email,
       Phone: this.Phone,
       Function: this.Function,
       Password: this.Password,

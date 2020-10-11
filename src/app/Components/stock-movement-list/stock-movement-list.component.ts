@@ -13,7 +13,7 @@ export class StockMovementListComponent implements OnInit {
   datageting: any = {};
   tabledata = [];
   dataTable: any;
-  fileName = 'ExcelSheet.xlsx';
+  fileName = 'StockMomentList.xlsx';
   constructor(public config: NgbModalConfig, public modalService: NgbModal) { }
   exportexcel() {
     console.log("Usama")
@@ -31,7 +31,7 @@ export class StockMovementListComponent implements OnInit {
       var doc = new jsPDF()
       var imgheight = canvas.height * 208 / canvas.width;
       doc.addImage(imdData, 0, 0, 208, imgheight)
-      doc.save('Quiz.pdf');
+      doc.save('StockMomentList.pdf');
     });
   }
   ngOnInit() {

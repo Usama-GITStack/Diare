@@ -17,7 +17,7 @@ export class ExpensesListComponent implements OnInit {
   tabledata = [];
   dataTable: any;
   message: any;
-  fileName = 'ExcelSheet.xlsx';
+  fileName = 'ExpensesList.xlsx';
   exportexcel() {
     console.log("Usama")
     let element = document.getElementById('excel-table');
@@ -34,7 +34,7 @@ export class ExpensesListComponent implements OnInit {
       var doc = new jsPDF()
       var imgheight = canvas.height * 208 / canvas.width;
       doc.addImage(imdData, 0, 0, 208, imgheight)
-      doc.save('Quiz.pdf');
+      doc.save('ExpensesList.pdf');
     });
   }
   ngOnInit() {

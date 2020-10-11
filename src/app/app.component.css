@@ -34,3 +34,15 @@
 a {
   text-decoration: none;
 }
+
+nav .dropdown {
+  margin-right: 5%;
+}
+
+.icon-set {
+  padding-right: 10px;
+}
+
+.fa-angle-down {
+  padding-left: 10px;
+}

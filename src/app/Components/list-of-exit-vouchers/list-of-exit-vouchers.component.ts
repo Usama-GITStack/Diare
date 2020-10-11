@@ -17,7 +17,7 @@ export class ListOfExitVouchersComponent implements OnInit {
   datageting: any = {};
   tabledata = [];
   dataTable: any;
-  fileName = 'ExcelSheet.xlsx';
+  fileName = 'ExitVoucherList.xlsx';
   Date: String;
   message: any;
   Document: String;
@@ -38,7 +38,7 @@ export class ListOfExitVouchersComponent implements OnInit {
       var doc = new jsPDF()
       var imgheight = canvas.height * 208 / canvas.width;
       doc.addImage(imdData, 0, 0, 208, imgheight)
-      doc.save('Quiz.pdf');
+      doc.save('ExitVoucherList.pdf');
     });
   }
   openXl(content) {

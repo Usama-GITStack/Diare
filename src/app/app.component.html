@@ -1,16 +1,20 @@
 <!-- This example requires Tailwind CSS v1.4.0+ -->
-<div class="relative bg-white md:border-2" *ngIf="_router.url!='/'">
+<div class="relative bg-white md:border-2" *ngIf="_router.url!='/' && _router.url!='/AddUser'">
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
-    <div class="flex justify-between items-center py-4 md:space-x-10">
+    <div class="flex items-center py-4 md:space-x-10">
       <div class="">
-        <a routerLink=" " target="_blank" class="flex">
+        <a routerLink="/dashboard" class="flex">
           <img src="../assets/logo.jpg" class="w-16">
         </a>
       </div>
-      <nav class=" md:flex space-x-4">
+      <nav class=" md:flex space-x-4" style="    justify-content: center;
+      display: flex;
+      width: 100%;">
         <div class="dropdown">
-          <a routerLink="#"
-            class="text-sm leading-6 font-medium text-gray-500 focus:outline-none hover:text-indigo-900 transition ease-in-out duration-150">Client</a>
+          <a routerLink=""
+            class="text-sm leading-6 font-medium text-gray-500 focus:outline-none hover:text-indigo-900 transition ease-in-out duration-150"><i
+              class="fa fa-user icon-set" aria-hidden="true"></i>Client<i class="fa fa-angle-down"
+              aria-hidden="true"></i></a>
           <div class="dropdown-content">
             <a routerLink="CustomerList">List of clients</a>
             <a routerLink="RegisterCustomer">New customer</a>
@@ -18,7 +22,9 @@
         </div>
         <div class="dropdown">
           <a
-            class="text-sm leading-6 font-medium text-gray-500 focus:outline-none hover:text-indigo-900 transition ease-in-out duration-150">Articles</a>
+            class="text-sm leading-6 font-medium text-gray-500 focus:outline-none hover:text-indigo-900 transition ease-in-out duration-150"><i
+              class="fa fa-archive icon-set" aria-hidden="true"></i>Articles<i class="fa fa-angle-down"
+              aria-hidden="true"></i></a>
           <div class="dropdown-content">
             <a routerLink="AddArticals">Add Artical</a>
             <a routerLink="ListofArticals">Artical List</a>
@@ -26,8 +32,9 @@
         </div>
         <div class="dropdown">
           <a routerLink="SaleDocuments"
-            class="text-sm leading-6 font-medium text-gray-500 focus:outline-none hover:text-indigo-900 transition ease-in-out duration-150">Sale
-            Documents</a>
+            class="text-sm leading-6 font-medium text-gray-500 focus:outline-none hover:text-indigo-900 transition ease-in-out duration-150"><i
+              class="fa fa-balance-scale icon-set" aria-hidden="true"></i>Sale
+            Documents<i class="fa fa-angle-down" aria-hidden="true"></i></a>
           <div class="dropdown-content">
             <a routerLink="InvoiceList">List of Invoices</a>
             <a routerLink="NewInvoice">New Invoice</a>
@@ -38,8 +45,9 @@
         </div>
         <div class="dropdown">
           <a routerLink="StockDocument"
-            class="text-sm leading-6 font-medium text-gray-500 focus:outline-none hover:text-indigo-900 transition ease-in-out duration-150">Stock
-            Documents</a>
+            class="text-sm leading-6 font-medium text-gray-500 focus:outline-none hover:text-indigo-900 transition ease-in-out duration-150"><i
+              class="fa fa-balance-scale icon-set" aria-hidden="true"></i>Stock
+            Documents<i class="fa fa-angle-down" aria-hidden="true"></i></a>
           <div class="dropdown-content">
             <a routerLink="ListOfEntryVouchers">Entry voucher</a>
             <a routerLink="StockMovementList">Movement of stock</a>
@@ -49,19 +57,31 @@
         </div>
         <div class="dropdown">
           <a
-            class="text-sm leading-6 font-medium text-gray-500 focus:outline-none hover:text-indigo-900 transition ease-in-out duration-150">User</a>
+            class="text-sm leading-6 font-medium text-gray-500 focus:outline-none hover:text-indigo-900 transition ease-in-out duration-150"><i
+              class="fa fa-user icon-set" aria-hidden="true"></i>User<i class="fa fa-angle-down"
+              aria-hidden="true"></i></a>
           <div class="dropdown-content">
             <a routerLink="UserList">Users list</a>
-            <a routerLink="AddUser">New user</a>
             <a routerLink="UserAccess">Access control</a>
           </div>
         </div>
         <div class="dropdown">
           <a
-            class="text-sm leading-6 font-medium text-gray-500 focus:outline-none hover:text-indigo-900 transition ease-in-out duration-150">Expences</a>
+            class="text-sm leading-6 font-medium text-gray-500 focus:outline-none hover:text-indigo-900 transition ease-in-out duration-150"><i
+              class="fa fa-exclamation icon-set" aria-hidden="true"></i>Expences<i class="fa fa-angle-down"
+              aria-hidden="true"></i></a>
           <div class="dropdown-content">
             <a routerLink="ExpensesList">List of expenses</a>
             <a routerLink="Expenses">New expense</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a
+            class="text-sm leading-6 font-medium text-gray-500 focus:outline-none hover:text-indigo-900 transition ease-in-out duration-150"><i
+              class="fa fa-sign-out icon-set" aria-hidden="true"></i>Logout<i class="fa fa-angle-down"
+              aria-hidden="true"></i></a>
+          <div class="dropdown-content">
+            <a routerLink="">Logout</a>
           </div>
         </div>
       </nav>

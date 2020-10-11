@@ -16,7 +16,7 @@ export class ListRegulationComponent implements OnInit {
   tabledata = [];
   message: any;
   dataTable: any;
-  fileName = 'ExcelSheet.xlsx';
+  fileName = 'RegulationrList.xlsx';
   RC: String;
   Date: String;
   CC: String;
@@ -40,7 +40,7 @@ export class ListRegulationComponent implements OnInit {
       var doc = new jsPDF()
       var imgheight = canvas.height * 208 / canvas.width;
       doc.addImage(imdData, 0, 0, 208, imgheight)
-      doc.save('Quiz.pdf');
+      doc.save('RegulationrList.pdf');
     });
   }
   constructor(private CR: CoustomerRegisterService, public config: NgbModalConfig, public modalService: NgbModal) { }

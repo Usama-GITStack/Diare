@@ -6,22 +6,22 @@
     <div class="col-md-4 padding-colm-set ">
       <label for="sel1" class="text-color ">CUSTOMER NAME AND FIRST NAME:</label>
       <select class="form-control" id="sel1">
-        <option>First Name</option>
-        <option *ngFor="let tb of tabledata; let i = index">{{tb.FirstName}}</option>
+        <option>First Name And Last Name</option>
+        <option *ngFor="let tb of tabledata1; let i = index">{{tb.FirstName}} {{tb.LastName}}</option>
       </select>
     </div>
     <div class="col-md-4 border-left padding-colm-set ">
       <label for="sel1" class="text-color ">CUSTOMER CODE:</label>
-      <select class="form-control" id="sel1">
+      <select class="form-control" id="sel1" [(ngModel)]=searchText name="searchText">
         <option>Customer Code</option>
-        <option *ngFor="let tb of tabledata">{{tb.CustomerCode}}</option>
+        <option *ngFor="let tb of tabledata1">{{tb.CustomerCode}}</option>
       </select>
     </div>
     <div class="col-md-4 border-left padding-colm-set ">
       <label for="sel1" class="text-color ">CUSTOMER CATEGORY:</label>
       <select class="form-control" id="sel1">
         <option>Category</option>
-        <option *ngFor="let tb of tabledata">{{tb.Category}}</option>
+        <option *ngFor="let tb of tabledata1">{{tb.Category}}</option>
       </select>
       <button class="btn btn-success buttons-style  w-50 " style="float: right; margin-top: 5%;">APPLY FILTER</button>
     </div>
@@ -44,17 +44,19 @@
     </thead>
     <tbody>
       <tr *ngFor="let tb of tabledata | filter:searchText; let i=index">
-        <td><a (click)=Transfer(i)>{{tb.CustomerCode}}</a></td>
+        <td><a>{{tb.CustomerCode}}</a></td>
         <td>{{tb.LastName}}</td>
         <td>{{tb.FirstName}}</td>
         <td>{{tb.Phone}}</td>
         <td>{{tb.City}}</td>
         <td>{{tb.MadinaAddress}}</td>
         <td>{{tb.Category}}</td>
-        <td>1000</td>
-        <td> <button class="btn btn-success buttons-style  w-50 " (click)="openSm(content1,i);"><i class="fa fa-pencil"
+        <td>0</td>
+        <td> <button class="btn btn-success buttons-style  w-30 " (click)="openSm(content1,i);"><i class="fa fa-pencil"
               aria-hidden="true"></i></button>
-          <button class="btn btn-danger buttons-style  w-50 " (click)=openSm2(content2,i)><i class="fa fa-trash-o"
+          <button class="btn btn-danger buttons-style  w-30 " (click)=openSm2(content2,i)><i class="fa fa-trash-o"
+              aria-hidden="true"></i></button>
+          <button class="btn btn-info buttons-style  w-30 " (click)=Transfer(i)><i class="fa fa-eye"
               aria-hidden="true"></i></button></td>
       </tr>
     </tbody>
@@ -68,9 +70,6 @@
           <a routerLink="/RegisterCustomer">
             <button class="btn btn-success buttons-style  w-100 ">New Customer</button>
           </a>
-        </div>
-        <div class="col-md-3">
-          <button class="btn btn-success buttons-style  w-100 " routerLink="/CustomerInfo">Customer account</button>
         </div>
         <div class="col-md-2">
           <button class="btn btn-success buttons-style w-100" (click)="openSm3(content3);">Actions</button>
@@ -109,16 +108,24 @@
         </div>
         <div class="col-md-6">
           <div class="form-group">
-            <label>LAST NAME</label>
-            <input type="text" class="form-control" aria-describedby="emailHelp" value="{{LastName}}" placeholder=""
-              [(ngModel)]="LastName" name="LastName">
+            <label>Civility</label>
+            <input type="text" class="form-control" aria-describedby="emailHelp" value="{{Civility}}" placeholder=""
+              [(ngModel)]="Civility" name="Civility">
           </div>
         </div>
+
         <div class="col-md-6">
           <div class="form-group">
             <label>FIRST NAME</label>
             <input type="text" class="form-control" aria-describedby="emailHelp" value="{{FirstName}}" placeholder=""
               [(ngModel)]="FirstName" name="FirstName">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>LAST NAME</label>
+            <input type="text" class="form-control" aria-describedby="emailHelp" value="{{LastName}}" placeholder=""
+              [(ngModel)]="LastName" name="LastName">
           </div>
         </div>
         <div class="col-md-6">
@@ -130,16 +137,16 @@
         </div>
         <div class="col-md-6">
           <div class="form-group">
-            <label>CITY</label>
-            <input type="text" class="form-control" aria-describedby="emailHelp" value="{{City}}" placeholder=""
-              [(ngModel)]="City" name="City">
+            <label> ADDRESS</label>
+            <input type="text" class="form-control" aria-describedby="emailHelp" value="{{Address}}" placeholder=""
+              [(ngModel)]="Address" name="Address">
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
-            <label> ADDRESS</label>
-            <input type="text" class="form-control" aria-describedby="emailHelp" value="{{Address}}" placeholder=""
-              [(ngModel)]="Address" name="Address">
+            <label>CITY</label>
+            <input type="text" class="form-control" aria-describedby="emailHelp" value="{{City}}" placeholder=""
+              [(ngModel)]="City" name="City">
           </div>
         </div>
         <div class="col-md-6">
@@ -149,15 +156,8 @@
               [(ngModel)]="Category" name="Category">
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="form-group">
-            <label>Civility</label>
-            <input type="text" class="form-control" aria-describedby="emailHelp" value="{{Civility}}" placeholder=""
-              [(ngModel)]="Civility" name="Civility">
-          </div>
-        </div>
       </div>
-      <button type="submit" class="btn btn-primary" (click)="UpdatedAuto()">Submit</button>
+      <button type="submit" class="btn btn-success" style="float: right;" (click)="UpdatedAuto()">Submit</button>
     </form>
   </div>
   <div class="modal-footer">

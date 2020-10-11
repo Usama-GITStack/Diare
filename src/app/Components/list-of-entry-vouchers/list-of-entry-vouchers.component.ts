@@ -17,7 +17,7 @@ export class ListOfEntryVouchersComponent implements OnInit {
   tabledata = [];
   dataTable: any;
   message: any;
-  fileName = 'ExcelSheet.xlsx';
+  fileName = 'EntryVoucherList.xlsx';
   Date: String;
   Document: String;
   Warehouse: String;
@@ -38,7 +38,7 @@ export class ListOfEntryVouchersComponent implements OnInit {
       var doc = new jsPDF()
       var imgheight = canvas.height * 208 / canvas.width;
       doc.addImage(imdData, 0, 0, 208, imgheight)
-      doc.save('Quiz.pdf');
+      doc.save('EntryVoucherList.pdf');
     });
   }
   openXl(content) {

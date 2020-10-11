@@ -6,8 +6,13 @@ body {
   margin: 0;
   background-color: #f3f9ff !important;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  overflow-x: hidden;
 }
 
 .main {
   margin-top: 5%;
+}
+
+.display {
+  overflow: scroll !important;
 }

@@ -32,11 +32,11 @@ export class RegisterNewCoustomerComponent implements OnInit {
       Address: this.Address
     }
     console.log(Co);
-    setTimeout(() => {
-      this.router.navigateByUrl('/CustomerList');
-    }, 500);
+
     this.router.navigateByUrl('/CustomerList');
     this.CR.CoustomerRegister(Co);
-
+    setTimeout(() => {
+      this.router.navigateByUrl('/CustomerList');
+    }, 2000);
   }
 }

@@ -15,13 +15,14 @@ export class UserListComponent implements OnInit {
   datageting: any = {};
   tabledata = [];
   dataTable: any;
-  fileName = 'ExcelSheet.xlsx';
+  fileName = 'UserList.xlsx';
   Name: String;
   Phone: String;
   Function: String;
   Password: String;
   PasswordC: String;
   UC: String;
+  message: any;
   exportexcel() {
     console.log("Usama")
     let element = document.getElementById('excel-table');
@@ -38,7 +39,7 @@ export class UserListComponent implements OnInit {
       var doc = new jsPDF()
       var imgheight = canvas.height * 208 / canvas.width;
       doc.addImage(imdData, 0, 0, 208, imgheight)
-      doc.save('Quiz.pdf');
+      doc.save('UserList.pdf');
     });
   }
   ngOnInit() {
@@ -47,18 +48,18 @@ export class UserListComponent implements OnInit {
       this.tabledata = this.datageting.msg;
     })
   }
-  openXl(content, index) {
+  openXl(content) {
     this.modalService.open(content, { size: 'xl' });
-    this.UC = this.tabledata[index].UserCOde;
-    this.Name = this.tabledata[index].Name;
-    this.Phone = this.tabledata[index].Phone;
-    this.Function = this.tabledata[index].Function;
-    this.Password = this.tabledata[index].Password;
-    this.PasswordC = this.tabledata[index].PasswordC;
+    this.UC = this.tabledata[this.message].UserCOde;
+    this.Name = this.tabledata[this.message].Name;
+    this.Phone = this.tabledata[this.message].Phone;
+    this.Function = this.tabledata[this.message].Function;
+    this.Password = this.tabledata[this.message].Password;
+    this.PasswordC = this.tabledata[this.message].PasswordC;
   }
-  Delete(index) {
+  Delete() {
     const Co = {
-      UserCOde: this.tabledata[index].UserCOde,
+      UserCOde: this.tabledata[this.message].UserCOde,
     }
 
     this.CR.UserListRemove(Co);
@@ -68,6 +69,16 @@ export class UserListComponent implements OnInit {
         this.tabledata = this.datageting.msg;
       })
     }, 1500);
+  }
+  openSm(content1, i) {
+    this.modalService.open(content1, { size: 'sm' });
+    this.message = i
+    console.log(this.message)
+  }
+  openSm2(content2, i) {
+    this.modalService.open(content2, { size: 'sm' });
+    this.message = i
+    console.log(this.message)
   }
   onCourseSend() {
     const Co = {
@@ -93,4 +104,5 @@ export class UserListComponent implements OnInit {
   openSm3(content3) {
     this.modalService.open(content3, { size: 'sm' });
   }
+
 }

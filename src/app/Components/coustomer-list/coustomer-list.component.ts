@@ -11,16 +11,19 @@ import { Router, Routes } from '@angular/router';
   styleUrls: ['./coustomer-list.component.css']
 })
 export class CoustomerListComponent implements OnInit {
-
+  dtOptions: any;
   constructor(private CR: CoustomerRegisterService, private router: Router, public config: NgbModalConfig, public modalService: NgbModal) { }
+
   @ViewChild('dataTable', { static: true }) table;
   datageting: any = {};
   tabledata = [];
+  tabledata1 = [];
   message: any;
   dataTable: any;
-  fileName = 'ExcelSheet.xlsx';
+  fileName = 'CustomerList.xlsx';
   searchText: any;
   searchText1: any;
+  searchText2: any;
   CustomerCode: String;
   LastName: String;
   Phone: String;
@@ -40,19 +43,25 @@ export class CoustomerListComponent implements OnInit {
 
   }
   public SavePDF() {
-    let element = document.getElementById("excel-table")
-    html2canvas(element).then((canvas) => {
-      var imdData = canvas.toDataURL('image/png')
-      var doc = new jsPDF()
-      var imgheight = canvas.height * 208 / canvas.width;
-      doc.addImage(imdData, 0, 0, 208, imgheight)
-      doc.save('Quiz.pdf');
+    var data = document.getElementById('excel-table');
+    html2canvas(data).then(canvas => {
+      var imgWidth = 208;
+      var pageHeight = 295;
+      var imgHeight = canvas.height * imgWidth / canvas.width;
+      var heightLeft = imgHeight;
+
+      const contentDataURL = canvas.toDataURL('image/png')
+      let pdf = new jsPDF('p', 'mm', 'a4'); // A4 size page of PDF
+      var position = 0;
+      pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight)
+      pdf.save('CustomerList.pdf'); // Generated PDF
     });
   }
   ngOnInit() {
     this.CR.getData().subscribe(data => {
       this.datageting = data;
       this.tabledata = this.datageting.msg;
+      this.tabledata1 = this.datageting.msg;
       setTimeout(() => {
         this.dataTable = $(this.table.nativeElement);
         this.dataTable.DataTable();
@@ -114,7 +123,7 @@ export class CoustomerListComponent implements OnInit {
         }, 500);
 
       })
-    }, 1500);
+    }, 2000);
   }
   Transfer(index) {
     this.CR.changetMessage(index);

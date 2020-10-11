@@ -18,7 +18,7 @@ export class ListofWarehouseComponent implements OnInit {
   tabledata = [];
   message: any;
   dataTable: any;
-  fileName = 'ExcelSheet.xlsx';
+  fileName = 'WarehouseList.xlsx';
   WAREHOUSECODE: String;
   NAMEOFWAREHOUSE: String;
   ADDRESS: String;
@@ -40,7 +40,7 @@ export class ListofWarehouseComponent implements OnInit {
       var doc = new jsPDF()
       var imgheight = canvas.height * 208 / canvas.width;
       doc.addImage(imdData, 0, 0, 208, imgheight)
-      doc.save('Quiz.pdf');
+      doc.save('WarehouseList.pdf');
     });
   }
   ngOnInit() {

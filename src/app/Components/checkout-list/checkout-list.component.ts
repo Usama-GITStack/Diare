@@ -16,7 +16,7 @@ export class CheckoutListComponent implements OnInit {
   tabledata = [];
   message: any;
   dataTable: any;
-  fileName = 'ExcelSheet.xlsx';
+  fileName = 'CheckoutList.xlsx';
   Date: String;
   Amount: String;
   EXPENDITURE: String;
@@ -38,7 +38,7 @@ export class CheckoutListComponent implements OnInit {
       var doc = new jsPDF()
       var imgheight = canvas.height * 208 / canvas.width;
       doc.addImage(imdData, 0, 0, 208, imgheight)
-      doc.save('Quiz.pdf');
+      doc.save('CheckoutList.pdf');
     });
   }
   constructor(private CR: CoustomerRegisterService, public config: NgbModalConfig, public modalService: NgbModal) { }

@@ -16,7 +16,7 @@ export class ListofArticalsComponent implements OnInit {
   tabledata = [];
   dataTable: any;
   message: any;
-  fileName = 'ExcelSheet.xlsx';
+  fileName = 'ArticalList.xlsx';
   ItemCode: String;
   Unit: String;
   Nameofthearticle: String;
@@ -41,7 +41,7 @@ export class ListofArticalsComponent implements OnInit {
       var doc = new jsPDF()
       var imgheight = canvas.height * 208 / canvas.width;
       doc.addImage(imdData, 0, 0, 208, imgheight)
-      doc.save('Quiz.pdf');
+      doc.save('ArticalList.pdf');
     });
   }
   ngOnInit() {

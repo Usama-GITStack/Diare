@@ -8,7 +8,7 @@ export class FilterPipe implements PipeTransform {
     if (!searchText) return items;
     searchText = searchText.toLowerCase();
     return items.filter(it => {
-      return it.Email.toLowerCase().includes(searchText);
+      return it.CustomerCode.toLowerCase().includes(searchText);
     });
   }
   transform1(items: any[], searchText1: string): any[] {
@@ -16,7 +16,15 @@ export class FilterPipe implements PipeTransform {
     if (!searchText1) return items;
     searchText1 = searchText1.toLowerCase();
     return items.filter(it => {
-      return it.Email.toLowerCase().includes(searchText1);
+      return it.CustomerCode.toLowerCase().includes(searchText1);
+    });
+  }
+  transform2(items: any[], searchText2: string): any[] {
+    if (!items) return [];
+    if (!searchText2) return items;
+    searchText2 = searchText2.toLowerCase();
+    return items.filter(it => {
+      return it.Category.toLowerCase().includes(searchText2);
     });
   }
 }

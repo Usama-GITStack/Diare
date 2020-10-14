@@ -14,6 +14,10 @@ export class SaleHistoryComponent implements OnInit {
   @ViewChild('dataTable', { static: true }) table;
   datageting: any = {};
   tabledata = [];
+  tabledata1 = [];
+  searchText: any;
+  searchText1: any;
+  searchText2: any;
   dataTable: any;
   fileName = 'ExcelSheet.xlsx';
   exportexcel() {
@@ -40,6 +44,7 @@ export class SaleHistoryComponent implements OnInit {
     this.CR.getData10().subscribe(data => {
       this.datageting = data;
       this.tabledata = this.datageting.msg;
+      this.tabledata1 = this.datageting.msg;
       setTimeout(() => {
         this.dataTable = $(this.table.nativeElement);
         this.dataTable.DataTable();
@@ -48,5 +53,32 @@ export class SaleHistoryComponent implements OnInit {
   }
   openSm3(content3) {
     this.modalService.open(content3, { size: 'sm' });
+  }
+  DateFilter() {
+    var a = this.searchText;
+    var b = this.searchText1;
+    var c = this.searchText2;
+    this.tabledata = this.tabledata1;
+    for (var i = 0; i < this.tabledata.length; i++) {
+      if (a == this.tabledata[i].CC && b == this.tabledata[i].RC && c == this.tabledata[i].Amount) {
+        var index = i;
+        console.log(this.tabledata);
+        break;
+      }
+      else {
+        console.log("No Found")
+      }
+    }
+    this.tabledata = [
+      {
+        RC: this.tabledata[index].RC,
+        Date: this.tabledata[index].Date,
+        CC: this.tabledata[index].CC,
+        PM: this.tabledata[index].PM,
+        Bank: this.tabledata[index].Bank,
+        Checkout: this.tabledata[index].Checkout,
+        Amount: this.tabledata[index].Amount,
+      }
+    ]
   }
 }

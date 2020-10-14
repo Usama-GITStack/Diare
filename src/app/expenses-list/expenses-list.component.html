@@ -15,11 +15,17 @@
     </div>
     <div class="col-md-4 border-left padding-colm-set ">
       <label for="sel1" class="text-color ">ARTICLE CATEGORY:</label>
-      <select class="form-control" id="sel1">
-        <option *ngFor="let tb of tabledata;">{{tb.Category}}</option>
+      <select class="form-control" id="sel1" [(ngModel)]=searchText name="searchText">
+        <option *ngFor="let tb of tabledata1;">{{tb.Category}}</option>
 
       </select>
-      <button class="btn btn-success buttons-style  w-50 " style="float: right; margin-top: 5%;">APPLY FILTER</button>
+      <label for="sel1" class="text-color ">Referance:</label>
+      <select class="form-control" id="sel1" [(ngModel)]=searchText1 name="searchText1">
+        <option *ngFor="let tb of tabledata1;">{{tb.Referance}}</option>
+
+      </select>
+      <button class="btn btn-success buttons-style  w-50 " style="float: right; margin-top: 5%;"
+        (click)=DateFilter()>APPLY FILTER</button>
     </div>
   </div>
 </section>

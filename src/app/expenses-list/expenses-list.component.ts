@@ -15,6 +15,9 @@ export class ExpensesListComponent implements OnInit {
   @ViewChild('dataTable', { static: true }) table;
   datageting: any = {};
   tabledata = [];
+  tabledata1 = [];
+  searchText: any;
+  searchText1: any;
   dataTable: any;
   message: any;
   fileName = 'ExpensesList.xlsx';
@@ -41,6 +44,7 @@ export class ExpensesListComponent implements OnInit {
     this.CR.getData12().subscribe(data => {
       this.datageting = data;
       this.tabledata = this.datageting.msg;
+      this.tabledata1 = this.datageting.msg;
       setTimeout(() => {
         this.dataTable = $(this.table.nativeElement);
         this.dataTable.DataTable();
@@ -49,5 +53,29 @@ export class ExpensesListComponent implements OnInit {
   }
   openSm3(content3) {
     this.modalService.open(content3, { size: 'sm' });
+  }
+  DateFilter() {
+    var a = this.searchText;
+    var b = this.searchText1;
+    this.tabledata = this.tabledata1;
+    for (var i = 0; i < this.tabledata.length; i++) {
+      if (a == this.tabledata[i].Category && b == this.tabledata[i].Referance) {
+        var index = i;
+        console.log(this.tabledata);
+        break;
+      }
+      else {
+        console.log("No Found")
+      }
+    }
+    this.tabledata = [
+      {
+        Referance: this.tabledata[index].Referance,
+        Date: this.tabledata[index].Date,
+        Amount: this.tabledata[index].Amount,
+        Note: this.tabledata[index].Note,
+        Category: this.tabledata[index].Category
+      }
+    ]
   }
 }

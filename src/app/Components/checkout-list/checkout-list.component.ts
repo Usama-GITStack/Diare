@@ -14,6 +14,10 @@ export class CheckoutListComponent implements OnInit {
   @ViewChild('dataTable', { static: true }) table;
   datageting: any = {};
   tabledata = [];
+  tabledata1 = [];
+  searchText: any;
+  searchText1: any;
+  searchText2: any;
   message: any;
   dataTable: any;
   fileName = 'CheckoutList.xlsx';
@@ -55,6 +59,7 @@ export class CheckoutListComponent implements OnInit {
     this.CR.getData11().subscribe(data => {
       this.datageting = data;
       this.tabledata = this.datageting.msg;
+      this.tabledata1 = this.datageting.msg;
       setTimeout(() => {
         this.dataTable = $(this.table.nativeElement);
         this.dataTable.DataTable();
@@ -105,5 +110,31 @@ export class CheckoutListComponent implements OnInit {
 
       })
     }, 1500);
+  }
+  DateFilter() {
+    var a = this.searchText;
+    var b = this.searchText1;
+    var c = this.searchText2;
+    this.tabledata = this.tabledata1;
+    for (var i = 0; i < this.tabledata.length; i++) {
+      if (a == this.tabledata[i].RN && b == this.tabledata[i].Amount && c == this.tabledata[i].EXPENDITURE) {
+        var index = i;
+        console.log(this.tabledata);
+        break;
+      }
+      else {
+        console.log("No Found")
+      }
+    }
+    this.tabledata = [
+      {
+        RN: this.tabledata[index].RN,
+        Date: this.tabledata[index].Date,
+        Amount: this.tabledata[index].Amount,
+        EXPENDITURE: this.tabledata[index].EXPENDITURE,
+        CM: this.tabledata[index].CM,
+        Wording: this.tabledata[index].Wording,
+      }
+    ]
   }
 }

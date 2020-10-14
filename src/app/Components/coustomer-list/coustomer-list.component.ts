@@ -17,6 +17,7 @@ export class CoustomerListComponent implements OnInit {
   @ViewChild('dataTable', { static: true }) table;
   datageting: any = {};
   tabledata = [];
+  DataQuiz: any;
   tabledata1 = [];
   message: any;
   dataTable: any;
@@ -131,6 +132,34 @@ export class CoustomerListComponent implements OnInit {
   }
   openSm3(content3) {
     this.modalService.open(content3, { size: 'sm' });
+  }
+  DateFilter() {
+    var a = this.searchText;
+    var b = this.searchText1;
+    var c = this.searchText2;
+    this.tabledata = this.tabledata1;
+    for (var i = 0; i < this.tabledata.length; i++) {
+      if (b == this.tabledata[i].CustomerCode && c == this.tabledata[i].Category) {
+        var index = i;
+        console.log(this.tabledata);
+        break;
+      }
+      else {
+        console.log("No Found")
+      }
+    }
+    this.tabledata = [
+      {
+        CustomerCode: this.tabledata[index].CustomerCode,
+        LastName: this.tabledata[index].LastName,
+        Phone: this.tabledata[index].Phone,
+        City: this.tabledata[index].City,
+        Civility: this.tabledata[index].Civility,
+        FirstName: this.tabledata[index].FirstName,
+        Category: this.tabledata[index].Category,
+        Address: this.tabledata[index].MadinaAddress
+      }
+    ]
   }
 }
 

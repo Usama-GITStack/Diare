@@ -18,6 +18,10 @@ export class ListOfExitVouchersComponent implements OnInit {
   tabledata = [];
   dataTable: any;
   fileName = 'ExitVoucherList.xlsx';
+  tabledata1 = [];
+  searchText: any;
+  searchText1: any;
+  searchText2: any;
   Date: String;
   message: any;
   Document: String;
@@ -52,6 +56,7 @@ export class ListOfExitVouchersComponent implements OnInit {
     this.CR.getData3().subscribe(data => {
       this.datageting = data;
       this.tabledata = this.datageting.msg;
+      this.tabledata1 = this.datageting.msg;
       setTimeout(() => {
         this.dataTable = $(this.table.nativeElement);
         this.dataTable.DataTable();
@@ -104,5 +109,29 @@ export class ListOfExitVouchersComponent implements OnInit {
   }
   openSm3(content3) {
     this.modalService.open(content3, { size: 'sm' });
+  }
+  DateFilter() {
+    var a = this.searchText;
+    var b = this.searchText1;
+    var c = this.searchText2;
+    this.tabledata = this.tabledata1;
+    for (var i = 0; i < this.tabledata.length; i++) {
+      if (a == this.tabledata[i].Warehouse && b == this.tabledata[i].Reception && c == this.tabledata[i].Reception) {
+        var index = i;
+        console.log(this.tabledata);
+        break;
+      }
+      else {
+        console.log("No Found")
+      }
+    }
+    this.tabledata = [
+      {
+        Date: this.tabledata[index].Date,
+        Document: this.tabledata[index].Document,
+        Warehouse: this.tabledata[index].Warehouse,
+        Reception: this.tabledata[index].Reception
+      }
+    ]
   }
 }

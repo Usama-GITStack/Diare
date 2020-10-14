@@ -14,8 +14,12 @@ export class ListofArticalsComponent implements OnInit {
   @ViewChild('dataTable', { static: true }) table;
   datageting: any = {};
   tabledata = [];
+  tabledata1 = [];
   dataTable: any;
   message: any;
+  searchText: any;
+  searchText1: any;
+  searchText2: any;
   fileName = 'ArticalList.xlsx';
   ItemCode: String;
   Unit: String;
@@ -48,6 +52,7 @@ export class ListofArticalsComponent implements OnInit {
     this.CR.getData1().subscribe(data => {
       this.datageting = data;
       this.tabledata = this.datageting.msg;
+      this.tabledata1 = this.datageting.msg;
       setTimeout(() => {
         this.dataTable = $(this.table.nativeElement);
         this.dataTable.DataTable();
@@ -115,5 +120,32 @@ export class ListofArticalsComponent implements OnInit {
   }
   openSm3(content3) {
     this.modalService.open(content3, { size: 'sm' });
+  }
+  DateFilter() {
+    var a = this.searchText;
+    var b = this.searchText1;
+    var c = this.searchText2;
+    this.tabledata = this.tabledata1;
+    for (var i = 0; i < this.tabledata.length; i++) {
+      if (a == this.tabledata[i].ItemCode && b == this.tabledata[i].Nameofthearticle && c == this.tabledata[i].Category) {
+        var index = i;
+        console.log(this.tabledata);
+        break;
+      }
+      else {
+        console.log("No Found")
+      }
+    }
+    this.tabledata = [
+      {
+        ItemCode: this.tabledata[index].ItemCode,
+        Unit: this.tabledata[index].Unit,
+        Nameofthearticle: this.tabledata[index].Nameofthearticle,
+        CostPrice: this.tabledata[index].CostPrice,
+        SellingPrice: this.tabledata[index].SellingPrice,
+        Category: this.tabledata[index].Category,
+        Margin: this.tabledata[index].Margin
+      }
+    ]
   }
 }

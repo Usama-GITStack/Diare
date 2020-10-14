@@ -14,6 +14,11 @@ export class ListRegulationComponent implements OnInit {
   @ViewChild('dataTable', { static: true }) table;
   datageting: any = {};
   tabledata = [];
+  tabledata1 = [];
+  tabledata2 = [];
+  searchText: any;
+  searchText1: any;
+  searchText2: any;
   message: any;
   dataTable: any;
   fileName = 'RegulationrList.xlsx';
@@ -57,12 +62,13 @@ export class ListRegulationComponent implements OnInit {
   ngOnInit() {
     this.CR.getData10().subscribe(data => {
       this.datageting = data;
+      this.tabledata1 = this.datageting.msg;
       this.tabledata = this.datageting.msg;
       setTimeout(() => {
         this.dataTable = $(this.table.nativeElement);
         this.dataTable.DataTable();
       }, 500);
-    })
+    });
   }
   onCourseSend() {
     const Co = {
@@ -110,5 +116,32 @@ export class ListRegulationComponent implements OnInit {
   }
   openSm3(content3) {
     this.modalService.open(content3, { size: 'sm' });
+  }
+  DateFilter() {
+    var a = this.searchText;
+    var b = this.searchText1;
+    var c = this.searchText2;
+    this.tabledata = this.tabledata1;
+    for (var i = 0; i < this.tabledata.length; i++) {
+      if (b == this.tabledata[i].CC && c == this.tabledata[i].RC) {
+        var index = i;
+        console.log(this.tabledata);
+        break;
+      }
+      else {
+        console.log("No Found")
+      }
+    }
+    this.tabledata = [
+      {
+        RC: this.tabledata[index].RC,
+        Date: this.tabledata[index].Date,
+        CC: this.tabledata[index].CC,
+        PM: this.tabledata[index].PM,
+        Bank: this.tabledata[index].Bank,
+        Checkout: this.tabledata[index].Checkout,
+        Amount: this.tabledata[index].Amount,
+      }
+    ]
   }
 }

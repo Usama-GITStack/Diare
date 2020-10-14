@@ -15,6 +15,10 @@ export class InvoiceListComponent implements OnInit {
   @ViewChild('dataTable', { static: true }) table;
   datageting: any = {};
   tabledata = [];
+  tabledata1 = [];
+  searchText: any;
+  searchText1: any;
+  searchText2: any;
   dataTable: any;
   fileName = 'InvoiceList.xlsx';
   Warehouse: String;
@@ -49,6 +53,7 @@ export class InvoiceListComponent implements OnInit {
     this.CR.getData5().subscribe(data => {
       this.datageting = data;
       this.tabledata = this.datageting.msg;
+      this.tabledata1 = this.datageting.msg;
       setTimeout(() => {
         this.dataTable = $(this.table.nativeElement);
         this.dataTable.DataTable();
@@ -115,5 +120,34 @@ export class InvoiceListComponent implements OnInit {
   }
   openSm3(content3) {
     this.modalService.open(content3, { size: 'sm' });
+  }
+  DateFilter() {
+    var a = this.searchText;
+    var b = this.searchText1;
+    var c = this.searchText2;
+    this.tabledata = this.tabledata1;
+    for (var i = 0; i < this.tabledata.length; i++) {
+      if (a == this.tabledata[i].FACTNUMBER && b == this.tabledata[i].FirstName && c == this.tabledata[i].FACTNUMBER) {
+        var index = i;
+        console.log(this.tabledata);
+        break;
+      }
+      else {
+        console.log("No Found")
+      }
+    }
+    this.tabledata = [
+      {
+        Date: this.tabledata[index].Date,
+        FACTNUMBER: this.tabledata[index].FACTNUMBER,
+        Warehouse: this.tabledata[index].Warehouse,
+        FirstName: this.tabledata[index].FirstName,
+        LastName: this.tabledata[index].LastName,
+        Email: this.tabledata[index].Email,
+        Phone: this.tabledata[index].Phone,
+        Address: this.tabledata[index].Address,
+        TotalInvoice: this.tabledata[index].TotalInvoice
+      }
+    ]
   }
 }

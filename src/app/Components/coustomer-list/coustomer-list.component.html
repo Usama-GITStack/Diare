@@ -5,25 +5,26 @@
   <div class="row">
     <div class="col-md-4 padding-colm-set ">
       <label for="sel1" class="text-color ">CUSTOMER NAME AND FIRST NAME:</label>
-      <select class="form-control" id="sel1">
+      <select class="form-control" id="sel1" [(ngModel)]=searchText name="searchText">
         <option>First Name And Last Name</option>
         <option *ngFor="let tb of tabledata1; let i = index">{{tb.FirstName}} {{tb.LastName}}</option>
       </select>
     </div>
     <div class="col-md-4 border-left padding-colm-set ">
       <label for="sel1" class="text-color ">CUSTOMER CODE:</label>
-      <select class="form-control" id="sel1" [(ngModel)]=searchText name="searchText">
+      <select class="form-control" id="sel1" [(ngModel)]=searchText1 name="searchText1">
         <option>Customer Code</option>
         <option *ngFor="let tb of tabledata1">{{tb.CustomerCode}}</option>
       </select>
     </div>
     <div class="col-md-4 border-left padding-colm-set ">
       <label for="sel1" class="text-color ">CUSTOMER CATEGORY:</label>
-      <select class="form-control" id="sel1">
+      <select class="form-control" id="sel1" [(ngModel)]=searchText2 name="searchText2">
         <option>Category</option>
         <option *ngFor="let tb of tabledata1">{{tb.Category}}</option>
       </select>
-      <button class="btn btn-success buttons-style  w-50 " style="float: right; margin-top: 5%;">APPLY FILTER</button>
+      <button class="btn btn-success buttons-style  w-50 " style="float: right; margin-top: 5%;"
+        (click)=DateFilter()>APPLY FILTER</button>
     </div>
   </div>
 </section>
@@ -43,7 +44,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let tb of tabledata | filter:searchText; let i=index">
+      <tr *ngFor="let tb of tabledata; let i=index">
         <td><a>{{tb.CustomerCode}}</a></td>
         <td>{{tb.LastName}}</td>
         <td>{{tb.FirstName}}</td>

@@ -109,7 +109,7 @@ export class CoustomerRegisterService {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
-        this._snackBar.open("Invoice successfully Add", "OK", {
+        this._snackBar.open("Invoice Add", "OK", {
           duration: 2000,
           panelClass: ['blue-snackbar']
         });
@@ -127,7 +127,7 @@ export class CoustomerRegisterService {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
-        this._snackBar.open("WArehouse successfully Add", "OK", {
+        this._snackBar.open("WArehouse Add", "OK", {
           duration: 2000,
           panelClass: ['blue-snackbar']
         });
@@ -145,7 +145,7 @@ export class CoustomerRegisterService {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
-        this._snackBar.open("New Voucher successfully Add", "OK", {
+        this._snackBar.open("New Voucher Add", "OK", {
           duration: 2000,
           panelClass: ['blue-snackbar']
         });
@@ -163,7 +163,7 @@ export class CoustomerRegisterService {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
-        this._snackBar.open("Exit Voucher successfully Add", "OK", {
+        this._snackBar.open("Exit Voucher Add", "OK", {
           duration: 2000,
           panelClass: ['blue-snackbar']
         });
@@ -181,7 +181,7 @@ export class CoustomerRegisterService {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
-        this._snackBar.open("Stuff successfully Add", "OK", {
+        this._snackBar.open("Stuff  Add", "OK", {
           duration: 2000,
           panelClass: ['blue-snackbar']
         });
@@ -199,7 +199,7 @@ export class CoustomerRegisterService {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
-        this._snackBar.open("User successfully Add", "OK", {
+        this._snackBar.open("User  Add", "OK", {
           duration: 2000,
           panelClass: ['blue-snackbar']
         });
@@ -217,7 +217,7 @@ export class CoustomerRegisterService {
     }).subscribe(data => {
       this.datageting = data
       if (this.datageting.success) {
-        this._snackBar.open("Rules successfully Add", "OK", {
+        this._snackBar.open("Rules  Add", "OK", {
           duration: 2000,
           panelClass: ['blue-snackbar']
         });
@@ -234,7 +234,7 @@ export class CoustomerRegisterService {
     this.http.post('https://diarebackend.herokuapp.com/NewCheckout', CR, {
     }).subscribe(data => {
       if (this.datageting.success) {
-        this._snackBar.open("Checkout successfully Add", "OK", {
+        this._snackBar.open("Checkout Add", "OK", {
           duration: 2000,
           panelClass: ['blue-snackbar']
         });

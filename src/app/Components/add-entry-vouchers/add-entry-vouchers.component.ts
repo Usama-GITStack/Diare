@@ -10,17 +10,20 @@ export class AddEntryVouchersComponent implements OnInit {
 
   constructor(private CR: CoustomerRegisterService, private router: Router) { }
   Date: String;
+  random: any;
+  today = Date.now();
   Document: String;
   Warehouse: String;
   Reception: String;
   AA: number;
   ngOnInit() {
+    this.random = Math.floor((Math.random() * 10000) + 1);
     console.log(this.AA);
   }
   onCourseSend() {
     const Co = {
-      Date: this.Date,
-      Document: this.Document,
+      Date: this.today,
+      Document: this.random,
       Warehouse: this.Warehouse,
       Reception: this.Reception
     }

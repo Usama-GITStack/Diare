@@ -12,7 +12,7 @@
                   <div class="form-group row">
                     <label class="col-sm-4 col-form-label">Date:</label>
                     <div class="col-sm-8">
-                      <input type="date" class="form-control" placeholder="" [(ngModel)]="Date" name="Date" required>
+                      <input class="form-control" placeholder="" value="{{today| date:'shortDate'}}" required>
                     </div>
                   </div>
                 </div>
@@ -20,8 +20,7 @@
                   <div class="form-group row">
                     <label class="col-sm-4 col-form-label">DOCUMENT NUMBER:</label>
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" placeholder="" [(ngModel)]="Document" name="Document"
-                        required>
+                      <input type="text" class="form-control" placeholder="" value="AR-{{random}}" required>
                     </div>
                   </div>
                 </div>
@@ -30,7 +29,7 @@
               <div class="col-md-6">
                 <div class="col-md-12">
                   <div class="form-group row">
-                    <label class="col-sm-4 col-form-label">PROVEN WAREHOUSE:</label>
+                    <label class="col-sm-4 col-form-label">Origin WAREHOUSE:</label>
                     <div class="col-sm-8">
                       <input type="" class="form-control" placeholder="" [(ngModel)]="Warehouse" name="Warehouse"
                         required>

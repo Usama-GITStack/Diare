@@ -9,8 +9,28 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class CoustomerRegisterService {
   private messagesend = new BehaviorSubject<number>(0);
   currentMessage = this.messagesend.asObservable();
+  private messagesend0 = new BehaviorSubject<number>(0);
+  currentMessage0 = this.messagesend0.asObservable();
+  private messagesend1 = new BehaviorSubject<string>("default");
+  currentMessage1 = this.messagesend1.asObservable();
+  private messagesend2 = new BehaviorSubject<string>("default");
+  currentMessage2 = this.messagesend2.asObservable();
+  private messagesend3 = new BehaviorSubject<string>("default");
+  currentMessage3 = this.messagesend3.asObservable();
   changetMessage(message: number) {
     this.messagesend.next(message);
+  }
+  changetMessage1(message: string) {
+    this.messagesend1.next(message);
+  }
+  changetMessage2(message: string) {
+    this.messagesend2.next(message);
+  }
+  changetMessage3(message: string) {
+    this.messagesend3.next(message);
+  }
+  changetMessage0(message: number) {
+    this.messagesend0.next(message);
   }
 
   datageting: any = {}

@@ -127,7 +127,7 @@ export class CoustomerListComponent implements OnInit {
     }, 2000);
   }
   Transfer(index) {
-    this.CR.changetMessage(index);
+    this.CR.changetMessage0(index);
     this.router.navigateByUrl('/CustomerInfo');
   }
   openSm3(content3) {

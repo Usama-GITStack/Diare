@@ -33,7 +33,7 @@ export class AddArticalsComponent implements OnInit {
     this.Sub = event;
   }
   somethingChanged1(event) {
-    this.Sub = this.Sub - Number(this.SellingPrice)
+    this.Sub = Number(this.CostPrice) - Number(this.SellingPrice)
   }
   onCourseSend() {
     const Co = {

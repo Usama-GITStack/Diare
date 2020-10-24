@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class NewInvoiceComponent implements OnInit {
   random: any;
   datageting: any;
+  datageting1: any;
   Warehouse: String;
   FirstName: String;
   LastName: String;
@@ -25,6 +26,8 @@ export class NewInvoiceComponent implements OnInit {
   constructor(private CR: CoustomerRegisterService, private router: Router) { }
   dataTable: any;
   tabledata = [];
+  dataTable1: any;
+  tabledata1 = [];
   TotalAdd = 0;
   today: number = Date.now();
   ngOnInit() {
@@ -35,6 +38,10 @@ export class NewInvoiceComponent implements OnInit {
     this.CR.getData4().subscribe(data => {
       this.datageting = data;
       this.tabledata = this.datageting.msg;
+    });
+    this.CR.getData().subscribe(data => {
+      this.datageting1 = data;
+      this.tabledata1 = this.datageting1.msg;
     })
     this.random = Math.floor((Math.random() * 10000) + 1);
   }

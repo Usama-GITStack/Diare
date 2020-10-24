@@ -110,19 +110,28 @@
       <tr class="home-page-color-bg1">
         <th scope="col">DATED</th>
         <th scope="col">DOCUMENT TYPE</th>
-        <th scope="col">TOTAL GNF INVOICE</th>
-        <th scope="col">TOTAL PAYMENT GNF</th>
-        <th scope="col">GNF SALES</th>
+        <th scope="col">TOTAL INVOICE</th>
+        <th scope="col">TOTAL PAYMENT</th>
+        <th scope="col">SALES</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let tb of tabledata1">
+      <tr *ngFor="let tb of tabledata1; let i=index">
         <td>{{tb.DATED}}</td>
-        <td><a routerLink="/RECEIPT">{{tb.DOCUMENT}}</a></td>
+        <td><a (click)=Transfer(i)>{{tb.DOCUMENT}}</a></td>
         <td>{{tb.Total}}</td>
         <td>{{tb.Totalp}}</td>
         <td>{{tb.GNF}}</td>
       </tr>
     </tbody>
+    <tfoot>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Total</th>
+        <th scope="col">{{variable}} GNF</th>
+        <th scope="col">{{variable1}} GNF</th>
+        <th scope="col">{{variable2}} GNF</th>
+      </tr>
+    </tfoot>
   </table>
 </section>

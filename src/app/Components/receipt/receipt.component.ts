@@ -42,17 +42,26 @@ export class RECEIPTComponent implements OnInit {
       this.message4 = message
       console.log(this.message4)
     });
-    this.CR.getData10().subscribe(data => {
-      this.datageting = data;
-      this.tabledata = this.datageting.msg;
-      this.CC = this.tabledata[this.message4].CC;
-      this.Name = this.tabledata[this.message4].CN;
-      this.CH = this.tabledata[this.message4].PM;
-      this.CN = this.tabledata[this.message4].Checkout;
-      this.Bank = this.tabledata[this.message4].Bank;
-      this.Ammount = this.tabledata[this.message4].Amount;
+    this.CR.currentMessage11.subscribe(message => {
+      this.CC = message
+    });
+    this.CR.currentMessage12.subscribe(message => {
+      this.Name = message
+    });
+    this.CR.currentMessage13.subscribe(message => {
+      this.CH = message
+
+    });
+    this.CR.currentMessage14.subscribe(message => {
+      this.Bank = message
+
+    });
+    this.CR.currentMessage15.subscribe(message => {
+      this.CN = message
+    });
+    this.CR.currentMessage16.subscribe(message => {
+      this.Ammount = message
       this.Words = numberToWords(Number(this.Ammount));
-      console.log(this.Words);
     });
   }
 

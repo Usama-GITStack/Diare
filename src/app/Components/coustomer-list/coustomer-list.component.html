@@ -227,8 +227,7 @@
             <div class="form-group row">
               <label class="col-sm-4 col-form-label">Date:</label>
               <div class="col-sm-8">
-                <input type="date" class="form-control" placeholder="" value="{{Date| date:'shortDate'}}"
-                  [(ngModel)]="Date" name="Date" required>
+                <input type="date" class="form-control" placeholder="" value="" [(ngModel)]="Date" name="Date" required>
               </div>
             </div>
           </div>
@@ -253,12 +252,12 @@
             <div class="form-group row">
               <label class="col-sm-4 col-form-label">PAYMENT CHOICE:</label>
               <div class="col-sm-8">
-                <input type="radio" [(ngModel)]="PM" name="PM" value="male" (click)=openSm11(content11)> Cash<br>
-                <input type="radio" [(ngModel)]="PM" name="PM" value="female" (click)=openSm12(content12)> Bank
+                <input type="radio" [(ngModel)]="PM" name="PM" value="Cash" (click)=openSm11(content11)> Cash<br>
+                <input type="radio" [(ngModel)]="PM" name="PM" value="Bank" (click)=openSm12(content12)> Bank
                 Transfer<br>
-                <input type="radio" [(ngModel)]="PM" name="PM" value="female1" (click)=openSm13(content13)> Mobile
+                <input type="radio" [(ngModel)]="PM" name="PM" value="Mobile" (click)=openSm13(content13)> Mobile
                 Money<br>
-                <input type="radio" [(ngModel)]="PM" name="PM" value="other" (click)=openSm14(content14)> Cheques
+                <input type="radio" [(ngModel)]="PM" name="PM" value="Cheques" (click)=openSm14(content14)> Cheques
               </div>
             </div>
           </div>

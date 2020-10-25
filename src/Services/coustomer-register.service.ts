@@ -664,5 +664,39 @@ export class CoustomerRegisterService {
       }
     })
   }
+  private messagesend11 = new BehaviorSubject<String>("default");
+  currentMessage11 = this.messagesend11.asObservable();
+  changetMessage11(message: String) {
+    this.messagesend11.next(message);
+  }
+  private messagesend12 = new BehaviorSubject<String>("default");
+  currentMessage12 = this.messagesend12.asObservable();
+  changetMessage12(message: String) {
+    this.messagesend12.next(message);
+  }
+  private messagesend13 = new BehaviorSubject<String>("default");
+  currentMessage13 = this.messagesend13.asObservable();
+  changetMessage13(message: String) {
+    this.messagesend13.next(message);
+  }
+  private messagesend14 = new BehaviorSubject<String>("default");
+  currentMessage14 = this.messagesend14.asObservable();
+  changetMessage14(message: String) {
+    this.messagesend14.next(message);
+  }
+  private messagesend15 = new BehaviorSubject<String>("default");
+  currentMessage15 = this.messagesend15.asObservable();
+  changetMessage15(message: String) {
+    this.messagesend15.next(message);
+  }
+  private messagesend16 = new BehaviorSubject<String>("default");
+  currentMessage16 = this.messagesend16.asObservable();
+  changetMessage16(message: String) {
+    this.messagesend16.next(message);
+  }
+  private messagesend17 = new BehaviorSubject<String>("default");
+  currentMessage17 = this.messagesend17.asObservable();
+  changetMessage17(message: String) {
+    this.messagesend17.next(message);
+  }
 }
-

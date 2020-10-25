@@ -130,4 +130,7 @@ export class CustomerinfoComponent implements OnInit {
       doc.save('Quiz.pdf');
     });
   }
+  Submit() {
+
+  }
 }

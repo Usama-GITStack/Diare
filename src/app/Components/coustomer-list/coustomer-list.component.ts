@@ -194,6 +194,12 @@ export class CoustomerListComponent implements OnInit {
       Checkout: "Case-" + this.random1,
       Amount: this.Amount
     }
+    this.CR.changetMessage11(Co.CC);
+    this.CR.changetMessage12(Co.CN);
+    this.CR.changetMessage13(Co.PM);
+    this.CR.changetMessage14(Co.Bank);
+    this.CR.changetMessage15(Co.Checkout);
+    this.CR.changetMessage16(Co.Amount);
     console.log(Co);
     this.CR.RuleAdd(Co);
     setTimeout(() => {
@@ -216,6 +222,9 @@ export class CoustomerListComponent implements OnInit {
 
   openSm14(content14) {
     this.modalService.open(content14, { size: 'lg' });
+  }
+  Submit() {
+
   }
 }
 

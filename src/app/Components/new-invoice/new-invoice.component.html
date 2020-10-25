@@ -166,14 +166,14 @@
               </div>
               <div class="form-group col-6">
                 <label>TOTAL</label>
-                <input type="number" value="{{singletotal}}" name="TOTAL" formControlName="TOTAL"
-                  class="form-control" />
+                <input type="number" ngDefaultControl [(ngModel)]="singletotal " value="{{singletotal}}" name="TOTAL"
+                  formControlName="TOTAL" class="form-control" />
               </div>
             </div>
           </div>
         </div>
         <div class="card-footer text-center">
-          <button class="btn btn-primary mr-1" (click)="onSubmit()">Add Products</button>
+          <button class="btn btn-primary mr-1" (click)="onSubmit();TOtalCal()">Add Products</button>
         </div>
       </div>
     </form>

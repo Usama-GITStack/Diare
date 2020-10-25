@@ -83,13 +83,20 @@ export class NewInvoiceComponent implements OnInit {
     if (this.dynamicForm.invalid) {
       return;
     }
-    for (var i = 0; i < this.dynamicForm.value.tickets.length; i++) {
-      this.TotalAdd = this.TotalAdd + parseInt(this.dynamicForm.value.tickets[i].TOTAL);
-      console.log(this.TotalAdd);
-    }
+
     this.table12 = this.dynamicForm.value.tickets;
     console.log(this.dynamicForm.value.tickets);
   }
+  TOtalCal() {
+    setTimeout(() => {
+      for (var i = 0; i < this.dynamicForm.value.tickets.length; i++) {
+        this.TotalAdd = this.TotalAdd + parseInt(this.dynamicForm.value.tickets[i].TOTAL);
+        console.log(this.TotalAdd);
+
+      }
+    }, 500);
+  }
+
   ngOnInit() {
     this.dynamicForm = this.fb.group({
       numberOfTickets: ['', Validators.required],

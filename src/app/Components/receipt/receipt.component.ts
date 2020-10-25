@@ -1,6 +1,6 @@
 import { CoustomerRegisterService } from './../../../Services/coustomer-register.service';
 import { Component, OnInit } from '@angular/core';
-
+import { numberToWords } from 'v-number-to-words';
 @Component({
   selector: 'app-receipt',
   templateUrl: './receipt.component.html',
@@ -22,6 +22,7 @@ export class RECEIPTComponent implements OnInit {
   CN: String;
   Bank: String;
   Ammount: String;
+  Words: any;
   random: any;
   ngOnInit() {
     this.random = Math.floor((Math.random() * 10000) + 1);
@@ -50,7 +51,8 @@ export class RECEIPTComponent implements OnInit {
       this.CN = this.tabledata[this.message4].Checkout;
       this.Bank = this.tabledata[this.message4].Bank;
       this.Ammount = this.tabledata[this.message4].Amount;
-
+      this.Words = numberToWords(Number(this.Ammount));
+      console.log(this.Words);
     });
   }
 

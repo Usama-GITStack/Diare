@@ -1,3 +1,4 @@
+import { ChoiceComponent } from './Components/choice/choice.component';
 import { LoginPageComponent } from './Components/login-page/login-page.component';
 import { ExpensesListComponent } from './expenses-list/expenses-list.component';
 import { ExpensesComponent } from './expenses/expenses.component';
@@ -71,6 +72,7 @@ const routes: Routes = [
   { path: 'UserAccess', component: UserAccessControlComponent },
   { path: 'Expenses', component: ExpensesComponent },
   { path: 'ExpensesList', component: ExpensesListComponent },
+  { path: 'choice', component: ChoiceComponent },
 
 ];
 

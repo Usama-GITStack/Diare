@@ -58,6 +58,8 @@
           <button class="btn btn-danger buttons-style  w-30 " (click)=openSm2(content2,i)><i class="fa fa-trash-o"
               aria-hidden="true"></i></button>
           <button class="btn btn-info buttons-style  w-30 " (click)=Transfer(i)><i class="fa fa-eye"
+              aria-hidden="true"></i></button>
+          <button class="btn btn-primary buttons-style  w-30 " (click)="opencash(contentcash,i) "><i class="fa fa-usd"
               aria-hidden="true"></i></button></td>
       </tr>
     </tbody>
@@ -209,4 +211,200 @@
         <button type="button" class="btn btn-danger" (click)=SavePDF()>PDF</button>
         <button type="button" class="btn btn-success" (click)=exportexcel()>Excel</button>
       </div>
+</ng-template>
+<ng-template #contentcash let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Update</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form ngNativeValidate (submit)="onCourseSend12()">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="col-md-12">
+            <div class="form-group row">
+              <label class="col-sm-4 col-form-label">Date:</label>
+              <div class="col-sm-8">
+                <input type="date" class="form-control" placeholder="" value="{{Date| date:'shortDate'}}"
+                  [(ngModel)]="Date" name="Date" required>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group row">
+              <label class="col-sm-4 col-form-label">RECEIPT No:</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" placeholder="" value="RC-{{random}}" required>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group row">
+              <label class="col-sm-4 col-form-label">CUSTOMER CODE:</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" value="{{CustomerCode}}" [(ngModel)]="CustomerCode"
+                  name="CustomerCode" placeholder="" required>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group row">
+              <label class="col-sm-4 col-form-label">PAYMENT CHOICE:</label>
+              <div class="col-sm-8">
+                <input type="radio" [(ngModel)]="PM" name="PM" value="male" (click)=openSm11(content11)> Cash<br>
+                <input type="radio" [(ngModel)]="PM" name="PM" value="female" (click)=openSm12(content12)> Bank
+                Transfer<br>
+                <input type="radio" [(ngModel)]="PM" name="PM" value="female1" (click)=openSm13(content13)> Mobile
+                Money<br>
+                <input type="radio" [(ngModel)]="PM" name="PM" value="other" (click)=openSm14(content14)> Cheques
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+
+          <div class="col-md-12">
+            <div class="form-group row">
+              <label class="col-sm-4 col-form-label">CLIENT NAME:</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" placeholder="" value="{{FirstName}}" [(ngModel)]="FirstName"
+                  name="FirstName" required>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group row">
+              <label class="col-sm-4 col-form-label">AMOUNT:</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" placeholder="" [(ngModel)]="Amount" name="Amount" required>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group row">
+              <label class="col-sm-4 col-form-label">Bank:</label>
+              <div class="col-sm-8">
+                <select class="form-control" [(ngModel)]="Bank" name="Bank" required>
+                  <option>Chose Bank</option>
+                  <option>User Bank</option>
+                  <option>CHECKOUT</option>
+                  <option>ORABANK</option>
+                  <option>ECOBANK</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group row">
+              <label class="col-sm-4 col-form-label">Cashier Case:</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" placeholder="" value="Case:{{random1}}" required>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-6">
+                <button type="submit" class="btn btn-success buttons-style  w-100 ">Save</button>
+              </div>
+              <div class="col-md-6">
+                <button class="btn btn-success buttons-style  w-100 " type="reset">CANCEL</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+  </div>
+</ng-template>
+<ng-template #content11 let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Cash</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Please Enter The Amount</p>
+    <div class="form-group row">
+      <label class="col-sm-4 col-form-label">AMOUNT:</label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" placeholder="" required>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)=Submit()>Submit</button>
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+  </div>
+</ng-template>
+
+<ng-template #content12 let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Bank Transfer</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Please Enter The Transfer Number</p>
+    <div class="form-group row">
+      <label class="col-sm-4 col-form-label">AMOUNT:</label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" placeholder="" required>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)=Submit()>Submit</button>
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+  </div>
+</ng-template>
+<ng-template #content13 let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Mobile Money</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Enter The Amount You Need To Pay</p>
+    <div class="form-group row">
+      <label class="col-sm-4 col-form-label">AMOUNT:</label>
+      <div class="col-sm-8">
+        <input type="number" class="form-control" placeholder="" required>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)=Submit()>Submit</button>
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+  </div>
+</ng-template>
+<ng-template #content14 let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Cheques</h4>
+
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Please Enter The Cheque Number</p>
+    <div class="form-group row">
+      <label class="col-sm-4 col-form-label">Number:</label>
+      <div class="col-sm-8">
+        <input type="number" class="form-control" placeholder="" required>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)=Submit()>Submit</button>
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+  </div>
 </ng-template>

@@ -17,6 +17,8 @@ export class CoustomerRegisterService {
   currentMessage2 = this.messagesend2.asObservable();
   private messagesend3 = new BehaviorSubject<string>("default");
   currentMessage3 = this.messagesend3.asObservable();
+  private messagesend4 = new BehaviorSubject<number>(0);
+  currentMessage4 = this.messagesend4.asObservable();
   changetMessage(message: number) {
     this.messagesend.next(message);
   }
@@ -31,6 +33,9 @@ export class CoustomerRegisterService {
   }
   changetMessage0(message: number) {
     this.messagesend0.next(message);
+  }
+  changetMessage4(message: number) {
+    this.messagesend4.next(message);
   }
 
   datageting: any = {}

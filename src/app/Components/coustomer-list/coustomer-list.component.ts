@@ -33,7 +33,16 @@ export class CoustomerListComponent implements OnInit {
   FirstName: String;
   Category: String;
   Address: String;
+  RC: String;
+  CC: String;
+  CN: String;
+  PM: String;
+  Bank: String;
+  Checkout: String;
+  Amount: String;
+  Date = Date.now();
   random: any;
+  random1: any;
   exportexcel() {
     console.log("Usama")
     let element = document.getElementById('excel-table');
@@ -69,6 +78,7 @@ export class CoustomerListComponent implements OnInit {
       }, 500);
     })
     this.random = Math.floor((Math.random() * 10000) + 1);
+    this.random1 = Math.floor((Math.random() * 10000) + 1);
   }
 
   openXl(content) {
@@ -133,6 +143,18 @@ export class CoustomerListComponent implements OnInit {
   openSm3(content3) {
     this.modalService.open(content3, { size: 'sm' });
   }
+  opencash(contentcash, index) {
+    this.CR.changetMessage4(index);
+    this.modalService.open(contentcash, { size: 'xl' });
+    this.CustomerCode = this.tabledata[index].CustomerCode;
+    this.LastName = this.tabledata[index].LastName;
+    this.Phone = this.tabledata[index].Phone;
+    this.City = this.tabledata[index].City;
+    this.Civility = this.tabledata[index].Civility;
+    this.FirstName = this.tabledata[index].FirstName;
+    this.Category = this.tabledata[index].Category;
+    this.Address = this.tabledata[index].MadinaAddress;
+  }
   DateFilter() {
     var a = this.searchText;
     var b = this.searchText1;
@@ -160,6 +182,40 @@ export class CoustomerListComponent implements OnInit {
         Address: this.tabledata[index].MadinaAddress
       }
     ]
+  }
+  onCourseSend12() {
+    const Co = {
+      RC: "RC-" + this.random,
+      Date: this.Date,
+      CC: this.CustomerCode,
+      CN: this.FirstName,
+      PM: this.PM,
+      Bank: this.Bank,
+      Checkout: "Case-" + this.random1,
+      Amount: this.Amount
+    }
+    console.log(Co);
+    this.CR.RuleAdd(Co);
+    setTimeout(() => {
+      this.router.navigateByUrl('/RECEIPT');
+    }, 2000);
+
+  }
+
+  openSm11(content11) {
+    this.modalService.open(content11, { size: 'lg' });
+  }
+
+  openSm12(content12) {
+    this.modalService.open(content12, { size: 'lg' });
+  }
+
+  openSm13(content13) {
+    this.modalService.open(content13, { size: 'lg' });
+  }
+
+  openSm14(content14) {
+    this.modalService.open(content14, { size: 'lg' });
   }
 }
 

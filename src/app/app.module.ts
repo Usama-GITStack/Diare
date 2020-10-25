@@ -46,6 +46,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ExpensesComponent } from './expenses/expenses.component';
 import { ExpensesListComponent } from './expenses-list/expenses-list.component';
 import { LoginPageComponent } from './Components/login-page/login-page.component';
+import { ChoiceComponent } from './Components/choice/choice.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -84,9 +86,11 @@ import { LoginPageComponent } from './Components/login-page/login-page.component
     ExpensesComponent,
     ExpensesListComponent,
     LoginPageComponent,
+    ChoiceComponent,
 
   ],
   imports: [
+    ReactiveFormsModule,
     MatSnackBarModule,
     MatDatepickerModule,
     FormsModule,

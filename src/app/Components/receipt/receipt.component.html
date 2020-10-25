@@ -1,4 +1,4 @@
-<div class="container">
+<div class="">
   <div class="row">
     <div class="col-2" id="logodiv1">
       <img src="../../../assets/logo.jpg" alt="NO photo" id="logo">
@@ -17,7 +17,7 @@
 
 <hr class="new5">
 
-<div class="container">
+<div class="">
 
   <div class="row">
     <div class="col-3" id="logodiv1">
@@ -28,8 +28,8 @@
 
     </div>
     <div class="col-3" style="color: #54a020">
-      <b>DATE:</b> <br>
-      RECIEVED No.:
+      <b>DATE: {{Date|date:'shortDate'}}</b> <br>
+      RECIEVED No.: {{random}}
     </div>
   </div>
 
@@ -58,17 +58,17 @@
 
       </div>
       <div class="col-3" style="color: #54a020; border: 2px solid #54a020;">
-        <b>AMOUNT: {{message}}</b>
+        <b>AMOUNT: {{Ammount}} GNF</b>
       </div>
     </div>
 
     <div class="row">
       <div class="col-6" id="containerIntro" style="color: #54a020; justify-content: space-between;">
-        CUSTOMER CODE: {{message2}} <br> <br>
+        CUSTOMER CODE: {{CC}} <br> <br>
         <h1>RECIEVED FORM:</h1>
-        <p>{{message1}}</p> <br> <br> <br>
+        <p>{{CN}}</p> <br> <br> <br>
         <h1>AMOUNT IN LETTER:</h1>
-        <p>twenty five million Guinean francs</p>
+        <p><input type="text" value="" placeholder="" name="AMOUNT"></p>
       </div>
       <div class="col-3" style="text-align: center;">
 
@@ -83,12 +83,12 @@
       <div class="col-6" id="containerIntro" style="color: #54a020; justify-content: space-between;">
 
         <h1>PAYMENT CHOICE:</h1>
-        <p>CHECK</p>
+        <p>{{CH}}</p>
 
       </div>
       <div class="col-3" id="containerIntro" style="color: #54a020;">
         <h1>BANK:</h1>
-        <p>ORABANK</p>
+        <p>{{Bank}}</p>
 
       </div>
       <div class="col-3">
@@ -100,7 +100,7 @@
       <div class="col-6" id="containerIntro" style="color: #54a020; justify-content: space-between;">
 
         <h1>DETAILS:</h1>
-        <p>no. check: 0067897</p>
+        <p>{{CN}}</p>
 
       </div>
       <div class="col-3">

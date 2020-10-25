@@ -1,61 +1,42 @@
 <header class="header-section-bg-color ">
   <h5 class="text-center" style="margin: auto;">NEW INVOICE</h5>
 </header>
+<div class="col-md-4">
+  <button class="btn btn-success buttons-style  w-100 " (click)="openXl(content)">Add Products</button>
+</div>
 <form ngNativeValidate (submit)="onCourseSend()">
   <section class="border-color-set">
     <div class="row">
       <div class="col-md-4 padding-colm-set ">
         <label for="sel1" class="text-color ">WAREHOUSE:</label>
-        <select class="form-control" id="sel1" [(ngModel)]="Warehouse" name="Warehouse" required>
+        <select class="form-control w-50" id="sel1" [(ngModel)]="Warehouse" name="Warehouse" required>
           <option>Warehouse Select</option>
           <option *ngFor="let tb of tabledata; let i=index">{{tb.NAMEOFWAREHOUSE}}</option>
         </select>
       </div>
       <div class="col-md-4 padding-colm-set ">
-        <label for="sel1" class="text-color ">DATED:</label>
-        <label style="margin-left: 5%;">{{ today | date:'shortDate' }} </label>
-        <label></label>
+        <label for="sel1" class="text-color ">INVOICE NO. {{this.random}}</label>
+      </div>
+      <div class="col-md-4 padding-colm-set ">
+        <label for="sel1" class="text-color ">Date:</label>
+        <label for="sel1" class="text-color ">{{today | date:'shortDate'}}</label>
       </div>
     </div>
   </section>
   <section class="border-color-set">
     <div class="row">
-      <div class="col-md-3 padding-colm-set ">
-        <div class="form-group">
-          <label>LAST NAME</label>
-          <input type="text" class="form-control" [(ngModel)]="LastName" name="LastName" required>
-        </div>
-      </div>
-      <div class="col-md-3 padding-colm-set ">
-        <div class="form-group">
-          <label>FIRST NAME</label>
-          <input type="text" class="form-control" [(ngModel)]="FirstName" name="FirstName" required>
-        </div>
-      </div>
-      <div class="col-md-3 padding-colm-set ">
-        <div class="form-group">
-          <label>PHONE</label>
-          <input type="text" class="form-control" [(ngModel)]="Phone" name="Phone" required>
-        </div>
-      </div>
-      <div class="col-md-3 padding-colm-set ">
-        <div class="form-group">
-          <label>ADDRESS</label>
-          <input type="text" class="form-control" [(ngModel)]="Address" name="Address" required>
-        </div>
-      </div>
-      <div class="col-md-4 padding-colm-set ">
-        <div class="form-group">
-          <label>E-MAIL</label>
-          <input type="text" class="form-control" [(ngModel)]="Email" name="Email" required>
-        </div>
-      </div>
       <div class="col-md-4 padding-colm-set ">
         <label for="sel1" class="text-color ">Customer:</label>
-        <select class="form-control" id="sel1" required>
-          <option>Customer Select</option>
-          <option *ngFor="let tb of tabledata1; let i=index">{{tb.FirstName}}</option>
-        </select>
+        <br>
+        <div style="display: inline-flex;">
+          <select class="form-control w-100" id="sel1" [(ngModel)]=FirstName name="FirstName" required>
+            <option>Customer Select</option>
+            <option *ngFor="let tb of tabledata1; let i=index">{{tb.FirstName}}</option>
+          </select>
+          <button class="btn btn-success" routerLink="/RegisterCustomer"><i class="fa fa-plus"
+              aria-hidden="true"></i></button>
+          <button class="btn btn-info" routerLink="/CustomerList"><i class="fa fa-eye" aria-hidden="true"></i></button>
+        </div>
       </div>
     </div>
   </section>
@@ -95,13 +76,10 @@
       <div class="col-md-10">
         <div class="row">
           <div class="col-md-2">
-
           </div>
           <div class="col-md-2">
-
           </div>
         </div>
-
       </div>
       <div class="col-md-2">
         <div class="row">
@@ -116,3 +94,91 @@
     </div>
   </section>
 </form>
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Add Products</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <!-- <form [formGroup]="myForm">
+      <div formArrayName="arr" *ngFor="let a of myForm.get('arr').controls; let i = index">
+        <div [formGroupName]="i">
+          <div class="form-group">
+            <label>DESCRIPTION:</label>
+            <input type="text" name="DESCRIPTION" formControlName="DESCRIPTION" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>AMOUNT:</label>
+            <input type="text" name="AMOUNT" formControlName="AMOUNT" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>UNITS:</label>
+            <input type="text" name="UNITS" formControlName="UNITS" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>SELLINGPRICE:</label>
+            <input type="text" name="SELLINGPRICE" formControlName="SELLINGPRICE" class="form-control">
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-success" class="addItem()">Add More</button>
+    </form> -->
+    <form [formGroup]="dynamicForm" (ngSubmit)="onSubmit()">
+      <div class="card m-3">
+        <div class="card-body">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Number of Products</label>
+              <select formControlName="numberOfTickets" class="form-control" (change)="onChangeTickets($event)"
+                [ngClass]="{ 'is-invalid': submitted && f.numberOfTickets.errors }">
+                <option value=""></option>
+                <option *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]">{{i}}</option>
+              </select>
+              <div *ngIf="submitted && f.numberOfTickets.errors" class="invalid-feedback">
+                <div *ngIf="f.numberOfTickets.errors.required">Number of Products is required</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div *ngFor="let ticket of t.controls; let i = index" class="list-group list-group-flush">
+          <div class="list-group-item">
+            <h5 class="card-title">Ticket {{i + 1}}</h5>
+            <div [formGroup]="ticket" class="form-row">
+              <div class="form-group col-6">
+                <label>DESCRIPTION</label>
+                <input type="text" formControlName="DESCRIPTION" class="form-control" />
+              </div>
+              <div class="form-group col-6">
+                <label>AMOUNT</label>
+                <input type="number" formControlName="AMOUNT" class="form-control"
+                  (change)="somethingChanged($event.target.value)" />
+              </div>
+              <div class="form-group col-6">
+                <label>UNITS</label>
+                <input type="text" formControlName="UNIT" class="form-control" />
+              </div>
+              <div class="form-group col-6">
+                <label>SELLINGPRICE</label>
+                <input type="number" formControlName="SELLINGPRICE" class="form-control"
+                  (change)="somethingChanged1($event.target.value)" />
+              </div>
+              <div class="form-group col-6">
+                <label>TOTAL</label>
+                <input type="number" value="{{singletotal}}" name="TOTAL" formControlName="TOTAL"
+                  class="form-control" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer text-center">
+          <button class="btn btn-primary mr-1" (click)="onSubmit()">Add Products</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+  </div>
+</ng-template>

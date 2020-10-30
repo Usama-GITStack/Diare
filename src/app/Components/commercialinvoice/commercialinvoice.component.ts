@@ -31,6 +31,7 @@ export class COMMERCIALINVOICEComponent implements OnInit {
     this.CR.getData5().subscribe(data => {
       this.datageting = data;
       this.tabledata = this.datageting.msg;
+      console.log(this.tabledata[this.message].LastName)
       this.FirstName = this.tabledata[this.message].FirstName + " " + this.tabledata[this.message].LastName;
       this.InvoiceNumber = this.tabledata[this.message].FACTNUMBER;
       this.Email = this.tabledata[this.message].Email;

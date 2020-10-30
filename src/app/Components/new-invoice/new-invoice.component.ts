@@ -12,6 +12,10 @@ import { FormArray } from '@angular/forms';
 export class NewInvoiceComponent implements OnInit {
   random: any;
   datageting: any;
+  FN: String;
+  LN: String;
+  PH: String;
+  ADD: String;
   datageting1: any;
   Warehouse: String;
   FirstName: String;
@@ -20,6 +24,7 @@ export class NewInvoiceComponent implements OnInit {
   Phone: String;
   Address: String;
   table12: any;
+  artical: any;
   // myForm = new FormGroup({
   //   DESCRIPTION: new FormControl(),
   //   AMOUNT: new FormControl(),
@@ -40,7 +45,7 @@ export class NewInvoiceComponent implements OnInit {
   SELLINGPRICE: String[];
   today: number = Date.now();
   myControl = new FormControl();
-  singletotal: any;
+  singletotal = [];
   @ViewChild('dataTable', { static: true }) table;
   constructor(private CR: CoustomerRegisterService, private router: Router, public config: NgbModalConfig, public modalService: NgbModal, private fb: FormBuilder) { }
   // createItem() {
@@ -98,6 +103,10 @@ export class NewInvoiceComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.CR.getData1().subscribe(data => {
+      this.datageting = data;
+      this.artical = this.datageting.msg;
+    });
     this.dynamicForm = this.fb.group({
       numberOfTickets: ['', Validators.required],
       tickets: new FormArray([])
@@ -114,16 +123,23 @@ export class NewInvoiceComponent implements OnInit {
     })
     this.random = Math.floor((Math.random() * 10000) + 1);
   }
+  customerselect(index) {
+    console.log(index);
+    this.FN = this.tabledata1[index].FirstName;
+    this.LN = this.tabledata1[index].LastName;
+    this.PH = this.tabledata1[index].Phone;
+    this.ADD = this.tabledata1[index].MadinaAddress;
+
+  }
   onCourseSend() {
     const Co = {
       FACTNUMBER: "INVOICE NO." + this.random,
       Date: this.today,
       Warehouse: this.Warehouse,
-      FirstName: this.FirstName,
-      LastName: this.LastName,
-      Email: this.Email,
-      Phone: this.Phone,
-      Address: this.Address,
+      FirstName: this.FN,
+      LastName: this.LN,
+      Phone: this.PH,
+      Address: this.ADD,
       InvoiceData: this.dynamicForm.value.tickets,
       TotalInvoice: this.TotalAdd,
     }
@@ -134,13 +150,14 @@ export class NewInvoiceComponent implements OnInit {
     }, 2000);
 
   }
-  somethingChanged(event) {
-    this.singletotal = event
+  somethingChanged(event, i) {
+    this.singletotal[i] = event
   }
-  somethingChanged1(event) {
-    this.singletotal = Number(this.singletotal) * Number(event);
+  somethingChanged1(event, i) {
+    this.singletotal[i] = Number(this.singletotal[i]) * Number(event);
   }
   openXl(content) {
     this.modalService.open(content, { size: 'xl' });
   }
+
 }

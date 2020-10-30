@@ -29,9 +29,10 @@
         <label for="sel1" class="text-color ">Customer:</label>
         <br>
         <div style="display: inline-flex;">
-          <select class="form-control w-100" id="sel1" [(ngModel)]=FirstName name="FirstName" required>
+          <select class="form-control w-100" id="sel1" [(ngModel)]=FirstName name="FirstName"
+            (change)="customerselect($event.target.value)" required>
             <option>Customer Select</option>
-            <option *ngFor="let tb of tabledata1; let i=index">{{tb.FirstName}}</option>
+            <option *ngFor="let tb of tabledata1; let i=index" value="{{i}}">{{tb.FirstName}}</option>
           </select>
           <button class="btn btn-success" routerLink="/RegisterCustomer"><i class="fa fa-plus"
               aria-hidden="true"></i></button>
@@ -44,7 +45,7 @@
     <table id="customers" class="display table table_size table_background" style="width:100%">
       <thead>
         <tr class="home-page-color-bg">
-          <th scope="col">DESCRIPTION</th>
+          <th scope="col">PRODUCTS</th>
           <th scope="col">AMOUNT</th>
           <th scope="col">UNITS</th>
           <th scope="col">SELLING PRICE</th>
@@ -144,16 +145,19 @@
         </div>
         <div *ngFor="let ticket of t.controls; let i = index" class="list-group list-group-flush">
           <div class="list-group-item">
-            <h5 class="card-title">Ticket {{i + 1}}</h5>
+            <h5 class="card-title">Product {{i + 1}}</h5>
             <div [formGroup]="ticket" class="form-row">
               <div class="form-group col-6">
-                <label>DESCRIPTION</label>
-                <input type="text" formControlName="DESCRIPTION" class="form-control" />
+                <label>PRODUCTS</label>
+                <select class="form-control" formControlName="DESCRIPTION">
+                  <option>Select Product</option>
+                  <option *ngFor="let tb of artical; let a=index">{{tb.Nameofthearticle}}</option>
+                </select>
               </div>
               <div class="form-group col-6">
                 <label>AMOUNT</label>
                 <input type="number" formControlName="AMOUNT" class="form-control"
-                  (change)="somethingChanged($event.target.value)" />
+                  (change)="somethingChanged($event.target.value,i)" />
               </div>
               <div class="form-group col-6">
                 <label>UNITS</label>
@@ -162,11 +166,11 @@
               <div class="form-group col-6">
                 <label>SELLINGPRICE</label>
                 <input type="number" formControlName="SELLINGPRICE" class="form-control"
-                  (change)="somethingChanged1($event.target.value)" />
+                  (change)="somethingChanged1($event.target.value,i)" />
               </div>
               <div class="form-group col-6">
                 <label>TOTAL</label>
-                <input type="number" ngDefaultControl [(ngModel)]="singletotal " value="{{singletotal}}" name="TOTAL"
+                <input type="number" ngDefaultControl [(ngModel)]="singletotal[i] " value="{{singletotal}}" name="TOTAL"
                   formControlName="TOTAL" class="form-control" />
               </div>
             </div>
